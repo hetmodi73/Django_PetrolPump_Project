@@ -1,0 +1,140 @@
+{% extends "client/layout.html" %}
+{% load static %}
+{% block extra_css %}
+  <!-- DataTables -->
+  <link rel="stylesheet" href="{% static 'plugins/datatables-bs4/css/dataTables.bootstrap4.min.css' %}">
+  <link rel="stylesheet" href="{% static 'plugins/datatables-responsive/css/responsive.bootstrap4.min.css' %}">
+  <link rel="stylesheet" href="{% static 'plugins/datatables-buttons/css/buttons.bootstrap4.min.css' %}">
+{% endblock %}
+
+{% block body %}
+
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Employee Table</h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <table id="example1" class="table table-bordered table-striped">
+                  <thead>
+                  <tr>
+                      <th>Date</th>
+                      <th>Employee_id</th>
+                      <th>First_Name</th>
+                      <th>Middle_Name</th>
+                      <th>Last_Name</th>
+{#                      <th>Contact_No</th>#}
+{#                      <th>Address</th>#}
+{#                      <th>Street</th>#}
+{#                      <th>Area</th>#}
+{#                      <th>City</th>#}
+{#                      <th>State</th>#}
+{#                      <th>Pincode</th>#}
+{#                      <th>Country</th>#}
+{#                      <th>D.O.B</th>#}
+{#                      <th>Designation</th>#}
+{#                      <th>Gender</th>#}
+{#                      <th>Reffrence</th>#}
+{#                      <th>Shift_Timming</th>#}
+{#                      <th>Education</th>#}
+{#                      <th>Date_Of_Join</th>#}
+{#                      <th>Expected_Salary</th>#}
+{#                        <th>Profile_Picture</th>#}
+                      <th>Action</th>
+                  </tr>
+                  </thead>
+                    <tbody>
+                        {% for employee in employee_master %}
+                        <tr>
+                            <td>{{ employee.date }}</td>
+                            <td>{{ employee.employee_id }}</td>
+                            <td>{{ employee.first_name }}</td>
+                            <td>{{ employee.middle_name }}</td>
+                            <td>{{ employee.last_name }}</td>
+{#                            <td>{{ employee.Contact_no }}</td>#}
+{#                            <td>{{ employee.address }}</td>#}
+{#                            <td>{{ employee.Street }}</td>#}
+{#                            <td>{{ employee.area }}</td>#}
+{#                            <td>{{ employee.City }}</td>#}
+{#                            <td>{{ employee.state }}</td>#}
+{#                            <td>{{ employee.pincode }}</td>#}
+{#                            <td>{{ employee.Country }}</td>#}
+{#                            <td>{{ employee.dob }}</td>#}
+{#                            <td>{{ employee.designation }}</td>#}
+{#                            <td>{{ employee.gender }}</td>#}
+{#                            <td>{{ employee.reffrence }}</td>#}
+{#                            <td>{{ employee.shift_timming }}</td>#}
+{#                            <td>{{ employee.education }}</td>#}
+{#                            <td>{{ employee.Date_of_join }}</td>#}
+{#                            <td>{{ employee.expected_salary }}</td>#}
+{#                                <td>{{ employee.photo }}</td>#}
+                            <td>
+                                <a href="{% url 'employee-update'  employee.id %}" class="btn btn-info"> update</a>
+                                <a href="{% url 'employee-delete'  employee.id %}" class="btn btn-danger"> Delete</a>
+                                <a href="{% url 'employee-detail' employee.id %}" class="btn btn-info"> Detail</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+
+                  </tbody>
+                  <tfoot>
+                  <tr>
+                      <th align="center">Date</th>
+                      <th align="center">Employee_id</th>
+                      <th align="center">First_Name</th>
+                      <th align="center">Middle_Name</th>
+                      <th align="center">Last_Name</th>
+{#                      <th align="center">Contact_No</th>#}
+{#                      <th align="center">Address</th>#}
+{#                      <th align="center">Street</th>#}
+{#                      <th align="center">Area</th>#}
+{#                      <th align="center">City</th>#}
+{#                      <th align="center">State</th>#}
+{#                      <th align="center">Pincode</th>#}
+{#                      <th align="center">Country</th>#}
+{#                      <th align="center">D.O.B</th>#}
+{#                      <th align="center">Designation</th>#}
+{#                      <th align="center">Gender</th>#}
+{#                      <th align="center">Reffrence</th>#}
+{#                      <th align="center">Shift_Timming</th>#}
+{#                      <th align="center">Education</th>#}
+{#                      <th align="center">Date_Of_Join</th>#}
+{#                      <th align="center">Expected_Salary</th>#}
+{#                        <th align="center">Profile_Picture</th>#}
+                      <th align="center">Action</th>
+                  </tr>
+                  </tfoot>
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+
+{% endblock %}
+
+{% block extra_js %}
+
+<!-- DataTables  & Plugins -->
+<script src="{% static 'plugins/datatables/jquery.dataTables.min.js' %}"></script>
+<script src="{% static 'plugins/datatables-bs4/js/dataTables.bootstrap4.min.js' %}"></script>
+<script src="{% static 'plugins/datatables-responsive/js/dataTables.responsive.min.js' %}"></script>
+<script src="{% static 'plugins/datatables-responsive/js/responsive.bootstrap4.min.js' %}"></script>
+<script src="{% static 'plugins/datatables-buttons/js/dataTables.buttons.min.js' %}"></script>
+<script src="{% static 'plugins/datatables-buttons/js/buttons.bootstrap4.min.js' %}"></script>
+<script src="{% static 'plugins/jszip/jszip.min.js' %}"></script>
+<script src="{% static 'plugins/pdfmake/pdfmake.min.js' %}"></script>
+<script src="{% static 'plugins/pdfmake/vfs_fonts.js' %}"></script>
+<script src="{% static 'plugins/datatables-buttons/js/buttons.html5.min.js' %}"></script>
+<script src="{% static 'plugins/datatables-buttons/js/buttons.print.min.js' %}"></script>
+<script src="{% static 'plugins/datatables-buttons/js/buttons.colVis.min.js' %}"></script>
+<!-- Page specific script -->
+<script>
+  $(function () {
+    $("#example1").DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+  });
+</script>
+
+{% endblock %}

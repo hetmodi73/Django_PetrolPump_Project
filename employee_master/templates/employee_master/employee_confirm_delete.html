@@ -1,0 +1,39 @@
+{% extends "client/layout.html" %}
+{% block body %}
+    <h1> Are you Sure You Want To Delete ?</h1>
+    <form method="post">
+    {% csrf_token %}
+     <ul>
+         <li> Date : {{ object.date }}</li>
+         <li> Employee_id : {{ object.employee_id }}</li>
+         <li> First_Name :{{ object.first_name }}</li>
+         <li> Middle_Name : {{ object.middle_name }}</li>
+         <li> Last_Name : {{ object.last_name }}</li>
+         <li> Contact_No : {{ object.Contact_no }}</li>
+         <li> Address : {{ object.address }}</li>
+         <li> Street : {{ object.Street }}</li>
+         <li> Area : {{ object.area }}</li>
+         <li> City : {{ object.City }}</li>
+         <li> State : {{ object.state }}</li>
+         <li> Pincode : {{ object.pincode }}</li>
+         <li> Country : {{ object.Country }}</li>
+         <li> D.O.B : {{ object.dob }}</li>
+         <li> Designation : {{ object.designation }}</li>
+         <li> Gender : {{ object.gender }}</li>
+         <li> Reffrence : {{ object.reffrence }}</li>
+         <li> Shift_Timming : {{ object.shift_timming }}</li>
+         <li> Education : {{ object.education }}</li>
+         <li> Date_Of_Join : {{ object.Date_of_join }}</li>
+         <li> Expected_Salary : {{ object.expected_salary }}</li>
+         <li> Profile_Picture : {{ object.photo }}</li>
+         <li> Document_file : {{ object.Document_file }}</li>
+         <li> Bank_Name : {{ object.bank_name }}</li>
+         <li> Account_no : {{ object.account_no }}</li>
+         <li> IFSC_code : {{ object.ifsc_code }}</li>
+         <li> Salary : {{ object.salary }}</li>
+         <li> Pan_Number : {{ object.Pan_Number }}</li>
+     </ul>
+        <input type="submit" value="delete" class="btn btn-danger">
+        <a href="{% url 'rate-view' %}" class="btn btn-info" >cancel </a>
+    </form>
+{% endblock %}

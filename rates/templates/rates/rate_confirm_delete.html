@@ -1,0 +1,14 @@
+{% extends "client/layout.html" %}
+{% block body %}
+    <h1> Are you Sure You Want To Delete ?</h1>
+    <form method="post">
+    {% csrf_token %}
+     <ul>
+        <li> Date : {{ object.date }}</li>
+        <li> petrol :{{ object.petrol_price }}</li>
+        <li> diesel : {{ object.diesel_price }}</li>
+     </ul>
+        <input type="submit" value="delete" class="btn btn-danger">
+        <a href="{% url 'rate-view' %}" class="btn btn-info" >cancel </a>
+    </form>
+{% endblock %}

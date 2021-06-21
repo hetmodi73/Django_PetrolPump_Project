@@ -1,0 +1,95 @@
+{% extends "client/layout.html" %}
+{% load static %}
+{% load crispy_forms_field %}
+{% block extra_css %}
+<!-- daterange picker -->
+  <link rel="stylesheet" href="{% static 'plugins/daterangepicker/daterangepicker.css' %}">
+
+{% endblock %}
+{% block body %}
+            <!-- general form elements -->
+            <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title">Petrol/Diesel Daily Rates</h3>
+              </div>
+              <!-- /.card-header -->
+              <!-- form start -->
+              <form method="POST">
+              {% csrf_token %}
+                <div class="card-body">
+                  <div class="form-group">
+                  <label>Date:</label>
+                    <div class="input-group date" id="reservationdate" data-target-input="nearest">
+                        {% crispy_field form.date %}
+                        {% if form.date.errors %}
+                            {% for error in date.errors %}
+                                <div class="invalid-feedback">
+                                {{ error }}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                        <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
+                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.form group -->
+                  <div class="form-group">
+                    <label for="exampleInputPetrolrate">Rate Of Petrol</label>
+                      {% crispy_field form.petrol_price %}
+                      {% if  form.petrol_price.errors %}
+                          {% for error in form.petrol_price.errors %}
+                              <div class="invalid-feedback">
+                                  {{ error }}
+                              </div>
+                          {% endfor %}
+                      {% endif %}
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputDieselrate">Rate Of Diesel</label>
+                    <div class="input-group">
+                      {% crispy_field form.diesel_price %}
+                        {% if  form.petrol_diesel.errors %}
+                            {% for error in form.diesel_price.errors %}
+                                <div class="invalid-feedback">
+                                    {{ error }}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                  </div>
+                </div>
+                <!-- /.card-body -->
+
+                <div class="card-footer">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+              </form>
+            </div>
+            <!-- /.card -->
+
+            <!-- general form elements -->
+
+{% endblock %}
+{% block extra_js %}
+    <!-- bs-custom-file-input -->
+    <script src=" {% static 'plugins/bs-custom-file-input/bs-custom-file-input.min.js' %} "></script>
+
+    <!-- InputMask -->
+    <script src="{% static 'plugins/moment/moment.min.js'%}"></script>
+    <script src="{% static 'plugins/inputmask/jquery.inputmask.min.js'%}"></script>
+    <!-- date-range-picker -->
+    <script src="{% static 'plugins/daterangepicker/daterangepicker.js'%}"></script>
+    <!-- Tempusdominus Bootstrap 4 -->
+    <script src="{% static 'plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js'%}"></script>
+<script>
+$(function () {
+    <!-- bootstrap color picker -->
+    //Date range picker
+    $('#reservationdate').datetimepicker({
+        format: 'YYYY-MM-DD'
+    });
+});
+</script>
+
+{% endblock %}

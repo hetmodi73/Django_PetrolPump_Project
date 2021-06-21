@@ -1,0 +1,14 @@
+{% extends "client/layout.html" %}
+{% block body %}
+    <h1> Are you Sure You Want To Delete ?</h1>
+    <form method="post">
+    {% csrf_token %}
+     <ul>
+        <li> Nozzlle_No : {{ object.nozzlle_no }}</li>
+        <li> Nozzlle_Type :{{ object.nozzlle_type }}</li>
+        <li> Remark : {{ object.remark }}</li>
+     </ul>
+        <input type="submit" value="delete" class="btn btn-danger">
+        <a href="{% url 'rate-view' %}" class="btn btn-info" >cancel </a>
+    </form>
+{% endblock %}

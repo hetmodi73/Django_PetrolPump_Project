@@ -1,0 +1,425 @@
+{% extends "client/layout.html" %}
+{% load static %}
+{% load crispy_forms_field %}
+{% block extra_css %}
+<!-- daterange picker -->
+  <link rel="stylesheet" href="{% static 'plugins/daterangepicker/daterangepicker.css' %}">
+
+{% endblock %}
+{% block body %}
+            <!-- general form elements -->
+            <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title">Employee Entry Form</h3>
+              </div>
+              <!-- /.card-header -->
+              <!-- form start -->
+              <form method="POST">
+              {% csrf_token %}
+                <div class="card-body">
+                  <div class="form-group">
+                  <label>Date:</label>
+                    <div class="input-group date" id="reservationdate" data-target-input="nearest">
+                        {% crispy_field form.date %}
+                        {% if form.date.errors %}
+                            {% for error in date.errors %}
+                                <div class="invalid-feedback">
+                                {{ error }}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                        <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
+                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.form group -->
+                  <div class="form-group">
+                    <label for="exampleInputPetrolrate">Employee_id</label>
+                      {% crispy_field form.employee_id %}
+                      {% if  form.employee_id.errors %}
+                          {% for error in form.employee_id.errors %}
+                              <div class="invalid-feedback">
+                                  {{ error }}
+                              </div>
+                          {% endfor %}
+                      {% endif %}
+                  </div>
+                <!-- /.form group -->
+                  <div class="form-group">
+                    <label for="exampleInputDieselrate">First_Name</label>
+                    <div class="input-group">
+                      {% crispy_field form.first_name %}
+                        {% if  form.first_name.errors %}
+                            {% for error in form.first_name.errors %}
+                                <div class="invalid-feedback">
+                                    {{ error }}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                  </div>
+
+                <!-- /.form group -->
+                  <div class="form-group">
+                    <label for="exampleInputPetrolrate">Middle_Name</label>
+                      {% crispy_field form.middle_name %}
+                      {% if  form.Middle_Name.errors %}
+                          {% for error in form.Middle_Name.errors %}
+                              <div class="invalid-feedback">
+                                  {{ error }}
+                              </div>
+                          {% endfor %}
+                      {% endif %}
+                  </div>
+
+                <!-- /.form group -->
+                  <div class="form-group">
+                    <label for="exampleInputPetrolrate">Last_Name</label>
+                      {% crispy_field form.last_name %}
+                      {% if  form.last_Name.errors %}
+                          {% for error in form.last_Name.errors %}
+                              <div class="invalid-feedback">
+                                  {{ error }}
+                              </div>
+                          {% endfor %}
+                      {% endif %}
+                  </div>
+
+                <!-- /.form group -->
+                  <div class="form-group">
+                    <label for="exampleInputPetrolrate">Contact_No</label>
+                      {% crispy_field form.Contact_no %}
+                      {% if  form.Contact_no.errors %}
+                          {% for error in form.Contact_no.errors %}
+                              <div class="invalid-feedback">
+                                  {{ error }}
+                              </div>
+                          {% endfor %}
+                      {% endif %}
+                  </div>
+
+                <!-- /.form group -->
+                  <div class="form-group">
+                    <label for="exampleInputPetrolrate">Address</label>
+                      {% crispy_field form.address %}
+                      {% if  form.address.errors %}
+                          {% for error in form.address.errors %}
+                              <div class="invalid-feedback">
+                                  {{ error }}
+                              </div>
+                          {% endfor %}
+                      {% endif %}
+                  </div>
+
+                <!-- /.form group -->
+                  <div class="form-group">
+                    <label for="exampleInputPetrolrate">Street</label>
+                      {% crispy_field form.Street %}
+                      {% if  form.Street.errors %}
+                          {% for error in form.Street.errors %}
+                              <div class="invalid-feedback">
+                                  {{ error }}
+                              </div>
+                          {% endfor %}
+                      {% endif %}
+                  </div>
+
+                <!-- /.form group -->
+                  <div class="form-group">
+                    <label for="exampleInputPetrolrate">Area</label>
+                      {% crispy_field form.area %}
+                      {% if  form.area.errors %}
+                          {% for error in form.area.errors %}
+                              <div class="invalid-feedback">
+                                  {{ error }}
+                              </div>
+                          {% endfor %}
+                      {% endif %}
+                  </div>
+
+                <!-- /.form group -->
+                  <div class="form-group">
+                    <label for="exampleInputPetrolrate">City</label>
+                      {% crispy_field form.City %}
+                      {% if  form.City.errors %}
+                          {% for error in form.City.errors %}
+                              <div class="invalid-feedback">
+                                  {{ error }}
+                              </div>
+                          {% endfor %}
+                      {% endif %}
+                  </div>
+
+                <!-- /.form group -->
+                  <div class="form-group">
+                    <label for="exampleInputPetrolrate">State</label>
+                      {% crispy_field form.state %}
+                      {% if  form.state.errors %}
+                          {% for error in form.state.errors %}
+                              <div class="invalid-feedback">
+                                  {{ error }}
+                              </div>
+                          {% endfor %}
+                      {% endif %}
+                  </div>
+
+                <!-- /.form group -->
+                  <div class="form-group">
+                    <label for="exampleInputPetrolrate">Pincode</label>
+                      {% crispy_field form.pincode %}
+                      {% if  form.pincode.errors %}
+                          {% for error in form.pincode.errors %}
+                              <div class="invalid-feedback">
+                                  {{ error }}
+                              </div>
+                          {% endfor %}
+                      {% endif %}
+                  </div>
+
+                <!-- /.form group -->
+                  <div class="form-group">
+                    <label for="exampleInputPetrolrate">Country</label>
+                      {% crispy_field form.Country %}
+                      {% if  form.Country.errors %}
+                          {% for error in form.Country.errors %}
+                              <div class="invalid-feedback">
+                                  {{ error }}
+                              </div>
+                          {% endfor %}
+                      {% endif %}
+                  </div>
+
+                <!-- /.form group -->
+                  <div class="form-group">
+                    <label for="exampleInputPetrolrate">D.O.B</label>
+                      {% crispy_field form.dob %}
+                      {% if  form.dob.errors %}
+                          {% for error in form.dob.errors %}
+                              <div class="invalid-feedback">
+                                  {{ error }}
+                              </div>
+                          {% endfor %}
+                      {% endif %}
+                  </div>
+
+                <!-- /.form group -->
+                  <div class="form-group">
+                    <label for="exampleInputPetrolrate">Designation</label>
+                      {% crispy_field form.designation %}
+                      {% if  form.designation.errors %}
+                          {% for error in form.designation.errors %}
+                              <div class="invalid-feedback">
+                                  {{ error }}
+                              </div>
+                          {% endfor %}
+                      {% endif %}
+                  </div>
+
+                <!-- /.form group -->
+                  <div class="form-group">
+                    <label for="exampleInputPetrolrate">Gender</label>
+                      {% crispy_field form.gender %}
+                      {% if  form.gender.errors %}
+                          {% for error in form.gender.errors %}
+                              <div class="invalid-feedback">
+                                  {{ error }}
+                              </div>
+                          {% endfor %}
+                      {% endif %}
+                  </div>
+
+                <!-- /.form group -->
+                  <div class="form-group">
+                    <label for="exampleInputPetrolrate">Reffrence</label>
+                      {% crispy_field form.reffrence %}
+                      {% if  form.reffrence.errors %}
+                          {% for error in form.reffrence.errors %}
+                              <div class="invalid-feedback">
+                                  {{ error }}
+                              </div>
+                          {% endfor %}
+                      {% endif %}
+                  </div>
+
+                <!-- /.form group -->
+                  <div class="form-group">
+                    <label for="exampleInputPetrolrate">Shift_Timming</label>
+                      {% crispy_field form.shift_timming %}
+                      {% if  form.shift_timming.errors %}
+                          {% for error in form.shift_timming.errors %}
+                              <div class="invalid-feedback">
+                                  {{ error }}
+                              </div>
+                          {% endfor %}
+                      {% endif %}
+                  </div>
+
+                <!-- /.form group -->
+                  <div class="form-group">
+                    <label for="exampleInputPetrolrate">Education</label>
+                      {% crispy_field form.education %}
+                      {% if  form.education.errors %}
+                          {% for error in form.education.errors %}
+                              <div class="invalid-feedback">
+                                  {{ error }}
+                              </div>
+                          {% endfor %}
+                      {% endif %}
+                  </div>
+
+
+                <!-- /.form group -->
+                  <div class="form-group">
+                    <label for="exampleInputPetrolrate">Date_Of_Join</label>
+                      {% crispy_field form.Date_of_join %}
+                      {% if  form.Date_of_join.errors %}
+                          {% for error in form.Date_of_join.errors %}
+                              <div class="invalid-feedback">
+                                  {{ error }}
+                              </div>
+                          {% endfor %}
+                      {% endif %}
+                  </div>
+
+
+                <!-- /.form group -->
+                  <div class="form-group">
+                    <label for="exampleInputPetrolrate">Expected_Salary</label>
+                      {% crispy_field form.expected_salary %}
+                      {% if  form.expected_salary.errors %}
+                          {% for error in form.expected_salary.errors %}
+                              <div class="invalid-feedback">
+                                  {{ error }}
+                              </div>
+                          {% endfor %}
+                      {% endif %}
+                  </div>
+
+                <!-- /.form group -->
+                  <div class="form-group">
+                    <label for="exampleInputPetrolrate">Profile_Picture</label>
+                      {% crispy_field form.photo %}
+                      {% if  form.photo.errors %}
+                          {% for error in form.photo.errors %}
+                              <div class="invalid-feedback">
+                                  {{ error }}
+                              </div>
+                          {% endfor %}
+                      {% endif %}
+                  </div>
+
+                <!-- /.form group -->
+                  <div class="form-group">
+                    <label for="exampleInputPetrolrate">Document_file</label>
+                      {% crispy_field form.Document_file %}
+                      {% if  form.Document_file.errors %}
+                          {% for error in form.Document_file.errors %}
+                              <div class="invalid-feedback">
+                                  {{ error }}
+                              </div>
+                          {% endfor %}
+                      {% endif %}
+                  </div>
+
+                <!-- /.form group -->
+                  <div class="form-group">
+                    <label for="exampleInputPetrolrate">Bank_Name</label>
+                      {% crispy_field form.bank_name %}
+                      {% if  form.bank_name.errors %}
+                          {% for error in form.bank_name.errors %}
+                              <div class="invalid-feedback">
+                                  {{ error }}
+                              </div>
+                          {% endfor %}
+                      {% endif %}
+                  </div>
+
+                <!-- /.form group -->
+                  <div class="form-group">
+                    <label for="exampleInputPetrolrate">Account_No</label>
+                      {% crispy_field form.account_no %}
+                      {% if  form.account_no.errors %}
+                          {% for error in form.account_no.errors %}
+                              <div class="invalid-feedback">
+                                  {{ error }}
+                              </div>
+                          {% endfor %}
+                      {% endif %}
+                  </div>
+
+                <!-- /.form group -->
+                  <div class="form-group">
+                    <label for="exampleInputPetrolrate">IFSC_Code</label>
+                      {% crispy_field form.ifsc_code %}
+                      {% if  form.ifsc_code.errors %}
+                          {% for error in form.ifsc_code.errors %}
+                              <div class="invalid-feedback">
+                                  {{ error }}
+                              </div>
+                          {% endfor %}
+                      {% endif %}
+                  </div>
+
+                <!-- /.form group -->
+                  <div class="form-group">
+                    <label for="exampleInputPetrolrate">Salary</label>
+                      {% crispy_field form.salary %}
+                      {% if  form.salary.errors %}
+                          {% for error in form.salary.errors %}
+                              <div class="invalid-feedback">
+                                  {{ error }}
+                              </div>
+                          {% endfor %}
+                      {% endif %}
+                  </div>
+
+                <!-- /.form group -->
+                  <div class="form-group">
+                    <label for="exampleInputPetrolrate">Pan_Number</label>
+                      {% crispy_field form.Pan_Number %}
+                      {% if  form.Pan_Number.errors %}
+                          {% for error in form.Pan_Number.errors %}
+                              <div class="invalid-feedback">
+                                  {{ error }}
+                              </div>
+                          {% endfor %}
+                      {% endif %}
+                  </div>
+
+
+                </div>
+                <!-- /.card-body -->
+
+                <div class="card-footer">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+              </form>
+            </div>
+            <!-- /.card -->
+
+            <!-- general form elements -->
+
+{% endblock %}
+{% block extra_js %}
+    <!-- bs-custom-file-input -->
+    <script src=" {% static 'plugins/bs-custom-file-input/bs-custom-file-input.min.js' %} "></script>
+
+    <!-- InputMask -->
+    <script src="{% static 'plugins/moment/moment.min.js' %}"></script>
+    <script src="{% static 'plugins/inputmask/jquery.inputmask.min.js' %}"></script>
+    <!-- date-range-picker -->
+    <script src="{% static 'plugins/daterangepicker/daterangepicker.js' %}"></script>
+    <!-- Tempusdominus Bootstrap 4 -->
+    <script src="{% static 'plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js' %}"></script>
+<script>
+$(function () {
+    <!-- bootstrap color picker -->
+    //Date range picker
+    $('#reservationdate').datetimepicker({
+        format: 'YYYY-MM-DD'
+    });
+});
+</script>
+
+{% endblock %}
