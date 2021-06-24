@@ -31,6 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'creditors_master',
+    'tank_master',
     'employee_master',
     'nozzlle_master',
     'rates',

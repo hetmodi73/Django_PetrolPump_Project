@@ -14,7 +14,7 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form method="POST">
+              <form method="POST" enctype="multipart/form-data" >
               {% csrf_token %}
                 <div class="card-body">
                   <div class="form-group">
@@ -283,6 +283,7 @@
                   </div>
 
 
+
                 <!-- /.form group -->
                   <div class="form-group">
                     <label for="exampleInputPetrolrate">Expected_Salary</label>
@@ -393,6 +394,8 @@
 
                 <div class="card-footer">
                   <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+              </form>
                 </div>
               </form>
             </div>

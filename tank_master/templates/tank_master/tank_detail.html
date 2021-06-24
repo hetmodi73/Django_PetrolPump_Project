@@ -1,0 +1,50 @@
+{% extends "client/layout.html" %}
+{% block body %}
+{#    <h1 align="center"> Tank Details </h1>#}
+{#    <ul>#}
+{#        <li> Date : {{ object.date }}</li>#}
+{#         <li> Petrol Opening : {{ object.petrol_opening }}</li>#}
+{#         <li> Petrol Opening :{{ object.petrol_opening }}</li>#}
+{#         <li> Diesel Opening : {{ object.diesel_opening }}</li>#}
+{#         <li> Diesel Closing : {{ object.diesel_closing }}</li>#}
+{#         <li> Loss Of Petrol in Literes : {{ object.loss_petrol_lit }}</li>#}
+{#         <li> Loss Of Diesel in Literes : {{ object.loss_diesel_lit }}</li>#}
+{#         <li> Loss Of Petrol in Price : {{ object.loss_petrol_price }}</li>#}
+{#         <li> Loss Of Diesel inPrice : {{ object.loss_diesel_price }}</li>#}
+{#    </ul>#}
+
+    <h3 class="profile-username text-center"> Tank Details </h3>
+                <ul class="list-group list-group-unbordered mb-3">
+
+                    <li class="list-group-item">
+                    <b>Date: </b> <a class="float-right">{{ object.date }}</a>
+                    </li>
+                    <li class="list-group-item">
+                    <b>Opening Of Petrol: </b> <a class="float-right">{{ object.petrol_opening }}</a>
+                    </li>
+                    <li class="list-group-item">
+                    <b>Closing Of Petrol: </b> <a class="float-right">{{ object.petrol_closing }}</a>
+                    </li>
+                    <li class="list-group-item">
+                    <b>Opening Of Diesel: </b> <a class="float-right">{{ object.diesel_opening }}</a>
+                    </li>
+                    <li class="list-group-item">
+                    <b>Closing Of Diesel: </b> <a class="float-right">{{ object.diesel_closing }}</a>
+                    </li>
+                    <li class="list-group-item">
+                    <b>Loss Of Petrol in Literes: </b> <a class="float-right">{{ object.loss_petrol_lit }}</a>
+                    </li>
+                    <li class="list-group-item">
+                    <b>Loss Of Diesel in Literes:</b> <a class="float-right">{{ object.loss_diesel_lit }}</a>
+                    </li>
+                    <li class="list-group-item">
+                    <b>Loss Of Petrol in Price: </b> <a class="float-right">{{ object.loss_petrol_price }}</a>
+                    </li>
+                    <li class="list-group-item">
+                    <b>Loss Of Diesel in Price: </b> <a class="float-right">{{ object.loss_diesel_price }}</a>
+                    </li>
+
+
+                </ul>
+
+{% endblock %}

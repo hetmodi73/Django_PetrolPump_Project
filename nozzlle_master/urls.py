@@ -7,3 +7,4 @@ urlpatterns=[
     path("update/<int:pk>",UpdateNozzlleView.as_view(),name="nozzlle-update"),
     path("delete/<int:pk>",DeleteNozzlleView.as_view(),name="nozzlle-delete")
 ]
+
