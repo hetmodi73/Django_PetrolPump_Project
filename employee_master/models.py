@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from django .core.validators import MinValueValidator
 # Create your models here.
 
 class employee(models.Model):
@@ -39,7 +40,7 @@ class employee(models.Model):
     bank_name=models.CharField(max_length=20,null=True,blank=True)
     account_no=models.IntegerField(blank=True,null=True)
     ifsc_code=models.IntegerField(blank=True,null=True)
-    salary=models.IntegerField(blank=True,null=True)
+    salary=models.IntegerField(blank=True,null=True,validators=[MinValueValidator(0,'Salary should not be less than 0')])
     Pan_Number=models.IntegerField(blank=True,null=True)
 
     def __str__(self):

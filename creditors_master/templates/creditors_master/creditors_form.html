@@ -1,0 +1,317 @@
+{% extends "client/layout.html" %}
+{% load static %}
+{% load crispy_forms_field %}
+
+{% block body %}
+    <!-- general form elements -->
+            <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title" textalign="center"> Creditors Entry Form </h3>
+              </div>
+              <!-- /.card-header -->
+              <!-- form start -->
+              <form method="post">
+              {% csrf_token %}
+            <!-- /.form group -->
+                    <hr/>
+                     <div class="row">
+
+                         <div class="form-group col-lg-4 col-lg-4">
+                        <label for="exampleInputPetrolrate">Enter First Name</label>
+                          {% crispy_field form.first_name %}
+                          {% if  form.first_name.errors %}
+                              {% for error in form.first_name.errors %}
+                                  <div class="invalid-feedback">
+                                      {{ error }}
+                                  </div>
+                              {% endfor %}
+                          {% endif %}
+                      </div>
+
+                      <div class="form-group col-lg-4 col-lg-4">
+                        <label for="exampleInputDieselrate">Enter Middle Name </label>
+                        <div class="input-group">
+                          {% crispy_field form.middle_name %}
+                            {% if  form.middle_name.errors %}
+                                {% for error in form.middle_name.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ error }}
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                      </div>
+
+                      <div class="form-group col-lg-4 col-lg-4">
+                        <label for="exampleInputDieselrate">Enter Last Name </label>
+                        <div class="input-group">
+                          {% crispy_field form.last_name %}
+                            {% if  form.last_name.errors %}
+                                {% for error in form.last_name.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ error }}
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                      </div>
+
+
+                     </div>
+
+                    <div class="row">
+
+                        <div class="form-group col-lg-4 col-lg-4">
+                        <label for="exampleInputDieselrate">Enter Company Name </label>
+                        <div class="input-group">
+                          {% crispy_field form.company_name %}
+                            {% if  form.company_name.errors %}
+                                {% for error in form.company_name.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ error }}
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                      </div>
+
+
+                        <div class="form-group col-lg-4 col-lg-4">
+                        <label for="exampleInputDieselrate">Enter Mobile Number  </label>
+                        <div class="input-group">
+                          {% crispy_field form.mobile_no %}
+                            {% if  form.mobile_no.errors %}
+                                {% for error in form.mobile_no.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ error }}
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                      </div>
+
+                      <div class="form-group col-lg-4 col-lg-4">
+                        <label for="exampleInputDieselrate">Enter Office Number </label>
+                        <div class="input-group">
+                          {% crispy_field form.office_no %}
+                            {% if  form.office_no.errors %}
+                                {% for error in form.office_no.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ error }}
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                      </div>
+
+
+                    </div>
+
+                    <div class="row">
+
+                      <div class="form-group col-lg-4 col-lg-4">
+                        <label for="exampleInputDieselrate">Enter Contact Person's Name </label>
+                        <div class="input-group">
+                          {% crispy_field form.contact_person_name %}
+                            {% if  form.contact_person_name.errors %}
+                                {% for error in form.contact_person_name.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ error }}
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                      </div>
+
+                      <div class="form-group col-lg-4 col-lg-4">
+                        <label for="exampleInputDieselrate">Enter Contact Person's Mobile Number </label>
+                        <div class="input-group">
+                          {% crispy_field form.contact_person_mobile_no %}
+                            {% if  form.contact_person_mobile_no.errors %}
+                                {% for error in form.contact_person_mobile_no.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ error }}
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                      </div>
+
+                    </div>
+
+                    <div class="row">
+
+                      <div class="form-group col-lg-4 col-lg-4">
+                        <label for="exampleInputDieselrate">Enter Address/Home Number </label>
+                        <div class="input-group">
+                          {% crispy_field form.home_no %}
+                            {% if  form.home_no.errors %}
+                                {% for error in form.home_no.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ error }}
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                      </div>
+
+                      <div class="form-group col-lg-4 col-lg-4">
+                        <label for="exampleInputDieselrate">Enter Street Name </label>
+                        <div class="input-group">
+                          {% crispy_field form.street_name %}
+                            {% if  form.street_name.errors %}
+                                {% for error in form.street_name.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ error }}
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                      </div>
+
+                      <div class="form-group col-lg-4 col-lg-4">
+                        <label for="exampleInputDieselrate">Enter Area Name </label>
+                        <div class="input-group">
+                          {% crispy_field form.area_name %}
+                            {% if  form.area_name.errors %}
+                                {% for error in form.area_name.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ error }}
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                      </div>
+
+
+                    </div>
+
+                    <div class="row">
+
+                      <div class="form-group col-lg-4 col-lg-4">
+                        <label for="exampleInputDieselrate">Enter City </label>
+                        <div class="input-group">
+                          {% crispy_field form.city %}
+                            {% if  form.city.errors %}
+                                {% for error in form.city.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ error }}
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                      </div>
+
+                      <div class="form-group col-lg-4 col-lg-4">
+                        <label for="exampleInputDieselrate">Enter State </label>
+                        <div class="input-group">
+                          {% crispy_field form.state %}
+                            {% if  form.state.errors %}
+                                {% for error in form.state.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ error }}
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                      </div>
+
+                      <div class="form-group col-lg-4 col-lg-4">
+                        <label for="exampleInputDieselrate">Enter Country </label>
+                        <div class="input-group">
+                          {% crispy_field form.country %}
+                            {% if  form.country.errors %}
+                                {% for error in form.country.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ error }}
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                      </div>
+
+
+                    </div>
+
+                    <div class="row">
+
+                        <div class="form-group col-lg-4 col-lg-4">
+                        <label for="exampleInputDieselrate">Enter Pincode </label>
+                        <div class="input-group">
+                          {% crispy_field form.pincode %}
+                            {% if  form.pincode.errors %}
+                                {% for error in form.pincode.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ error }}
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                      </div>
+
+
+                      <div class="form-group col-lg-4 col-lg-4">
+                        <label for="exampleInputDieselrate">Enter GST Number </label>
+                        <div class="input-group">
+                          {% crispy_field form.gst_no %}
+                            {% if  form.gst_no.errors %}
+                                {% for error in form.gst_no.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ error }}
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                      </div>
+
+
+                    </div>
+
+                    <div class="row">
+                      <div class="form-group col-lg-4 col-lg-4">
+                        <label for="exampleInputDieselrate">Enter Pending Balance </label>
+                        <div class="input-group">
+                          {% crispy_field form.pending_balance %}
+                            {% if  form.pending_balance.errors %}
+                                {% for error in form.pending_balance.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ error }}
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                      </div>
+
+                      <div class="form-group col-lg-4 col-lg-4">
+                        <label for="exampleInputDieselrate">Enter Creation Date </label>
+                        <div class="input-group">
+                          {% crispy_field form.creation_date %}
+                            {% if  form.creation_date.errors %}
+                                {% for error in form.creation_date.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ error }}
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                      </div>
+                    </div>
+                  <div class="card-footer" align="center">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+
+                </div>
+
+              </form>
+
+            </div>
+                <!-- /.card-body -->
+
+            <!-- /.card -->
+
+            <!-- general form elements -->
+{% endblock %}
+{% block extra_js %}
+    <!-- bs-custom-file-input -->
+    <script src=" {% static 'plugins/bs-custom-file-input/bs-custom-file-input.min.js' %} "></script>
+
+{% endblock %}
