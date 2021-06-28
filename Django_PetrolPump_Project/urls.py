@@ -29,7 +29,9 @@ urlpatterns = [
     path("nozzlle_master/",include("nozzlle_master.urls")),
     path("employee_master/",include("employee_master.urls")),
     path("tank_master/",include("tank_master.urls")),
-    path("creditors_master/",include("creditors_master.urls"))
+    path("creditors_master/",include("creditors_master.urls")),
+    path("vehicle_master/",include("vehicle_master.urls"))
 ]
 
 urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+
