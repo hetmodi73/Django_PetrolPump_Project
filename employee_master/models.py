@@ -1,10 +1,11 @@
 from django.db import models
 from django.urls import reverse
 from django .core.validators import MinValueValidator
+from datetime import datetime
 # Create your models here.
 
 class employee(models.Model):
-    date=models.DateField()
+    date=models.DateField(default=datetime.utcnow)
     employee_id=models.IntegerField()
     first_name=models.CharField(max_length=20)
     middle_name=models.CharField(max_length=20)
@@ -44,7 +45,7 @@ class employee(models.Model):
     Pan_Number=models.IntegerField(blank=True,null=True)
 
     def __str__(self):
-        return f"({self.employee_id})-({self.expected_salary})"
+        return f"({self.employee_id})-({self.first_name} {self.middle_name} {self.last_name})-({self.salary})"
 
     def get_absolute_url(self):
         return reverse('employee-view')

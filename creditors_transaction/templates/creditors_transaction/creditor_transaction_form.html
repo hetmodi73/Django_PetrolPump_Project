@@ -180,4 +180,43 @@ $(function () {
 });
 </script>
 
+    <script>
+      document.addEventListener('DOMContentLoaded',function(){
+
+          //document.querySelector("button").on
+          document.querySelector("#id_petrol_in_lit").onkeyup=function(){
+
+              // fetch the rate of petrol
+              fetch("http://127.0.0.1:8000/tank_master/petrolprice/")
+              .then(response => response.json())
+              .then(data => {
+
+                  console.log(data.petrol_price);  //50
+                  let lostpp=document.querySelector("#id_petrol_price");
+                  lostpp.value=data.petrol_price*this.value;
+              })
+          }
+      })
+    </script>
+
+    <script>
+      document.addEventListener('DOMContentLoaded',function(){
+
+          //document.querySelector("button").on
+          document.querySelector("#id_diesel_in_lit").onkeyup=function(){
+
+              // fetch the rate of petrol
+              fetch("http://127.0.0.1:8000/tank_master/dieselprice/")
+              .then(response => response.json())
+              .then(data => {
+
+                  console.log(data.diesel_price);  //50
+                  let lostpp=document.querySelector("#id_diesel_price");
+                  lostpp.value=data.diesel_price*this.value;
+              })
+          }
+      })
+    </script>
+
 {% endblock %}
+

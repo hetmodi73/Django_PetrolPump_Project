@@ -16,8 +16,10 @@
               <!-- form start -->
               <form method="POST">
               {% csrf_token %}
-                <div class="card-body">
-                  <div class="form-group">
+                  <div class="card-body">
+
+
+                  <div class="form-group form-group col-lg-4 col-lg-4">
                   <label>Date:</label>
                     <div class="input-group date" id="reservationdate" data-target-input="nearest">
                         {% crispy_field form.date %}
@@ -35,7 +37,10 @@
                 </div>
 
                 <!-- /.form group -->
-                      <div class="form-group">
+
+                  <div class="row">
+
+                      <div class="form-group form-group col-lg-4 col-lg-4">
                         <label for="exampleInputPetrolrate">Opening Of Petrol</label>
                           {% crispy_field form.petrol_opening %}
                           {% if  form.petrol_opening.errors %}
@@ -47,7 +52,7 @@
                           {% endif %}
                       </div>
 
-                    <div class="form-group">
+                      <div class="form-group form-group col-lg-4 col-lg-4">
                     <label for="exampleInputDieselrate">Closing Of Petrol</label>
                     <div class="input-group">
                       {% crispy_field form.petrol_closing %}
@@ -60,9 +65,12 @@
                         {% endif %}
                     </div>
                   </div>
-                </div>
 
-                  <div class="form-group">
+                  </div>
+
+                  <div class="row">
+
+                      <div class="form-group form-group col-lg-4 col-lg-4">
                         <label for="exampleInputPetrolrate">Opening Of Diesel</label>
                           {% crispy_field form.diesel_opening %}
                           {% if  form.diesel_opening.errors %}
@@ -74,7 +82,7 @@
                           {% endif %}
                       </div>
 
-                  <div class="form-group">
+                      <div class="form-group form-group col-lg-4 col-lg-4">
                         <label for="exampleInputPetrolrate">Closing Of Diesel</label>
                           {% crispy_field form.diesel_closing %}
                           {% if  form.diesel_closing.errors %}
@@ -86,7 +94,11 @@
                           {% endif %}
                       </div>
 
-                  <div class="form-group">
+                  </div>
+
+                  <div class="row">
+
+                      <div class="form-group form-group col-lg-4 col-lg-4">
                         <label for="exampleInputPetrolrate">Loss Of Petrol in Literes</label>
                           {% crispy_field form.loss_petrol_lit %}
                           {% if  form.loss_petrol_lit.errors %}
@@ -98,7 +110,7 @@
                           {% endif %}
                       </div>
 
-                  <div class="form-group">
+                      <div class="form-group form-group col-lg-4 col-lg-4">
                         <label for="exampleInputPetrolrate">Loss Of Diesel in Literes</label>
                           {% crispy_field form.loss_diesel_lit %}
                           {% if  form.loss_diesel_lit.errors %}
@@ -110,7 +122,11 @@
                           {% endif %}
                       </div>
 
-                  <div class="form-group">
+                  </div>
+
+                  <div class="row">
+
+                      <div class="form-group form-group col-lg-4 col-lg-4">
                         <label for="exampleInputPetrolrate">Loss Of Petrol in Price</label>
                           {% crispy_field form.loss_petrol_price %}
                           {% if  form.loss_petrol_price.errors %}
@@ -122,8 +138,7 @@
                           {% endif %}
                       </div>
 
-
-                  <div class="form-group">
+                      <div class="form-group form-group col-lg-4 col-lg-4">
                         <label for="exampleInputPetrolrate">Loss Of Diesel in Price</label>
                           {% crispy_field form.loss_diesel_price %}
                           {% if  form.loss_diesel_price.errors %}
@@ -135,13 +150,17 @@
                           {% endif %}
                       </div>
 
+                  </div>
 
                   <!-- /.card-body -->
 
-                <div class="card-footer">
+                <div class="card-footer" align="center">
                   <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
+                  </div>
               </form>
+            </div>
+            </div>
             </div>
             <!-- /.card -->
 

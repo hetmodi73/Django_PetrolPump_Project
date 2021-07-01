@@ -1,10 +1,11 @@
 from django.db import models
 from django.urls import reverse
 from django .core.validators import MinValueValidator
+from datetime import datetime
 # Create your models here.
 
 class rate(models.Model):
-    date=models.DateField()
+    date=models.DateField(default=datetime.utcnow)
     petrol_price=models.FloatField(validators=[MinValueValidator(0,'Salary should not be less than 0')])
     diesel_price=models.FloatField(validators=[MinValueValidator(0,'Salary should not be less than 0')])
 

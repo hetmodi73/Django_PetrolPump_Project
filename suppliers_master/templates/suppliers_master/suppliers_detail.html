@@ -1,0 +1,38 @@
+{% extends "client/layout.html" %}
+{% block body %}
+<ul>
+    <h3 class="profile-username text-center" align="center"> Suppliers Details </h3>
+                <ul class="list-group list-group-unbordered mb-3">
+
+                    <li class="list-group-item">
+                    <b> Date: </b> <a class="float-right">{{ object.date }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Receipt Number: </b> <a class="float-right">{{ object.receipt_no }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Petrol In Literes: </b> <a class="float-right">{{ object.petrol_in_lit }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Diesel In Literes: </b> <a class="float-right">{{ object.diesel_in_lit }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Loss Of Petrol In Literes: </b> <a class="float-right">{{ object.loss_of_petrol_in_lit }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Loss Of Diesel In Literes: </b> <a class="float-right">{{ object.loss_of_diesel_in_lit }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Transportation Expense: </b> <a class="float-right">{{ object.transportation_expense }}</a>
+                    </li>
+
+
+                </ul>
+</ul>
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends "client/layout.html" %}
+{% block body %}
+<ul>
+    <h3 class="profile-username text-center" align="center"> Employees Payment Details </h3>
+                <ul class="list-group list-group-unbordered mb-3">
+
+                    <li class="list-group-item">
+                    <b> Date: </b> <a class="float-right">{{ object.date }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Employee: </b> <a class="float-right">{{ object.employee_master }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Amount On Dailybases: </b> <a class="float-right">{{ object.amount_dailybase }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Payment Type: </b> <a class="float-right">{{ object.payment_type }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Bank Name: </b> <a class="float-right">{{ object.bank_name }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Branch Name: </b> <a class="float-right">{{ object.branch_name }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> IFSC Code: </b> <a class="float-right">{{ object.ifsc_code }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Cheque Number: </b> <a class="float-right">{{ object.cheque_no }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Cheque Date: </b> <a class="float-right">{{ object.cheque_date }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Online Transaction ID: </b> <a class="float-right">{{ object.reffrence }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Salary: </b> <a class="float-right">{{ object.salary }}</a>
+                    </li>
+
+                </ul>
+</ul>
+{% endblock %}

@@ -6,14 +6,18 @@
     <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Nozzlle Table</h3>
+                <h3 class="card-title">Nozzlle Entry Form</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
               <form method="POST">
               {% csrf_token %}
             <!-- /.form group -->
-                  <div class="form-group">
+                  <hr/>
+                  <div class="card-body">
+              <div class="row">
+
+                  <div class="form-group form-group col-lg-4 col-lg-4">
                     <label for="exampleInputPetrolrate">Enter Nozzlle_No</label>
                       {% crispy_field form.nozzlle_no %}
                       {% if  form.nozzlle_no.errors %}
@@ -24,7 +28,8 @@
                           {% endfor %}
                       {% endif %}
                   </div>
-                  <div class="form-group">
+
+                  <div class="form-group form-group col-lg-4 col-lg-4">
                     <label for="exampleInputDieselrate">Enter Nozzlle_Type</label>
                     <div class="input-group">
                       {% crispy_field form.nozzlle_type %}
@@ -37,7 +42,10 @@
                         {% endif %}
                     </div>
                   </div>
-                   <div class="form-group">
+
+              </div>
+
+                   <div class="form-group form-group col-lg-4 col-lg-4">
                     <label>Remarks </label>
                     <div class="input-group">
                       {% crispy_field form.remark %}
@@ -50,9 +58,10 @@
                         {% endif %}
                     </div>
                   </div>
-                  <div class="card-footer">
+                  <div class="card-footer" align="center">
                   <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
+                  </div>
               </form>
                 </div>
                 <!-- /.card-body -->

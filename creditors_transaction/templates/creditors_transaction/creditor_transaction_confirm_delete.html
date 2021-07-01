@@ -1,0 +1,49 @@
+{% extends "client/layout.html" %}
+{% block body %}
+    <h1 align="center"> Are you Sure You Want To Delete ? </h1>
+    <hr/>
+    <form method="post">
+    {% csrf_token %}
+
+        <ul>
+                    <li class="list-group-item">
+                    <b> Date: </b> <a class="float-right">{{ object.date }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Company Name: </b> <a class="float-right">{{ object.vehicle_master }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Type Of Vehicle: </b> <a class="float-right">{{ object.nozzlle_master }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Vehicle Number: </b> <a class="float-right">{{ object.petrol_in_lit }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Type Of Fuel: </b> <a class="float-right">{{ object.diesel_in_lit }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Name Of Driver: </b> <a class="float-right">{{ object.petrol_price }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Name Of Driver: </b> <a class="float-right">{{ object.diesel_price }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Remark: </b> <a class="float-right">{{ object.remark }}</a>
+                    </li>
+
+        </ul>
+
+        <div align="center">
+            <input type="submit" value="Delete" class="btn btn-danger">
+            <a href="{% url 'rate-view' %}" class="btn btn-info">Cancel </a>
+        </div>
+
+    </form>
+{% endblock %}

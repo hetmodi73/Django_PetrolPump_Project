@@ -31,8 +31,10 @@ urlpatterns = [
     path("tank_master/",include("tank_master.urls")),
     path("creditors_master/",include("creditors_master.urls")),
     path("vehicle_master/",include("vehicle_master.urls")),
-    path("creditors_transaction/",include("creditors_transaction.urls"))
+    path("creditors_transaction/",include("creditors_transaction.urls")),
+    path("creditors_payment/",include("creditors_payment.urls")),
+    path("suppliers_master/",include("suppliers_master.urls")),
+    path("employee_payment/",include("employee_payment.urls"))
 ]
 
 urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
-

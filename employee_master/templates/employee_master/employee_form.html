@@ -17,7 +17,10 @@
               <form method="POST" enctype="multipart/form-data" >
               {% csrf_token %}
                 <div class="card-body">
-                  <div class="form-group">
+
+                <div class="row">
+
+                    <div class="form-group">
                   <label>Date:</label>
                     <div class="input-group date" id="reservationdate" data-target-input="nearest">
                         {% crispy_field form.date %}
@@ -33,6 +36,7 @@
                         </div>
                     </div>
                 </div>
+
                 <!-- /.form group -->
                   <div class="form-group">
                     <label for="exampleInputPetrolrate">Employee_id</label>
@@ -45,7 +49,12 @@
                           {% endfor %}
                       {% endif %}
                   </div>
-                <!-- /.form group -->
+
+                </div>
+
+                <div class="row">
+
+                    <!-- /.form group -->
                   <div class="form-group">
                     <label for="exampleInputDieselrate">First_Name</label>
                     <div class="input-group">
@@ -86,7 +95,11 @@
                       {% endif %}
                   </div>
 
-                <!-- /.form group -->
+                </div>
+
+                <div class="row">
+
+                    <!-- /.form group -->
                   <div class="form-group">
                     <label for="exampleInputPetrolrate">Contact_No</label>
                       {% crispy_field form.Contact_no %}
@@ -112,6 +125,12 @@
                       {% endif %}
                   </div>
 
+                </div>
+
+                <div class="row">
+
+
+                </div>
                 <!-- /.form group -->
                   <div class="form-group">
                     <label for="exampleInputPetrolrate">Street</label>

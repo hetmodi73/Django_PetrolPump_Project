@@ -1,9 +1,10 @@
 from django.db import models
 from django.urls import reverse
+from datetime import datetime
 # Create your models here.
 from django .core.validators import MinValueValidator
 class tank(models.Model):
-    date=models.DateField()
+    date=models.DateField(default=datetime.utcnow)
     petrol_opening=models.FloatField(validators=[MinValueValidator(0,'Salary should not be less than 0')])
     petrol_closing=models.FloatField(validators=[MinValueValidator(0,'Salary should not be less than 0')])
     diesel_opening=models.FloatField(validators=[MinValueValidator(0,'Salary should not be less than 0')])

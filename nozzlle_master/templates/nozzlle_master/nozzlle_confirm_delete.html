@@ -1,14 +1,27 @@
 {% extends "client/layout.html" %}
 {% block body %}
-    <h1> Are you Sure You Want To Delete ?</h1>
+    <h1 align="center"> Are you Sure You Want To Delete ?</h1>
+    <hr/>
     <form method="post">
     {% csrf_token %}
      <ul>
-        <li> Nozzlle_No : {{ object.nozzlle_no }}</li>
-        <li> Nozzlle_Type :{{ object.nozzlle_type }}</li>
-        <li> Remark : {{ object.remark }}</li>
+         <li class="list-group-item">
+             <b> Nozzlle Number: </b> <a class="float-right">{{ object.nozzlle_no }}</a>
+         </li>
+
+         <li class="list-group-item">
+             <b> Nozzlle Type: </b> <a class="float-right">{{ object.nozzlle_type }}</a>
+         </li>
+
+         <li class="list-group-item">
+             <b> Remark: </b> <a class="float-right">{{ object.remark }}</a>
+         </li>
+
      </ul>
-        <input type="submit" value="delete" class="btn btn-danger">
-        <a href="{% url 'rate-view' %}" class="btn btn-info" >cancel </a>
+        <div align="center">
+            <input type="submit" value="delete" class="btn btn-danger">
+            <a href="{% url 'rate-view' %}" class="btn btn-info" >cancel </a>
+        </div>
+
     </form>
 {% endblock %}
