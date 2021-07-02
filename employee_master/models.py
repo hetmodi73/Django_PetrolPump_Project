@@ -45,7 +45,7 @@ class employee(models.Model):
     Pan_Number=models.IntegerField(blank=True,null=True)
 
     def __str__(self):
-        return f"({self.employee_id})-({self.first_name} {self.middle_name} {self.last_name})-({self.salary})"
+        return f"({self.employee_id})-({self.first_name} {self.middle_name} {self.last_name})"
 
     def get_absolute_url(self):
         return reverse('employee-view')

@@ -4,9 +4,9 @@ from employee_master.models import employee
 from django.urls import reverse
 # Create your models here.
 
-class employee(models.Model):
+class employee_p(models.Model):
     date=models.DateField(default=datetime.utcnow)
-    employee_master=models.ForeignKey(employee,on_delete=models.CASCADE, related_name='employee')
+    employee_master=models.ForeignKey(employee,on_delete=models.CASCADE, related_name='employee_p')
     amount_dailybase=models.IntegerField(null=True,blank=True)
     choice1=(
         ('Cash', 'Cash'),

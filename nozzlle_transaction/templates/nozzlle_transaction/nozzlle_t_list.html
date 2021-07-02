@@ -11,7 +11,7 @@
 
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title" align="center"> Employees Payment Table </h3>
+                <h3 class="card-title" align="center"> Nozzlle Transaction Table </h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -19,19 +19,21 @@
                   <thead>
                   <tr>
                       <th>Date</th>
-                      <th>Employee</th>
+                      <th>Nozzlle Detail</th>
+                      <th>Employee Detail</th>
                       <th>Action</th>
                   </tr>
                   </thead>
                     <tbody>
-                        {% for employee in employee_payment %}
+                        {% for nozzlle_t in nozzlle_transaction %}
                         <tr>
-                            <td>{{ employee.date }}</td>
-                            <td>{{ employee.employee_master }}</td>
+                            <td>{{ nozzlle_t.date }}</td>
+                            <td>{{ nozzlle_t.nozzlle_master }}</td>
+                            <td>{{ nozzlle_t.employee_master }}</td>
                             <td>
-                                <a href="{% url 'employee_payment-update'  employee.id %}" class="btn btn-info"> update</a>
-                                <a href="{% url 'employee_payment-delete'  employee.id %}" class="btn btn-danger"> Delete</a>
-                                <a href="{% url 'employee_payment-detail'  employee.id %}" class="btn btn-info"> Detail</a>
+                                <a href="{% url 'nozzlle_transaction-update'  nozzlle_t.id %}" class="btn btn-info"> update</a>
+                                <a href="{% url 'nozzlle_transaction-detail'  nozzlle_t.id %}" class="btn btn-info"> Detail</a>
+                                <a href="{% url 'nozzlle_transaction-delete'  nozzlle_t.id %}" class="btn btn-danger"> Delete</a>
                             </td>
                         </tr>
                     {% endfor %}
@@ -40,7 +42,8 @@
                   <tfoot>
                   <tr>
                       <th align="center">Date</th>
-                      <th align="center">Employee</th>
+                      <th align="center">Nozzlle Detail</th>
+                      <th align="center">Employee Detail</th>
                       <th align="center">Action</th>
                   </tr>
                   </tfoot>

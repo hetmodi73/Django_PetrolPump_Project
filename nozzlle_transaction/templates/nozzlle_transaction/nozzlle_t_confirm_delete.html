@@ -1,0 +1,101 @@
+{% extends "client/layout.html" %}
+{% block body %}
+    <h1 align="center"> Are you Sure You Want To Delete ? </h1>
+    <hr/>
+    <form method="post">
+    {% csrf_token %}
+
+        <ul>
+                    <li class="list-group-item">
+                    <b> Date: </b> <a class="float-right">{{ object.date }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Nozzlle Detail: </b> <a class="float-right">{{ object.nozzlle_master }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Employee Detail: </b> <a class="float-right">{{ object.employee_master }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Amount Of CASH: </b> <a class="float-right">{{ object.cash }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Amount Of PhonePay: </b> <a class="float-right">{{ object.phonePay }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Amount Of GooglePay: </b> <a class="float-right">{{ object.googlePay }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Amount Of Paytm: </b> <a class="float-right">{{ object.paytm }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Amount Of UPI: </b> <a class="float-right">{{ object.upi }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Amount Of Credit/Debit Card: </b> <a class="float-right">{{ object.credit_debit_card }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Total Literes Petrol: </b> <a class="float-right">{{ object.total_lit_petrol }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Total Literes Diesel: </b> <a class="float-right">{{ object.total_lit_diesel }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Total Price Of Petrol: </b> <a class="float-right">{{ object.total_price_petrol }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Total Price Of Diesel: </b> <a class="float-right">{{ object.total_price_diesel }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Loss Of Price in Petrol: </b> <a class="float-right">{{ object.loss_price_petrol }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Loss Of Price in Diesel: </b> <a class="float-right">{{ object.loss_price_diesel }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Opening Time: </b> <a class="float-right">{{ object.opening_time }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Closing Time: </b> <a class="float-right">{{ object.closing_time }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Opening Of Petrol in Literes: </b> <a class="float-right">{{ object.opening_lit_petrol }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Closing Of Petrol in Literes: </b> <a class="float-right">{{ object.closing_lit_petrol }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Opening Of Diesel in Literes: </b> <a class="float-right">{{ object.Opening_lit_Diesel }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Closing Of Diesel in Literes: </b> <a class="float-right">{{ object.closing_lit_Diesel }}</a>
+                    </li>
+
+        </ul>
+
+        <div align="center">
+            <input type="submit" value="Delete" class="btn btn-danger">
+            <a href="{% url 'rate-view' %}" class="btn btn-info">Cancel </a>
+        </div>
+
+    </form>
+{% endblock %}

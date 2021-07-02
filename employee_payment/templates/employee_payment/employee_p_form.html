@@ -252,17 +252,8 @@ $(function () {
                     document.querySelector("#chequedate").style.display='none';
                     document.querySelector("#refference").style.display='none';
                 }
-                else
-                {
-                    document.querySelector("#bankname").style.display='block';
-                    document.querySelector("#branchname").style.display='block';
-                    document.querySelector("#ifsccode").style.display='block';
-                    document.querySelector("#chequenumber").style.display='block';
-                    document.querySelector("#chequedate").style.display='block';
-                    document.querySelector("#refference").style.display='block';
-                }
 
-                if (this.value=='Banking Transaction')
+                else if (this.value=='Banking Transaction')
                 {
                     document.querySelector("#bankname").style.display='block';
                     document.querySelector("#branchname").style.display='block';
