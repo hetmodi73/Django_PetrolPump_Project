@@ -31,9 +31,15 @@
                             <td>{{ payment.creditors_master }}</td>
                             <td>{{ payment.amount }}</td>
                             <td>
-                                <a href="{% url 'creditors_payment-update'  payment.id %}" class="btn btn-info"> update</a>
-                                <a href="{% url 'creditors_payment-delete'  payment.id %}" class="btn btn-danger"> Delete</a>
-                                <a href="{% url 'creditors_payment-detail'  payment.id %}" class="btn btn-info"> Detail</a>
+                                <a href="{% url 'creditors_payment-update'  payment.id %}" class="btn btn-info">
+                                    <li class="fas fa-pencil-alt"></li> Edit
+                                </a>
+                                <a href="{% url 'creditors_payment-detail'  payment.id %}" class="btn btn-success">
+                                   <li class="fas fa-file-invoice"></li> Detail
+                                </a>
+                                <a href="{% url 'creditors_payment-delete'  payment.id %}" class="btn btn-danger">
+                                   <li class="fas fa-trash-alt"></li> Delete
+                                </a>
                             </td>
                         </tr>
                     {% endfor %}

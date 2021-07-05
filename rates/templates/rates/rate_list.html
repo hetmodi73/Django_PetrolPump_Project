@@ -31,8 +31,12 @@
                             <td>{{ rate.petrol_price }}</td>
                             <td>{{ rate.diesel_price }}</td>
                             <td>
-                                <a href="{% url 'rate-update'  rate.id %}" class="btn btn-info"> update</a>
-                                <a href="{% url 'rate-delete'  rate.id %}" class="btn btn-danger"> Delete</a>
+                                <a href="{% url 'rate-update'  rate.id %}" class="btn btn-info" >
+                                    <i class="fas fa-pencil-alt"></i> Edit
+                                </a>
+                                <a href="{% url 'rate-delete'  rate.id %}" class="btn btn-danger">
+                                    <i class="fas fa-trash-alt"></i> Delete
+                                </a>
                             </td>
                         </tr>
                     {% endfor %}

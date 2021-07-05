@@ -10,7 +10,7 @@
             <!-- general form elements -->
                 <div class="card card-primary">
                 <div class="card-header">
-                <h3 class="card-title" textalign="center"> Calculation Entry Form </h3>
+                <h3 class="card-title"> Calculation Entry Form </h3>
               </div>
               <!-- /.card-header -->
 <hr/>
@@ -35,36 +35,38 @@
                     </div>
                   </div>
 
-
                       <!-- /.form group -->
-              <div class="row">
-                  <div class="form-group col-lg-6 col-lg-6">
-                    <label for="exampleInputPetrolrate">Opening Of Tank</label>
-                      {% crispy_field form.tank_opening %}
-                      {% if  form.tank_opening.errors %}
-                          {% for error in form.tank_opening.errors %}
-                              <div class="invalid-feedback">
-                                  {{ error }}
-                              </div>
-                          {% endfor %}
-                      {% endif %}
+
+                  <div class="row">
+
+                          <div class="form-group col-lg-6 col-lg-6">
+                        <label for="exampleInputPetrolrate">Opening Of Tank</label>
+                          {% crispy_field form.tank_opening %}
+                          {% if  form.tank_opening.errors %}
+                              {% for error in form.tank_opening.errors %}
+                                  <div class="invalid-feedback">
+                                      {{ error }}
+                                  </div>
+                              {% endfor %}
+                          {% endif %}
+                      </div>
+
+                          <div class="form-group col-lg-6 col-lg-6">
+                        <label for="exampleInputPetrolrate">Closing Of Tank</label>
+                          {% crispy_field form.tank_closing %}
+                          {% if  form.tank_closing.errors %}
+                              {% for error in form.tank_closing.errors %}
+                                  <div class="invalid-feedback">
+                                      {{ error }}
+                                  </div>
+                              {% endfor %}
+                          {% endif %}
+                      </div>
+
                   </div>
 
-                  <div class="form-group col-lg-6 col-lg-6">
-                    <label for="exampleInputPetrolrate">Closing Of Tank</label>
-                      {% crispy_field form.tank_closing %}
-                      {% if  form.tank_closing.errors %}
-                          {% for error in form.tank_closing.errors %}
-                              <div class="invalid-feedback">
-                                  {{ error }}
-                              </div>
-                          {% endfor %}
-                      {% endif %}
-                  </div>
 
-              </div>
-
-              <div class="row">
+                  <div class="row">
 
                   <div class="form-group col-lg-6 col-lg-6">
                     <label for="exampleInputDieselrate">Total Literes Petrol</label>
@@ -80,7 +82,6 @@
                     </div>
                   </div>
 
-
                   <div class="form-group col-lg-6 col-lg-6">
                     <label for="exampleInputDieselrate">Total Literes Diesel</label>
                     <div class="input-group">
@@ -95,9 +96,10 @@
                     </div>
                   </div>
 
-              </div>
+                  </div>
 
-              <div class="row">
+
+                  <div class="row">
 
                   <div class="form-group col-lg-6 col-lg-6">
                     <label for="exampleInputDieselrate">Loss in Petrol</label>
@@ -127,17 +129,18 @@
                     </div>
                   </div>
 
-              </div>
+                  </div>
 
                 <!-- /.card-body -->
 
                 <div class="card-footer" align="center">
                   <button type="submit" class="btn btn-primary">Submit</button>
-                </div>
-
-              </form>
 
                 </div>
+
+                </form>
+
+            </div>
             <!-- /.card -->
 
             <!-- general form elements -->

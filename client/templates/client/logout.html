@@ -1,9 +1,60 @@
-{% extends "client/layout.html" %}
-{% block title %}
-    Logout - Indian Oil Petrol Pump
-{% endblock %}
-{% block body %}
-    <h1> you have successfully logout  </h1>
-    click
-    <a href="{% url 'login' %}"> login</a>
-{% endblock %}
+{#{% extends "client/layout.html" %}#}
+{#{% block title %}#}
+{#    Logout - Indian Oil Petrol Pump#}
+{#{% endblock %}#}
+{#{% block body %}#}
+{#    <h1> you have successfully logout  </h1>#}
+{#    click#}
+{#    <a href="{% url 'login' %}"> login</a>#}
+{#{% endblock %}#}
+
+<!DOCTYPE html>
+{% load static %}
+{% load crispy_forms_field %}
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Indian Oil Petrol Pump | Log out</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="{% static 'plugins/fontawesome-free/css/all.min.css'%}">
+  <!-- icheck bootstrap -->
+  <link rel="stylesheet" href="{% static 'plugins/icheck-bootstrap/icheck-bootstrap.min.css'%}">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{% static 'dist/css/adminlte.min.css'%}">
+</head>
+<body class="hold-transition login-page">
+<div class="login-box">
+  <!-- /.login-logo -->
+  <div class="card card-outline card-primary">
+    <div class="card-header text-center">
+      <a href="{% static 'class="h1"'%}">
+          <h3> Indian Oil Petrol Pump </h3>
+      </a>
+    </div>
+    <div class="card-body">
+
+     <h2> You Are Successfully Logged Out!!! </h2>
+        <hr/>
+        <h6 align="center"><a href="{%  url 'login' %}"> Click here to Login </a></h6>
+
+
+    </div>
+    <!-- /.card-body -->
+  </div>
+  <!-- /.card -->
+</div>
+<!-- /.login-box -->
+
+<!-- jQuery -->
+<script src="{% static 'plugins/jquery/jquery.min.js'%}"></script>
+<!-- Bootstrap 4 -->
+<script src="{% static 'plugins/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+<!-- AdminLTE App -->
+<script src="{% static 'dist/js/adminlte.min.js'%}"></script>
+</body>
+</html>
+

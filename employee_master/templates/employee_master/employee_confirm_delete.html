@@ -1,39 +1,129 @@
 {% extends "client/layout.html" %}
 {% block body %}
-    <h1> Are you Sure You Want To Delete ?</h1>
+    <h1 align="center"> Are you Sure You Want To Delete ?</h1>
+    <hr/>
     <form method="post">
     {% csrf_token %}
      <ul>
-         <li> Date : {{ object.date }}</li>
-         <li> Employee_id : {{ object.employee_id }}</li>
-         <li> First_Name :{{ object.first_name }}</li>
-         <li> Middle_Name : {{ object.middle_name }}</li>
-         <li> Last_Name : {{ object.last_name }}</li>
-         <li> Contact_No : {{ object.Contact_no }}</li>
-         <li> Address : {{ object.address }}</li>
-         <li> Street : {{ object.Street }}</li>
-         <li> Area : {{ object.area }}</li>
-         <li> City : {{ object.City }}</li>
-         <li> State : {{ object.state }}</li>
-         <li> Pincode : {{ object.pincode }}</li>
-         <li> Country : {{ object.Country }}</li>
-         <li> D.O.B : {{ object.dob }}</li>
-         <li> Designation : {{ object.designation }}</li>
-         <li> Gender : {{ object.gender }}</li>
-         <li> Reffrence : {{ object.reffrence }}</li>
-         <li> Shift_Timming : {{ object.shift_timming }}</li>
-         <li> Education : {{ object.education }}</li>
-         <li> Date_Of_Join : {{ object.Date_of_join }}</li>
-         <li> Expected_Salary : {{ object.expected_salary }}</li>
-         <li> Profile_Picture : {{ object.photo }}</li>
-         <li> Document_file : {{ object.Document_file }}</li>
-         <li> Bank_Name : {{ object.bank_name }}</li>
-         <li> Account_no : {{ object.account_no }}</li>
-         <li> IFSC_code : {{ object.ifsc_code }}</li>
-         <li> Salary : {{ object.salary }}</li>
-         <li> Pan_Number : {{ object.Pan_Number }}</li>
+                    <li class="list-group-item">
+                    <b> Date: </b> <a class="float-right">{{ object.date }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Employee Id: </b> <a class="float-right">{{ object.employee_id }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> First Name: </b> <a class="float-right">{{ object.first_name }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Middle Name: </b> <a class="float-right">{{ object.middle_name }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Last Name: </b> <a class="float-right">{{ object.last_name }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Contact Number: </b> <a class="float-right">{{ object.Contact_no }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Address: </b> <a class="float-right">{{ object.address }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Street Name: </b> <a class="float-right">{{ object.Street }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Area Name: </b> <a class="float-right">{{ object.area }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> City Name: </b> <a class="float-right">{{ object.City }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> State Name: </b> <a class="float-right">{{ object.state }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Pincode: </b> <a class="float-right">{{ object.pincode }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Country Name: </b> <a class="float-right">{{ object.Country }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Date Of Birth: </b> <a class="float-right">{{ object.dob }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Designation: </b> <a class="float-right">{{ object.designation }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Gender: </b> <a class="float-right">{{ object.gender }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Refference: </b> <a class="float-right">{{ object.reffrence }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Shift Timing: </b> <a class="float-right">{{ object.shift_timming }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Education: </b> <a class="float-right">{{ object.education }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Date Of Join: </b> <a class="float-right">{{ object.Date_of_join }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Expected Salary: </b> <a class="float-right">{{ object.expected_salary }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Photo: </b> <a class="float-right">{{ object.photo }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Documents: </b> <a class="float-right">{{ object.Document_file }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Bank Name: </b> <a class="float-right">{{ object.bank_name }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Account Number: </b> <a class="float-right">{{ object.account_no }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> IFSC Code: </b> <a class="float-right">{{ object.ifsc_code }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Salary: </b> <a class="float-right">{{ object.salary }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Pan Number: </b> <a class="float-right">{{ object.Pan_Number }}</a>
+                    </li>
+
      </ul>
-        <input type="submit" value="delete" class="btn btn-danger">
-        <a href="{% url 'rate-view' %}" class="btn btn-info" >cancel </a>
+
+        <div align="center">
+
+            <input type="submit" value="delete" class="btn btn-danger">
+            <a href="{% url 'rate-view' %}" class="btn btn-info" >cancel </a>
+
+        </div>
     </form>
 {% endblock %}

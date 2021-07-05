@@ -31,8 +31,12 @@
                             <td>{{ nozzlle.nozzlle_type }}</td>
                             <td>{{ nozzlle.remark }}</td>
                             <td>
-                                <a href="{% url 'nozzlle-update'  nozzlle.id %}" class="btn btn-info"> update</a>
-                                <a href="{% url 'nozzlle-delete'  nozzlle.id %}" class="btn btn-danger"> Delete</a>
+                                <a href="{% url 'nozzlle-update'  nozzlle.id %}" class="btn btn-info">
+                                   <li class="fas fa-pencil-alt"></li> Edit
+                                </a>
+                                <a href="{% url 'nozzlle-delete'  nozzlle.id %}" class="btn btn-danger">
+                                   <li class="fas fa-trash-alt"></li> Delete
+                                </a>
                             </td>
                         </tr>
                     {% endfor %}

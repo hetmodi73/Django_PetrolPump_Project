@@ -18,7 +18,7 @@
               <form method="POST">
               {% csrf_token %}
 
-                  <div class="form-group col-lg-4 col-lg-4" >
+                  <div class="form-group col-lg-6 col-lg-6" >
                   <label>Date:</label>
                     <div class="input-group date" id="reservationdate" data-target-input="nearest">
                         {% crispy_field form.date %}
@@ -34,121 +34,120 @@
                         </div>
                     </div>
                   </div>
+              <div>
+                          <!-- /.form group -->
+                  <div class="row">
+                      <div class="form-group col-lg-6 col-lg-6">
+                        <label for="exampleInputPetrolrate">Vehicle Master</label>
+                          {% crispy_field form.vehicle_master %}
+                          {% if  form.vehicle_master.errors %}
+                              {% for error in form.vehicle_master.errors %}
+                                  <div class="invalid-feedback">
+                                      {{ error }}
+                                  </div>
+                              {% endfor %}
+                          {% endif %}
+                      </div>
+
+                      <div class="form-group col-lg-6 col-lg-6">
+                        <label for="exampleInputPetrolrate">Nozzlle Master</label>
+                          {% crispy_field form.nozzlle_master %}
+                          {% if  form.nozzlle_master.errors %}
+                              {% for error in form.nozzlle_master.errors %}
+                                  <div class="invalid-feedback">
+                                      {{ error }}
+                                  </div>
+                              {% endfor %}
+                          {% endif %}
+                      </div>
 
 
-                      <!-- /.form group -->
-              <div class="row">
-                  <div class="form-group col-lg-4 col-lg-4">
-                    <label for="exampleInputPetrolrate">Vehicle Master</label>
-                      {% crispy_field form.vehicle_master %}
-                      {% if  form.vehicle_master.errors %}
-                          {% for error in form.vehicle_master.errors %}
-                              <div class="invalid-feedback">
-                                  {{ error }}
-                              </div>
-                          {% endfor %}
-                      {% endif %}
+
                   </div>
 
-                  <div class="form-group col-lg-4 col-lg-4">
-                    <label for="exampleInputPetrolrate">Nozzlle Master</label>
-                      {% crispy_field form.nozzlle_master %}
-                      {% if  form.nozzlle_master.errors %}
-                          {% for error in form.nozzlle_master.errors %}
-                              <div class="invalid-feedback">
-                                  {{ error }}
-                              </div>
-                          {% endfor %}
-                      {% endif %}
+                  <div class="row">
+
+                      <div class="form-group col-lg-6 col-lg-6">
+                        <label for="exampleInputDieselrate">Petrol In Literes</label>
+                        <div class="input-group">
+                          {% crispy_field form.petrol_in_lit %}
+                            {% if  form.petrol_in_lit.errors %}
+                                {% for error in form.petrol_in_lit.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ error }}
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                      </div>
+
+
+                      <div class="form-group col-lg-6 col-lg-6">
+                        <label for="exampleInputDieselrate">Diesel In Literes</label>
+                        <div class="input-group">
+                          {% crispy_field form.diesel_in_lit %}
+                            {% if  form.diesel_in_lit.errors %}
+                                {% for error in form.diesel_in_lit.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ error }}
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                      </div>
+
+
                   </div>
 
+                  <div class="row">
+
+                      <div class="form-group col-lg-6 col-lg-6">
+                        <label for="exampleInputDieselrate">Petrol Price</label>
+                        <div class="input-group">
+                          {% crispy_field form.petrol_price %}
+                            {% if  form.petrol_price.errors %}
+                                {% for error in form.petrol_price.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ error }}
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                      </div>
+
+                      <div class="form-group col-lg-6 col-lg-6">
+                        <label for="exampleInputDieselrate">Diesel Price</label>
+                        <div class="input-group">
+                          {% crispy_field form.diesel_price %}
+                            {% if  form.diesel_price.errors %}
+                                {% for error in form.diesel_price.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ error }}
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                      </div>
 
 
-              </div>
-
-              <div class="row">
-
-                  <div class="form-group col-lg-4 col-lg-4">
-                    <label for="exampleInputDieselrate">Petrol In Literes</label>
-                    <div class="input-group">
-                      {% crispy_field form.petrol_in_lit %}
-                        {% if  form.petrol_in_lit.errors %}
-                            {% for error in form.petrol_in_lit.errors %}
-                                <div class="invalid-feedback">
-                                    {{ error }}
-                                </div>
-                            {% endfor %}
-                        {% endif %}
-                    </div>
                   </div>
 
-
-                  <div class="form-group col-lg-4 col-lg-4">
-                    <label for="exampleInputDieselrate">Diesel In Literes</label>
-                    <div class="input-group">
-                      {% crispy_field form.diesel_in_lit %}
-                        {% if  form.diesel_in_lit.errors %}
-                            {% for error in form.diesel_in_lit.errors %}
-                                <div class="invalid-feedback">
-                                    {{ error }}
-                                </div>
-                            {% endfor %}
-                        {% endif %}
-                    </div>
-                  </div>
-
-
-              </div>
-
-              <div class="row">
-
-                  <div class="form-group col-lg-4 col-lg-4">
-                    <label for="exampleInputDieselrate">Petrol Price</label>
-                    <div class="input-group">
-                      {% crispy_field form.petrol_price %}
-                        {% if  form.petrol_price.errors %}
-                            {% for error in form.petrol_price.errors %}
-                                <div class="invalid-feedback">
-                                    {{ error }}
-                                </div>
-                            {% endfor %}
-                        {% endif %}
-                    </div>
-                  </div>
-
-                  <div class="form-group col-lg-4 col-lg-4">
-                    <label for="exampleInputDieselrate">Diesel Price</label>
-                    <div class="input-group">
-                      {% crispy_field form.diesel_price %}
-                        {% if  form.diesel_price.errors %}
-                            {% for error in form.diesel_price.errors %}
-                                <div class="invalid-feedback">
-                                    {{ error }}
-                                </div>
-                            {% endfor %}
-                        {% endif %}
-                    </div>
-                  </div>
-
-
-              </div>
-
-                  <div class="form-group">
-                    <label for="exampleInputDieselrate">Remark</label>
-                    <div class="input-group">
-                      {% crispy_field form.remark %}
-                        {% if  form.remark.errors %}
-                            {% for error in form.remark.errors %}
-                                <div class="invalid-feedback">
-                                    {{ error }}
-                                </div>
-                            {% endfor %}
-                        {% endif %}
-                    </div>
-                  </div>
+                      <div class="form-group">
+                        <label for="exampleInputDieselrate">Remark</label>
+                        <div class="input-group">
+                          {% crispy_field form.remark %}
+                            {% if  form.remark.errors %}
+                                {% for error in form.remark.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ error }}
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                      </div>
 
                 <!-- /.card-body -->
-
+              </div>
                 <div class="card-footer" align="center">
                   <button type="submit" class="btn btn-primary">Submit</button>
                 </div>

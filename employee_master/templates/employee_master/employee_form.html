@@ -20,7 +20,7 @@
 
                 <div class="row">
 
-                    <div class="form-group">
+                    <div class="form-group col-lg-6 col-lg-6">
                   <label>Date:</label>
                     <div class="input-group date" id="reservationdate" data-target-input="nearest">
                         {% crispy_field form.date %}
@@ -38,7 +38,7 @@
                 </div>
 
                 <!-- /.form group -->
-                  <div class="form-group">
+                  <div class="form-group col-lg-6 col-lg-6">
                     <label for="exampleInputPetrolrate">Employee_id</label>
                       {% crispy_field form.employee_id %}
                       {% if  form.employee_id.errors %}
@@ -55,7 +55,7 @@
                 <div class="row">
 
                     <!-- /.form group -->
-                  <div class="form-group">
+                  <div class="form-group col-lg-4 col-lg-4">
                     <label for="exampleInputDieselrate">First_Name</label>
                     <div class="input-group">
                       {% crispy_field form.first_name %}
@@ -70,7 +70,7 @@
                   </div>
 
                 <!-- /.form group -->
-                  <div class="form-group">
+                  <div class="form-group col-lg-4 col-lg-4">
                     <label for="exampleInputPetrolrate">Middle_Name</label>
                       {% crispy_field form.middle_name %}
                       {% if  form.Middle_Name.errors %}
@@ -83,7 +83,7 @@
                   </div>
 
                 <!-- /.form group -->
-                  <div class="form-group">
+                  <div class="form-group col-lg-4 col-lg-4">
                     <label for="exampleInputPetrolrate">Last_Name</label>
                       {% crispy_field form.last_name %}
                       {% if  form.last_Name.errors %}
@@ -100,7 +100,7 @@
                 <div class="row">
 
                     <!-- /.form group -->
-                  <div class="form-group">
+                  <div class="form-group col-lg-6 col-lg-6">
                     <label for="exampleInputPetrolrate">Contact_No</label>
                       {% crispy_field form.Contact_no %}
                       {% if  form.Contact_no.errors %}
@@ -113,7 +113,7 @@
                   </div>
 
                 <!-- /.form group -->
-                  <div class="form-group">
+                  <div class="form-group col-lg-6 col-lg-6">
                     <label for="exampleInputPetrolrate">Address</label>
                       {% crispy_field form.address %}
                       {% if  form.address.errors %}
@@ -129,10 +129,7 @@
 
                 <div class="row">
 
-
-                </div>
-                <!-- /.form group -->
-                  <div class="form-group">
+                      <div class="form-group col-lg-4 col-lg-4">
                     <label for="exampleInputPetrolrate">Street</label>
                       {% crispy_field form.Street %}
                       {% if  form.Street.errors %}
@@ -145,7 +142,7 @@
                   </div>
 
                 <!-- /.form group -->
-                  <div class="form-group">
+                  <div class="form-group col-lg-4 col-lg-4">
                     <label for="exampleInputPetrolrate">Area</label>
                       {% crispy_field form.area %}
                       {% if  form.area.errors %}
@@ -158,7 +155,7 @@
                   </div>
 
                 <!-- /.form group -->
-                  <div class="form-group">
+                  <div class="form-group col-lg-4 col-lg-4">
                     <label for="exampleInputPetrolrate">City</label>
                       {% crispy_field form.City %}
                       {% if  form.City.errors %}
@@ -170,8 +167,13 @@
                       {% endif %}
                   </div>
 
+
+                </div>
                 <!-- /.form group -->
-                  <div class="form-group">
+                <div class="row">
+
+                    <!-- /.form group -->
+                  <div class="form-group col-lg-4 col-lg-4">
                     <label for="exampleInputPetrolrate">State</label>
                       {% crispy_field form.state %}
                       {% if  form.state.errors %}
@@ -184,7 +186,7 @@
                   </div>
 
                 <!-- /.form group -->
-                  <div class="form-group">
+                  <div class="form-group col-lg-4 col-lg-4">
                     <label for="exampleInputPetrolrate">Pincode</label>
                       {% crispy_field form.pincode %}
                       {% if  form.pincode.errors %}
@@ -197,7 +199,7 @@
                   </div>
 
                 <!-- /.form group -->
-                  <div class="form-group">
+                  <div class="form-group col-lg-4 col-lg-4">
                     <label for="exampleInputPetrolrate">Country</label>
                       {% crispy_field form.Country %}
                       {% if  form.Country.errors %}
@@ -209,8 +211,12 @@
                       {% endif %}
                   </div>
 
-                <!-- /.form group -->
-                  <div class="form-group">
+
+                </div>
+                <div class="row">
+
+                    <!-- /.form group -->
+                  <div class="form-group col-lg-4 col-lg-4">
                     <label for="exampleInputPetrolrate">D.O.B</label>
                       {% crispy_field form.dob %}
                       {% if  form.dob.errors %}
@@ -223,7 +229,7 @@
                   </div>
 
                 <!-- /.form group -->
-                  <div class="form-group">
+                  <div class="form-group col-lg-4 col-lg-4">
                     <label for="exampleInputPetrolrate">Designation</label>
                       {% crispy_field form.designation %}
                       {% if  form.designation.errors %}
@@ -236,7 +242,7 @@
                   </div>
 
                 <!-- /.form group -->
-                  <div class="form-group">
+                  <div class="form-group col-lg-4 col-lg-4">
                     <label for="exampleInputPetrolrate">Gender</label>
                       {% crispy_field form.gender %}
                       {% if  form.gender.errors %}
@@ -248,8 +254,12 @@
                       {% endif %}
                   </div>
 
-                <!-- /.form group -->
-                  <div class="form-group">
+
+                </div>
+                <div class="row">
+
+                    <!-- /.form group -->
+                  <div class="form-group col-lg-4 col-lg-4">
                     <label for="exampleInputPetrolrate">Reffrence</label>
                       {% crispy_field form.reffrence %}
                       {% if  form.reffrence.errors %}
@@ -262,7 +272,7 @@
                   </div>
 
                 <!-- /.form group -->
-                  <div class="form-group">
+                  <div class="form-group col-lg-4 col-lg-4">
                     <label for="exampleInputPetrolrate">Shift_Timming</label>
                       {% crispy_field form.shift_timming %}
                       {% if  form.shift_timming.errors %}
@@ -275,7 +285,7 @@
                   </div>
 
                 <!-- /.form group -->
-                  <div class="form-group">
+                  <div class="form-group col-lg-4 col-lg-4">
                     <label for="exampleInputPetrolrate">Education</label>
                       {% crispy_field form.education %}
                       {% if  form.education.errors %}
@@ -288,8 +298,12 @@
                   </div>
 
 
-                <!-- /.form group -->
-                  <div class="form-group">
+                </div>
+
+                <div class="row">
+
+                    <!-- /.form group -->
+                  <div class="form-group col-lg-3 col-lg-3">
                     <label for="exampleInputPetrolrate">Date_Of_Join</label>
                       {% crispy_field form.Date_of_join %}
                       {% if  form.Date_of_join.errors %}
@@ -304,7 +318,7 @@
 
 
                 <!-- /.form group -->
-                  <div class="form-group">
+                  <div class="form-group col-lg-3 col-lg-3">
                     <label for="exampleInputPetrolrate">Expected_Salary</label>
                       {% crispy_field form.expected_salary %}
                       {% if  form.expected_salary.errors %}
@@ -316,8 +330,8 @@
                       {% endif %}
                   </div>
 
-                <!-- /.form group -->
-                  <div class="form-group">
+                  <!-- /.form group -->
+                  <div class="form-group col-lg-3 col-lg-3">
                     <label for="exampleInputPetrolrate">Profile_Picture</label>
                       {% crispy_field form.photo %}
                       {% if  form.photo.errors %}
@@ -330,7 +344,7 @@
                   </div>
 
                 <!-- /.form group -->
-                  <div class="form-group">
+                  <div class="form-group col-lg-3 col-lg-3">
                     <label for="exampleInputPetrolrate">Document_file</label>
                       {% crispy_field form.Document_file %}
                       {% if  form.Document_file.errors %}
@@ -342,8 +356,12 @@
                       {% endif %}
                   </div>
 
-                <!-- /.form group -->
-                  <div class="form-group">
+                </div>
+
+                <div class="row">
+
+                    <!-- /.form group -->
+                  <div class="form-group col-lg-4 col-lg-4">
                     <label for="exampleInputPetrolrate">Bank_Name</label>
                       {% crispy_field form.bank_name %}
                       {% if  form.bank_name.errors %}
@@ -356,7 +374,7 @@
                   </div>
 
                 <!-- /.form group -->
-                  <div class="form-group">
+                  <div class="form-group col-lg-4 col-lg-4">
                     <label for="exampleInputPetrolrate">Account_No</label>
                       {% crispy_field form.account_no %}
                       {% if  form.account_no.errors %}
@@ -368,8 +386,8 @@
                       {% endif %}
                   </div>
 
-                <!-- /.form group -->
-                  <div class="form-group">
+                                        <!-- /.form group -->
+                  <div class="form-group col-lg-4 col-lg-4">
                     <label for="exampleInputPetrolrate">IFSC_Code</label>
                       {% crispy_field form.ifsc_code %}
                       {% if  form.ifsc_code.errors %}
@@ -381,8 +399,13 @@
                       {% endif %}
                   </div>
 
+
+                </div>
+
+                <div class="row">
+
                 <!-- /.form group -->
-                  <div class="form-group">
+                  <div class="form-group col-lg-6 col-lg-6">
                     <label for="exampleInputPetrolrate">Salary</label>
                       {% crispy_field form.salary %}
                       {% if  form.salary.errors %}
@@ -394,8 +417,8 @@
                       {% endif %}
                   </div>
 
-                <!-- /.form group -->
-                  <div class="form-group">
+                    <!-- /.form group -->
+                  <div class="form-group col-lg-6 col-lg-6">
                     <label for="exampleInputPetrolrate">Pan_Number</label>
                       {% crispy_field form.Pan_Number %}
                       {% if  form.Pan_Number.errors %}
@@ -408,10 +431,15 @@
                   </div>
 
 
+
+                </div>
+
+
+
                 </div>
                 <!-- /.card-body -->
 
-                <div class="card-footer">
+                <div class="card-footer" align="center">
                   <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
               </form>
