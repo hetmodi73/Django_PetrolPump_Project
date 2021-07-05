@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import CreateView,ListView,DeleteView,UpdateView,DetailView
 from .models import nozzlle
+from django.http.response import JsonResponse
 # Create your views here.
 
 class NewNozzlleView(CreateView):
@@ -23,3 +24,6 @@ class DetailNozzlleView(DetailView):
     model = nozzlle
     success_url = '/nozzlle_master/view'
 
+def type_of_nozzlle(request,nid):
+    type=nozzlle.objects.get(id=nid).nozzlle_type
+    return JsonResponse({"type":type})

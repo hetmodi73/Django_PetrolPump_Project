@@ -163,7 +163,7 @@
 
                   <div class="row">
 
-                      <div class="form-group col-lg-6 col-lg-6">
+                      <div class="form-group col-lg-6 col-lg-6" id="t_l_p">
                         <label for="exampleInputDieselrate">Total Litere Petrol</label>
                         <div class="input-group">
                           {% crispy_field form.total_lit_petrol %}
@@ -177,7 +177,7 @@
                         </div>
                       </div>
 
-                      <div class="form-group col-lg-6 col-lg-6">
+                      <div class="form-group col-lg-6 col-lg-6" id="t_l_d">
                         <label for="exampleInputDieselrate"> Total Litere Diesel </label>
                         <div class="input-group">
                           {% crispy_field form.total_lit_diesel %}
@@ -195,8 +195,8 @@
 
                   <div class="row">
 
-                        <div class="form-group col-lg-6 col-lg-6">
-                        <label for="exampleInputDieselrate">Total Price Of Petrol</label>
+                        <div class="form-group col-lg-6 col-lg-6" id="t_p_p">
+                        <label for="exampleInputDieselrate" >Total Price Of Petrol</label>
                           <div class="input-group">
                             {% crispy_field form.total_price_petrol %}
                             {% if  form.total_price_petrol.errors %}
@@ -209,7 +209,7 @@
                         </div>
                         </div>
 
-                        <div class="form-group col-lg-6 col-lg-6">
+                        <div class="form-group col-lg-6 col-lg-6" id="t_p_d">
                         <label for="exampleInputDieselrate">Total Price Of Diesel</label>
                         <div class="input-group">
                             {% crispy_field form.total_price_diesel %}
@@ -227,7 +227,7 @@
 
                   <div class="row">
 
-                      <div class="form-group col-lg-6 col-lg-6">
+                      <div class="form-group col-lg-6 col-lg-6" id="l_p_p">
                         <label for="exampleInputDieselrate">Loss Of Price in Petrol</label>
                         <div class="input-group">
                             {% crispy_field form.loss_price_petrol %}
@@ -241,7 +241,7 @@
                         </div>
                         </div>
 
-                        <div class="form-group col-lg-6 col-lg-6">
+                        <div class="form-group col-lg-6 col-lg-6" id="l_p_d">
                         <label for="exampleInputDieselrate">Loss Of Price in Diesel</label>
                         <div class="input-group">
                             {% crispy_field form.loss_price_diesel %}
@@ -293,7 +293,7 @@
 
                   <div class="row">
 
-                      <div class="form-group col-lg-6 col-lg-6">
+                      <div class="form-group col-lg-6 col-lg-6" id="o_l_p">
                         <label for="exampleInputDieselrate">Opening Litere in Petrol</label>
                         <div class="input-group">
                           {% crispy_field form.opening_lit_petrol %}
@@ -307,7 +307,7 @@
                         </div>
                       </div>
 
-                      <div class="form-group col-lg-6 col-lg-6">
+                      <div class="form-group col-lg-6 col-lg-6" id="c_l_p">
                         <label for="exampleInputDieselrate"> Closing Litere in Petrol</label>
                         <div class="input-group">
                           {% crispy_field form.closing_lit_petrol %}
@@ -325,7 +325,7 @@
 
                   <div class="row">
 
-                      <div class="form-group col-lg-6 col-lg-6">
+                      <div class="form-group col-lg-6 col-lg-6" id="o_l_d">
                         <label for="exampleInputDieselrate">Opening litere in Diesel</label>
                         <div class="input-group">
                           {% crispy_field form.Opening_lit_Diesel %}
@@ -339,7 +339,7 @@
                         </div>
                       </div>
 
-                      <div class="form-group col-lg-6 col-lg-6">
+                      <div class="form-group col-lg-6 col-lg-6" id="c_l_d">
                         <label for="exampleInputDieselrate">Closing Litere in Diesel</label>
                         <div class="input-group">
                           {% crispy_field form.closing_lit_Diesel %}
@@ -396,5 +396,87 @@ $(function () {
     });
 });
 </script>
+    <script>
+          document.addEventListener('DOMContentLoaded',function(){
+
+                // hide and show columns
+              document.querySelector("#id_nozzlle_master").onchange=function(){
+
+                  const url=`http://127.0.0.1:8000/nozzlle_master/type/${this.value}`;
+                  fetch(url)
+                  .then(response => response.json())
+                  .then(data => {
+                      let type=data.type.toLowerCase();
+
+                    if(type == 'petrol')
+                    {
+                            document.querySelector("#t_l_p").style.display='block';
+                            document.querySelector("#t_l_d").style.display='none';
+                            document.querySelector("#t_p_p").style.display='block';
+                            document.querySelector("#t_p_d").style.display='none';
+                            document.querySelector("#l_p_p").style.display='block';
+                            document.querySelector("#l_p_d").style.display='none';
+                            document.querySelector("#o_l_p").style.display='block';
+                            document.querySelector("#o_l_d").style.display='none';
+                            document.querySelector("#c_l_p").style.display='block';
+                            document.querySelector("#c_l_d").style.display='none';
+                    }
+                    else if(type=='diesel')
+                    {
+                            document.querySelector("#t_l_p").style.display='none';
+                            document.querySelector("#t_l_d").style.display='block';
+                            document.querySelector("#t_p_p").style.display='none';
+                            document.querySelector("#t_p_d").style.display='block';
+                            document.querySelector("#l_p_p").style.display='none';
+                            document.querySelector("#l_p_d").style.display='block';
+                            document.querySelector("#o_l_p").style.display='none';
+                            document.querySelector("#o_l_d").style.display='block';
+                            document.querySelector("#c_l_p").style.display='none';
+                            document.querySelector("#c_l_d").style.display='block';
+
+                    }
+
+                  })
+              }
+
+              // get total price of petrol
+              document.querySelector("#id_closing_lit_petrol").onkeyup=function(){
+
+                  console.log("inside keyup event");
+                  //get the petrol rate
+                   // fetch the rate of petrol
+              fetch("http://127.0.0.1:8000/tank_master/petrolprice/")
+              .then(response => response.json())
+              .then(data => {
+
+                  //console.log(data.petrol_price);  //50
+                  let opl=document.querySelector("#id_opening_lit_petrol").value;
+                  let cpl=document.querySelector("#id_closing_lit_petrol").value;
+                  let lit=cpl-opl;
+                  document.querySelector("#id_total_price_petrol").value=data.petrol_price*lit;
+              })
+              }
+
+              // get total price of diesel
+              document.querySelector("#id_closing_lit_Diesel").onkeyup=function(){
+
+                  console.log("inside keyup event");
+                  //get the petrol rate
+                   // fetch the rate of petrol
+              fetch("http://127.0.0.1:8000/tank_master/dieselprice/")
+              .then(response => response.json())
+              .then(data => {
+
+                  //console.log(data.petrol_price);  //50
+                  let opl=document.querySelector("#id_Opening_lit_Diesel").value;
+                  let cpl=document.querySelector("#id_closing_lit_Diesel").value;
+                  let lit=cpl-opl;
+                  document.querySelector("#id_total_price_diesel").value=data.diesel_price*lit;
+              })
+              }
+
+
+          })
+    </script>
 
 {% endblock %}
