@@ -161,103 +161,6 @@
 
                   </div>
 
-                  <div class="row">
-
-                      <div class="form-group col-lg-6 col-lg-6" id="t_l_p">
-                        <label for="exampleInputDieselrate">Total Litere Petrol</label>
-                        <div class="input-group">
-                          {% crispy_field form.total_lit_petrol %}
-                            {% if  form.total_lit_petrol.errors %}
-                                {% for error in form.total_lit_petrol.errors %}
-                                    <div class="invalid-feedback">
-                                        {{ error }}
-                                    </div>
-                                {% endfor %}
-                            {% endif %}
-                        </div>
-                      </div>
-
-                      <div class="form-group col-lg-6 col-lg-6" id="t_l_d">
-                        <label for="exampleInputDieselrate"> Total Litere Diesel </label>
-                        <div class="input-group">
-                          {% crispy_field form.total_lit_diesel %}
-                            {% if  form.total_lit_diesel.errors %}
-                                {% for error in form.total_lit_diesel.errors %}
-                                    <div class="invalid-feedback">
-                                        {{ error }}
-                                    </div>
-                                {% endfor %}
-                            {% endif %}
-                        </div>
-                      </div>
-
-                  </div>
-
-                  <div class="row">
-
-                        <div class="form-group col-lg-6 col-lg-6" id="t_p_p">
-                        <label for="exampleInputDieselrate" >Total Price Of Petrol</label>
-                          <div class="input-group">
-                            {% crispy_field form.total_price_petrol %}
-                            {% if  form.total_price_petrol.errors %}
-                                {% for error in form.total_price_petrol.errors %}
-                                <div class="invalid-feedback">
-                                    {{ error }}
-                                </div>
-                            {% endfor %}
-                            {% endif %}
-                        </div>
-                        </div>
-
-                        <div class="form-group col-lg-6 col-lg-6" id="t_p_d">
-                        <label for="exampleInputDieselrate">Total Price Of Diesel</label>
-                        <div class="input-group">
-                            {% crispy_field form.total_price_diesel %}
-                            {% if  form.total_price_diesel.errors %}
-                                {% for error in form.total_price_diesel.errors %}
-                                <div class="invalid-feedback">
-                                    {{ error }}
-                                </div>
-                            {% endfor %}
-                            {% endif %}
-                        </div>
-                        </div>
-
-                  </div>
-
-                  <div class="row">
-
-                      <div class="form-group col-lg-6 col-lg-6" id="l_p_p">
-                        <label for="exampleInputDieselrate">Loss Of Price in Petrol</label>
-                        <div class="input-group">
-                            {% crispy_field form.loss_price_petrol %}
-                            {% if  form.loss_price_petrol.errors %}
-                                {% for error in form.loss_price_petrol.errors %}
-                                <div class="invalid-feedback">
-                                    {{ error }}
-                                </div>
-                            {% endfor %}
-                            {% endif %}
-                        </div>
-                        </div>
-
-                        <div class="form-group col-lg-6 col-lg-6" id="l_p_d">
-                        <label for="exampleInputDieselrate">Loss Of Price in Diesel</label>
-                        <div class="input-group">
-                            {% crispy_field form.loss_price_diesel %}
-                            {% if  form.loss_price_diesel.errors %}
-                                {% for error in form.loss_price_diesel.errors %}
-                                <div class="invalid-feedback">
-                                    {{ error }}
-                                </div>
-                            {% endfor %}
-                            {% endif %}
-                        </div>
-                        </div>
-
-                  </div>
-
-
 
                   <div class="row">
 
@@ -355,6 +258,111 @@
 
                   </div>
 
+                  <div class="row">
+
+                      <div class="form-group col-lg-4 col-lg-4" id="t_l_p">
+                        <label for="exampleInputDieselrate">Total Litere Petrol</label>
+                        <div class="input-group">
+                          {% crispy_field form.total_lit_petrol %}
+                            {% if  form.total_lit_petrol.errors %}
+                                {% for error in form.total_lit_petrol.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ error }}
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                      </div>
+
+                  <div class="form-group col-lg-4 col-lg-4">
+                        <label for="exampleInputDieselrate" >Crditor Amount</label>
+                          <div class="input-group">
+                            {% crispy_field form.creditor_amount %}
+                            {% if  form.creditor_amount.errors %}
+                                {% for error in form.creditor_amount.errors %}
+                                <div class="invalid-feedback">
+                                    {{ error }}
+                                </div>
+                            {% endfor %}
+                            {% endif %}
+                        </div>
+                  </div>
+                      <div class="form-group col-lg-4 col-lg-4" id="t_p_p">
+                        <label for="exampleInputDieselrate" >Total Price Of Petrol</label>
+                          <div class="input-group">
+                            {% crispy_field form.total_price_petrol %}
+                            {% if  form.total_price_petrol.errors %}
+                                {% for error in form.total_price_petrol.errors %}
+                                <div class="invalid-feedback">
+                                    {{ error }}
+                                </div>
+                            {% endfor %}
+                            {% endif %}
+                        </div>
+                        </div>
+
+                        <div class="form-group col-lg-4 col-lg-4" id="l_p_p">
+                        <label for="exampleInputDieselrate">Loss Of Price in Petrol</label>
+                        <div class="input-group">
+                            {% crispy_field form.loss_price_petrol %}
+                            {% if  form.loss_price_petrol.errors %}
+                                {% for error in form.loss_price_petrol.errors %}
+                                <div class="invalid-feedback">
+                                    {{ error }}
+                                </div>
+                            {% endfor %}
+                            {% endif %}
+                        </div>
+                        </div>
+
+                  </div>
+
+
+                  <div class="row">
+
+                      <div class="form-group col-lg-4 col-lg-4" id="t_l_d">
+                        <label for="exampleInputDieselrate"> Total Litere Diesel </label>
+                        <div class="input-group">
+                          {% crispy_field form.total_lit_diesel %}
+                            {% if  form.total_lit_diesel.errors %}
+                                {% for error in form.total_lit_diesel.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ error }}
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                      </div>
+
+                        <div class="form-group col-lg-4 col-lg-4" id="t_p_d">
+                        <label for="exampleInputDieselrate">Total Price Of Diesel</label>
+                        <div class="input-group">
+                            {% crispy_field form.total_price_diesel %}
+                            {% if  form.total_price_diesel.errors %}
+                                {% for error in form.total_price_diesel.errors %}
+                                <div class="invalid-feedback">
+                                    {{ error }}
+                                </div>
+                            {% endfor %}
+                            {% endif %}
+                        </div>
+                        </div>
+
+                        <div class="form-group col-lg-4 col-lg-4" id="l_p_d">
+                        <label for="exampleInputDieselrate">Loss Of Price in Diesel</label>
+                        <div class="input-group">
+                            {% crispy_field form.loss_price_diesel %}
+                            {% if  form.loss_price_diesel.errors %}
+                                {% for error in form.loss_price_diesel.errors %}
+                                <div class="invalid-feedback">
+                                    {{ error }}
+                                </div>
+                            {% endfor %}
+                            {% endif %}
+                        </div>
+                        </div>
+
+                  </div>
 
                   </div>
 
@@ -396,12 +404,37 @@ $(function () {
     });
 });
 </script>
+
     <script>
           document.addEventListener('DOMContentLoaded',function(){
 
                 // hide and show columns
               document.querySelector("#id_nozzlle_master").onchange=function(){
 
+                  const url1=`http://127.0.0.1:8000/nozzlle_master/creditor_amount/${this.value}`;
+                  fetch(url1)
+                  .then(response => response.json())
+                  .then(data => {
+                            if(data.diesel_in_lit__sum != undefined)
+                            {
+                                fetch("http://127.0.0.1:8000/tank_master/dieselprice/")
+                                .then(response => response.json())
+                                .then(data1 => {
+                                        document.querySelector("#id_creditor_amount").value=data.diesel_in_lit__sum * data1.diesel_price;
+                                })
+
+                            }
+                            else {
+                                //document.querySelector("#id_creditor_amount").value=data.petrol_in_lit__sum;
+                                fetch("http://127.0.0.1:8000/tank_master/petorlprice/")
+                                .then(response => response.json())
+                                .then(data1 => {
+                                        document.querySelector("#id_creditor_amount").value=data.petorl_in_lit__sum * data1.petrol_price;
+                                })
+                            }
+                  })
+
+                  // fetch type
                   const url=`http://127.0.0.1:8000/nozzlle_master/type/${this.value}`;
                   fetch(url)
                   .then(response => response.json())
@@ -449,10 +482,13 @@ $(function () {
               .then(response => response.json())
               .then(data => {
 
+
                   //console.log(data.petrol_price);  //50
                   let opl=document.querySelector("#id_opening_lit_petrol").value;
                   let cpl=document.querySelector("#id_closing_lit_petrol").value;
                   let lit=cpl-opl;
+
+                  document.querySelector("#id_total_lit_petrol").value=lit;
                   document.querySelector("#id_total_price_petrol").value=data.petrol_price*lit;
               })
               }
@@ -471,10 +507,13 @@ $(function () {
                   let opl=document.querySelector("#id_Opening_lit_Diesel").value;
                   let cpl=document.querySelector("#id_closing_lit_Diesel").value;
                   let lit=cpl-opl;
+
+
+                  document.querySelector("#id_total_lit_diesel").value=lit;
+
                   document.querySelector("#id_total_price_diesel").value=data.diesel_price*lit;
               })
               }
-
 
           })
     </script>

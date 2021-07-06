@@ -27,6 +27,7 @@ class nozzlle_t(models.Model):
     closing_lit_petrol=models.IntegerField(null=True,blank=True)
     Opening_lit_Diesel=models.IntegerField(null=True,blank=True)
     closing_lit_Diesel=models.IntegerField(null=True,blank=True)
+    creditor_amount=models.IntegerField(default=0)
 
     def __str__(self):
         return f"{self.nozzlle_master}-{self.employee_master}"
