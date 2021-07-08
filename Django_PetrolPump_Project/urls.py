@@ -19,6 +19,7 @@ from client.views import home
 from django.contrib.auth.views import LoginView,LogoutView
 from django .conf import settings
 from django .conf.urls.static import static
+from client.views import dashboard
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -36,8 +37,8 @@ urlpatterns = [
     path("suppliers_master/",include("suppliers_master.urls")),
     path("employee_payment/",include("employee_payment.urls")),
     path("nozzlle_transaction/",include("nozzlle_transaction.urls")),
-    path("calculation_master/",include("calculation_master.urls"))
-
+    path("calculation_master/",include("calculation_master.urls")),
+    path("dashboard/",dashboard,name="dashboard")
 ]
 
 urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

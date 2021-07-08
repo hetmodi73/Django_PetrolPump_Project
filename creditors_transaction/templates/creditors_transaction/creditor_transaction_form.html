@@ -38,7 +38,7 @@
                           <!-- /.form group -->
                   <div class="row">
                       <div class="form-group col-lg-6 col-lg-6">
-                        <label for="exampleInputPetrolrate">Vehicle Master</label>
+                        <label for="exampleInputPetrolrate">Vehicle Number</label>
                           {% crispy_field form.vehicle_master %}
                           {% if  form.vehicle_master.errors %}
                               {% for error in form.vehicle_master.errors %}
@@ -50,7 +50,7 @@
                       </div>
 
                       <div class="form-group col-lg-6 col-lg-6">
-                        <label for="exampleInputPetrolrate">Nozzlle Master</label>
+                        <label for="exampleInputPetrolrate">Nozzlle Type</label>
                           {% crispy_field form.nozzlle_master %}
                           {% if  form.nozzlle_master.errors %}
                               {% for error in form.nozzlle_master.errors %}
@@ -67,7 +67,7 @@
 
                   <div class="row">
 
-                      <div class="form-group col-lg-6 col-lg-6">
+                      <div class="form-group col-lg-6 col-lg-6" id="p_l">
                         <label for="exampleInputDieselrate">Petrol In Literes</label>
                         <div class="input-group">
                           {% crispy_field form.petrol_in_lit %}
@@ -81,27 +81,7 @@
                         </div>
                       </div>
 
-
-                      <div class="form-group col-lg-6 col-lg-6">
-                        <label for="exampleInputDieselrate">Diesel In Literes</label>
-                        <div class="input-group">
-                          {% crispy_field form.diesel_in_lit %}
-                            {% if  form.diesel_in_lit.errors %}
-                                {% for error in form.diesel_in_lit.errors %}
-                                    <div class="invalid-feedback">
-                                        {{ error }}
-                                    </div>
-                                {% endfor %}
-                            {% endif %}
-                        </div>
-                      </div>
-
-
-                  </div>
-
-                  <div class="row">
-
-                      <div class="form-group col-lg-6 col-lg-6">
+                                            <div class="form-group col-lg-6 col-lg-6" id="p_p">
                         <label for="exampleInputDieselrate">Petrol Price</label>
                         <div class="input-group">
                           {% crispy_field form.petrol_price %}
@@ -115,7 +95,25 @@
                         </div>
                       </div>
 
-                      <div class="form-group col-lg-6 col-lg-6">
+                  </div>
+
+                  <div class="row">
+
+                      <div class="form-group col-lg-6 col-lg-6" id="d_l">
+                        <label for="exampleInputDieselrate">Diesel In Literes</label>
+                        <div class="input-group">
+                          {% crispy_field form.diesel_in_lit %}
+                            {% if  form.diesel_in_lit.errors %}
+                                {% for error in form.diesel_in_lit.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ error }}
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                      </div>
+
+                      <div class="form-group col-lg-6 col-lg-6" id="d_p">
                         <label for="exampleInputDieselrate">Diesel Price</label>
                         <div class="input-group">
                           {% crispy_field form.diesel_price %}
@@ -215,6 +213,32 @@ $(function () {
               })
           }
       })
+    </script>
+
+    <script>
+
+        document.addEventListener('DOMContentLoaded',function(){
+
+            document.querySelector("#id_nozzlle_master").onchange=function(){
+
+                console.log("inside onchange ");
+
+                if (this.value=='petrol')
+                {
+                    document.querySelector("#p_l").style.display='block';
+                    document.querySelector("#d_l").style.display='none';
+                    document.querySelector("#p_p").style.display='block';
+                    document.querySelector("#d_p").style.display='none';
+                }
+                else if (this.value=='Diesel')
+                {
+                    document.querySelector("#p_l").style.display='none';
+                    document.querySelector("#d_l").style.display='block';
+                    document.querySelector("#p_p").style.display='none';
+                    document.querySelector("#d_p").style.display='block';
+                }
+            }
+        })
     </script>
 
 {% endblock %}

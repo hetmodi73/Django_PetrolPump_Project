@@ -12,7 +12,7 @@ class nozzlle(models.Model):
     remark=models.TextField(null=True,blank=True)
 
     def __str__(self):
-        return f"Nozzlle No.-({self.nozzlle_no})-Type-({self.nozzlle_type})"
+        return f"{self.nozzlle_no}"
 
     def get_absolute_url(self):
         return reverse('nozzlle-view')
