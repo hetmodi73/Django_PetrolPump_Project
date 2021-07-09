@@ -18,10 +18,11 @@
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
-                    <th>Date</th>
-                    <th>Petrol Rates</th>
-                    <th>Diesel Rates</th>
-                    <th>Action</th>
+                      <th>Date</th>
+                      <th>Petrol Rates</th>
+                      <th>Diesel Rates</th>
+                      <th>Stock Of Oil</th>
+                      <th>Action</th>
                   </tr>
                   </thead>
                     <tbody>
@@ -30,6 +31,7 @@
                             <td>{{ rate.date }}</td>
                             <td>{{ rate.petrol_price }}</td>
                             <td>{{ rate.diesel_price }}</td>
+                            <td>{{ rate.oil_stock }}</td>
                             <td>
                                 <a href="{% url 'rate-update'  rate.id %}" class="btn btn-info" >
                                     <i class="fas fa-pencil-alt"></i> Edit
@@ -44,10 +46,11 @@
                   </tbody>
                   <tfoot>
                   <tr>
-                    <th align="center">Date</th>
-                    <th align="center">Petrol Rates</th>
-                    <th align="center">Diesel Rates</th>
-                    <th align="center">Action</th>
+                      <th align="center">Date</th>
+                      <th align="center">Petrol Rates</th>
+                      <th align="center">Diesel Rates</th>
+                      <th align="center">Stock Of Oil</th>
+                      <th align="center">Action</th>
                   </tr>
                   </tfoot>
                 </table>

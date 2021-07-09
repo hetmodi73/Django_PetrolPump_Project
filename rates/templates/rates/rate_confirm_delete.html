@@ -17,9 +17,14 @@
              <b> Diesel Price: </b> <a class="float-right">{{ object.diesel_price }}</a>
              </li>
 
+             <li class="list-group-item">
+             <b> Stock Of Oil: </b> <a class="float-right">{{ object.oil_stock }}</a>
+             </li>
+
+
      </ul>
         <div align="center">
-            <input type="submit" value="delete" class="btn btn-danger">
+            <input type="submit" value="Delete" class="btn btn-danger">
             <a href="{% url 'rate-view' %}" class="btn btn-info" >cancel </a>
         </div>
 

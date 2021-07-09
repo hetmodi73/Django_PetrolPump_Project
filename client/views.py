@@ -33,3 +33,4 @@ def dashboard(request):
         'pending_amount':data['pending_balance__sum'],
         'today_collection':today_collection
     })
+

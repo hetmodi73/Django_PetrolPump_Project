@@ -274,19 +274,6 @@
                         </div>
                       </div>
 
-                  <div class="form-group col-lg-4 col-lg-4">
-                        <label for="exampleInputDieselrate" >Crditor Amount</label>
-                          <div class="input-group">
-                            {% crispy_field form.creditor_amount %}
-                            {% if  form.creditor_amount.errors %}
-                                {% for error in form.creditor_amount.errors %}
-                                <div class="invalid-feedback">
-                                    {{ error }}
-                                </div>
-                            {% endfor %}
-                            {% endif %}
-                        </div>
-                  </div>
                       <div class="form-group col-lg-4 col-lg-4" id="t_p_p">
                         <label for="exampleInputDieselrate" >Total Price Of Petrol</label>
                           <div class="input-group">
@@ -362,6 +349,20 @@
                         </div>
                         </div>
 
+                  </div>
+
+                  <div class="form-group col-lg-4 col-lg-4">
+                        <label for="exampleInputDieselrate" >Creditor Amount</label>
+                          <div class="input-group">
+                            {% crispy_field form.creditor_amount %}
+                            {% if  form.creditor_amount.errors %}
+                                {% for error in form.creditor_amount.errors %}
+                                <div class="invalid-feedback">
+                                    {{ error }}
+                                </div>
+                            {% endfor %}
+                            {% endif %}
+                        </div>
                   </div>
 
                   </div>

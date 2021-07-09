@@ -81,7 +81,7 @@
                         </div>
                       </div>
 
-                                            <div class="form-group col-lg-6 col-lg-6" id="p_p">
+                      <div class="form-group col-lg-6 col-lg-6" id="p_p">
                         <label for="exampleInputDieselrate">Petrol Price</label>
                         <div class="input-group">
                           {% crispy_field form.petrol_price %}
@@ -216,28 +216,34 @@ $(function () {
     </script>
 
     <script>
+        document.addEventListener('DOMContentLoaded', function () {
 
-        document.addEventListener('DOMContentLoaded',function(){
+           document.querySelector("#id_nozzlle_master").onchange = function () {
 
-            document.querySelector("#id_nozzlle_master").onchange=function(){
+               const url=`http://127.0.0.1:8000/nozzlle_master/type/${this.value}`;
+                fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                                let type = data.type.toLowerCase();
+                                console.log(this.value);
+                                if (type == 'petrol')
+                                {
+                                    document.querySelector("#p_l").style.display = 'block';
+                                     document.querySelector("#p_p").style.display = 'block';
+                                    document.querySelector("#d_l").style.display = 'none';
+                                    document.querySelector("#d_p").style.display = 'none';
+                                }
 
-                console.log("inside onchange ");
+                                else
+                                {
+                                    document.querySelector("#p_l").style.display = 'none';
+                                    document.querySelector("#p_p").style.display = 'none';
+                                    document.querySelector("#d_l").style.display = 'block';
+                                    document.querySelector("#d_p").style.display = 'block';
+                                }
 
-                if (this.value=='petrol')
-                {
-                    document.querySelector("#p_l").style.display='block';
-                    document.querySelector("#d_l").style.display='none';
-                    document.querySelector("#p_p").style.display='block';
-                    document.querySelector("#d_p").style.display='none';
+                    })
                 }
-                else if (this.value=='Diesel')
-                {
-                    document.querySelector("#p_l").style.display='none';
-                    document.querySelector("#d_l").style.display='block';
-                    document.querySelector("#p_p").style.display='none';
-                    document.querySelector("#d_p").style.display='block';
-                }
-            }
         })
     </script>
 

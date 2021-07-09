@@ -147,22 +147,39 @@
                     </div>
                   </div>
 
-                  <div class="form-group col-lg-4 col-lg-4" id="refference">
-                    <label for="exampleInputDieselrate"> ID Of Online Transaction </label>
-                    <div class="input-group">
-                      {% crispy_field form.reffrence %}
-                        {% if  form.reffrence.errors %}
-                            {% for error in form.reffrence.errors %}
-                                <div class="invalid-feedback">
-                                    {{ error }}
-                                </div>
-                            {% endfor %}
-                        {% endif %}
-                    </div>
-                  </div>
-
-
                 </div>
+
+                    <div class="row">
+
+                        <div class="form-group col-lg-4 col-lg-4" id="refference">
+                        <label for="exampleInputDieselrate"> ID Of Online Transaction </label>
+                        <div class="input-group">
+                            {% crispy_field form.reffrence %}
+                                {% if  form.reffrence.errors %}
+                                    {% for error in form.reffrence.errors %}
+                                        <div class="invalid-feedback">
+                                            {{ error }}
+                                        </div>
+                                    {% endfor %}
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        <div class="form-group col-lg-4 col-lg-4">
+                        <label for="exampleInputDieselrate"> Slip Number </label>
+                        <div class="input-group">
+                            {% crispy_field form.slip_no %}
+                                {% if  form.slip_no.errors %}
+                                    {% for error in form.slip_no.errors %}
+                                        <div class="invalid-feedback">
+                                            {{ error }}
+                                        </div>
+                                    {% endfor %}
+                                {% endif %}
+                            </div>
+                        </div>
+
+                    </div>
 
                 </div>
 

@@ -17,7 +17,9 @@
               <form method="POST">
               {% csrf_token %}
                 <div class="card-body">
-                  <div class="form-group">
+
+
+                    <div class="form-group">
                   <label>Date:</label>
                     <div class="input-group date" id="reservationdate" data-target-input="nearest">
                         {% crispy_field form.date %}
@@ -33,7 +35,9 @@
                         </div>
                     </div>
                 </div>
-                <!-- /.form group -->
+
+
+                    <!-- /.form group -->
                   <div class="form-group">
                     <label for="exampleInputPetrolrate">Rate Of Petrol</label>
                       {% crispy_field form.petrol_price %}
@@ -45,7 +49,9 @@
                           {% endfor %}
                       {% endif %}
                   </div>
-                  <div class="form-group">
+
+
+                    <div class="form-group">
                     <label for="exampleInputDieselrate">Rate Of Diesel</label>
                     <div class="input-group">
                       {% crispy_field form.diesel_price %}
@@ -57,12 +63,28 @@
                             {% endfor %}
                         {% endif %}
                     </div>
-                  </div>
-                </div>
+                    </div>
+
+                        <div class="form-group">
+                    <label for="exampleInputDieselrate">Stock Of Oil</label>
+                    <div class="input-group">
+                      {% crispy_field form.oil_stock %}
+                        {% if  form.oil_stock.errors %}
+                            {% for error in form.oil_stock.errors %}
+                                <div class="invalid-feedback">
+                                    {{ error }}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                        </div>
+
+
                 <!-- /.card-body -->
 
-                <div class="card-footer">
+                <div class="card-footer" align="center">
                   <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
                 </div>
               </form>
             </div>

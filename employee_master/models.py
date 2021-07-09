@@ -43,6 +43,11 @@ class employee(models.Model):
     ifsc_code=models.IntegerField(blank=True,null=True)
     salary=models.IntegerField(blank=True,null=True,validators=[MinValueValidator(0,'Salary should not be less than 0')])
     Pan_Number=models.IntegerField(blank=True,null=True)
+    choice3=(
+        ('Yes','Yes'),
+        ('No','No')
+    )
+    vaccinated=models.CharField(max_length=20,choices=choice3, blank=True,null=True)
 
     def __str__(self):
         return f"({self.employee_id})-({self.first_name} {self.middle_name} {self.last_name})"

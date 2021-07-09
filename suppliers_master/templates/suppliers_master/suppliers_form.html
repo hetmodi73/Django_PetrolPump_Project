@@ -38,10 +38,8 @@
                     </div>
                 </div>
 
-
-                      <!-- /.form group -->
-                  <div class="form-group col-lg-4 col-lg-4">
-                    <label for="exampleInputPetrolrate">Receipt Number</label>
+                      <div class="form-group col-lg-4 col-lg-4">
+                          <label for="exampleInputPetrolrate">Receipt Number</label>
                       {% crispy_field form.receipt_no %}
                       {% if  form.receipt_no.errors %}
                           {% for error in form.receipt_no.errors %}
@@ -56,7 +54,7 @@
 
                   <div class="row">
 
-                          <div class="form-group col-lg-4 col-lg-4">
+                      <div class="form-group col-lg-4 col-lg-4">
                     <label for="exampleInputDieselrate">Petrol in Literes</label>
                     <div class="input-group">
                       {% crispy_field form.petrol_in_lit %}
@@ -76,6 +74,20 @@
                       {% crispy_field form.diesel_in_lit %}
                         {% if  form.diesel_in_lit.errors %}
                             {% for error in form.diesel_in_lit.errors %}
+                                <div class="invalid-feedback">
+                                    {{ error }}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                  </div>
+
+                      <div class="form-group col-lg-4 col-lg-4">
+                    <label for="exampleInputDieselrate">Oil in Literes</label>
+                    <div class="input-group">
+                      {% crispy_field form.oil_in_lit %}
+                        {% if  form.oil_in_lit.errors %}
+                            {% for error in form.oil_in_lit.errors %}
                                 <div class="invalid-feedback">
                                     {{ error }}
                                 </div>
@@ -132,7 +144,6 @@
                     </div>
                   </div>
 
-
                   </div>
 
 
@@ -141,6 +152,7 @@
                 <div class="card-footer" align="center">
                   <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
+
               </form>
             </div>
             <!-- /.card -->

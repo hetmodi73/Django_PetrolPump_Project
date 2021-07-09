@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'expense_detail',
     'calculation_master',
     'nozzlle_transaction',
     'employee_payment',

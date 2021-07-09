@@ -38,7 +38,8 @@ urlpatterns = [
     path("employee_payment/",include("employee_payment.urls")),
     path("nozzlle_transaction/",include("nozzlle_transaction.urls")),
     path("calculation_master/",include("calculation_master.urls")),
-    path("dashboard/",dashboard,name="dashboard")
+    path("dashboard/",dashboard,name="dashboard"),
+    path("expense_detail/",include("expense_detail.urls"))
 ]
 
 urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

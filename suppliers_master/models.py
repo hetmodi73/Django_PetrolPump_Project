@@ -8,6 +8,7 @@ class suppliers(models.Model):
     receipt_no=models.IntegerField()
     petrol_in_lit=models.IntegerField()
     diesel_in_lit=models.IntegerField()
+    oil_in_lit=models.IntegerField(blank=True,null=True)
     loss_of_petrol_in_lit=models.IntegerField()
     loss_of_diesel_in_lit=models.IntegerField()
     transportation_expense=models.IntegerField()

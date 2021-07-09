@@ -6,8 +6,9 @@ from datetime import datetime
 
 class rate(models.Model):
     date=models.DateField(default=datetime.utcnow)
-    petrol_price=models.FloatField(validators=[MinValueValidator(0,'Salary should not be less than 0')])
-    diesel_price=models.FloatField(validators=[MinValueValidator(0,'Salary should not be less than 0')])
+    petrol_price=models.FloatField(validators=[MinValueValidator(0,'Price should not be less than 0')],null=True,blank=True)
+    diesel_price=models.FloatField(validators=[MinValueValidator(0,'Price should not be less than 0')],null=True,blank=True)
+    oil_stock=models.FloatField(validators=[MinValueValidator(0, 'Price should not be less than 0')],null=True,blank=True)
 
     def __str__(self):
         return f"petrol({self.petrol_price})-diesel({self.diesel_price})"
