@@ -1,0 +1,67 @@
+{% extends "client/layout.html" %}
+{% block body %}
+<ul>
+    <h3 class="profile-username text-center" align="center"> Expense Details </h3>
+                <ul class="list-group list-group-unbordered mb-3">
+                <div>
+                    <li class="list-group-item">
+                    <b> Date: </b> <a class="float-right">{{ object.date }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Tea/Coffee Expense: </b> <a class="float-right">{{ object.tea_coffee }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Electricity Expense: </b> <a class="float-right">{{ object.electricity }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> WaterBill Expense: </b> <a class="float-right">{{ object.water_bill }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Stationary Expense: </b> <a class="float-right">{{ object.stationary }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Labour Expense: </b> <a class="float-right">{{ object.labour_expense }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Property Tax Expense: </b> <a class="float-right">{{ object.property_tax }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Maintainenece Expense: </b> <a class="float-right">{{ object.maintainence_expense }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Machinory Expense: </b> <a class="float-right">{{ object.machinory_expense }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Insurence Expense: </b> <a class="float-right">{{ object.insurence_expence }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Ruff Expense: </b> <a class="float-right">{{ object.ruff_expense }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Employee Insurance Expense: </b> <a class="float-right">{{ object.employee_insurance_expense }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Total Amount Of Expense: </b> <a class="float-right">{{ object.total_Amount }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Remark: </b> <a class="float-right">{{ object.remark }}</a>
+                    </li>
+
+
+                </div>
+                </ul>
+</ul>
+{% endblock %}
