@@ -33,7 +33,7 @@
                     <tbody>
                         {% for tank in tank_master %}
                         <tr>
-                            <td>{{ tank.date }}</td>
+                            <td data-sort="{{ tank.date|date:"Ymd" }}">{{ tank.date | date:"d-m-Y" }}</td>
                             <td>{{ tank.petrol_opening }}</td>
                             <td>{{ tank.petrol_closing }}</td>
                             <td>{{ tank.diesel_opening }}</td>

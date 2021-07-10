@@ -18,6 +18,7 @@
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
+                      <th>Date</th>
                       <th>Nozzlle_No</th>
                       <th>Nozzlle_Type</th>
                       <th>Remark</th>
@@ -27,6 +28,7 @@
                     <tbody>
                         {% for nozzlle in nozzlle_master %}
                         <tr>
+                            <td data-sort="{{ nozzlle.date|date:"Ymd" }}">{{ nozzlle.date | date:"d-m-Y" }}</td>
                             <td>{{ nozzlle.nozzlle_no }}</td>
                             <td>{{ nozzlle.nozzlle_type }}</td>
                             <td>{{ nozzlle.remark }}</td>
@@ -44,10 +46,11 @@
                   </tbody>
                   <tfoot>
                   <tr>
-                    <th align="center">Nozzlle_No</th>
-                    <th align="center">Nozzlle_Type</th>
-                    <th align="center">Remark</th>
-                    <th align="center">Action</th>
+                      <th align="center">Date</th>
+                      <th align="center">Nozzlle_No</th>
+                      <th align="center">Nozzlle_Type</th>
+                      <th align="center">Remark</th>
+                      <th align="center">Action</th>
                   </tr>
                   </tfoot>
                 </table>

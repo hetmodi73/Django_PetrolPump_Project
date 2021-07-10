@@ -55,7 +55,7 @@
                     <label for="exampleInputDieselrate">Rate Of Diesel</label>
                     <div class="input-group">
                       {% crispy_field form.diesel_price %}
-                        {% if  form.petrol_diesel.errors %}
+                        {% if  form.diesel_price.errors %}
                             {% for error in form.diesel_price.errors %}
                                 <div class="invalid-feedback">
                                     {{ error }}

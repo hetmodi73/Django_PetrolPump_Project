@@ -28,6 +28,7 @@
                     <tbody>
                         {% for creditors in creditors_master %}
                         <tr>
+                            <td data-sort="{{ creditors.creation_date|date:"Ymd" }}">{{ creditors.creation_date | date:"d-m-Y" }}</td>
                             <td>{{ creditors.first_name }}</td>
                             <td>{{ creditors.middle_name }}</td>
                             <td>{{ creditors.last_name }}</td>

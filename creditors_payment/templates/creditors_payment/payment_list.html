@@ -27,7 +27,7 @@
                     <tbody>
                         {% for payment in creditors_payment %}
                         <tr>
-                            <td>{{ payment.date }}</td>
+                            <td data-sort="{{ payment.date|date:"Ymd" }}">{{ payment.date | date:"d-m-Y" }}</td>
                             <td>{{ payment.creditors_master }}</td>
                             <td>{{ payment.amount }}</td>
                             <td>

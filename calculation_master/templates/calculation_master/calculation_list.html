@@ -27,7 +27,7 @@
                     <tbody>
                         {% for calculation in calculation_master %}
                         <tr>
-                            <td>{{ calculation.date }}</td>
+                            <td data-sort="{{ calculation.date|date:"Ymd" }}">{{ calculation.date | date:"d-m-Y" }}</td>
                             <td>{{ calculation.tank_opening }}</td>
                             <td>{{ calculation.tank_closing }}</td>
                             <td>

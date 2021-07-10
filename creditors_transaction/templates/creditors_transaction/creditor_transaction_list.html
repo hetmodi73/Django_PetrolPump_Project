@@ -27,7 +27,7 @@
                     <tbody>
                         {% for creditor_transaction in creditors_transaction %}
                         <tr>
-                            <td>{{ creditor_transaction.date }}</td>
+                            <td data-sort="{{ creditor_transaction.date|date:"Ymd" }}">{{ creditor_transaction.date | date:"d-m-Y" }}</td>
                             <td>{{ creditor_transaction.vehicle_master }}</td>
                             <td>{{ creditor_transaction.nozzlle_master }}</td>
                             <td>

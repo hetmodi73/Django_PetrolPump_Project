@@ -27,7 +27,7 @@
                     <tbody>
                         {% for nozzlle_t in nozzlle_transaction %}
                         <tr>
-                            <td>{{ nozzlle_t.date }}</td>
+                            <td data-sort="{{ nozzlle_t.date|date:"Ymd" }}">{{ nozzlle_t.date | date:"d-m-Y" }}</td>
                             <td>{{ nozzlle_t.nozzlle_master }}</td>
                             <td>{{ nozzlle_t.employee_master }}</td>
                             <td>

@@ -26,7 +26,7 @@
                     <tbody>
                         {% for vehicle in vehicle_master %}
                         <tr>
-                            <td>{{ vehicle.date }}</td>
+                            <td data-sort="{{ vehicle.date|date:"Ymd" }}">{{ vehicle.date | date:"d-m-Y" }}</td>
                             <td>{{ vehicle.creditors_master }}</td>
                             <td>
                                 <a href="{% url 'vehicle-update'  vehicle.id %}" class="btn btn-info">

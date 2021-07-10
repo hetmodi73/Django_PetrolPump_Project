@@ -26,7 +26,7 @@
                     <tbody>
                         {% for employee_p in employee_payment %}
                         <tr>
-                            <td>{{ employee_p.date }}</td>
+                            <td data-sort="{{ employee_p.date|date:"Ymd" }}">{{ employee_p.date | date:"d-m-Y" }}</td>
                             <td>{{ employee_p.employee_master.first_name }}</td>
                             <td>
                                 <a href="{% url 'employee_payment-update'  employee_p.id %}" class="btn btn-info">

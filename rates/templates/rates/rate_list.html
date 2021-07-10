@@ -28,7 +28,7 @@
                     <tbody>
                         {% for rate in rates %}
                         <tr>
-                            <td>{{ rate.date }}</td>
+                            <td data-sort="{{ rate.date|date:"Ymd" }}">{{ rate.date | date:"d-m-Y" }}</td>
                             <td>{{ rate.petrol_price }}</td>
                             <td>{{ rate.diesel_price }}</td>
                             <td>{{ rate.oil_stock }}</td>

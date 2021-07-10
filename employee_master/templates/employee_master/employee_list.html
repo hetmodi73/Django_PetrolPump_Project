@@ -46,7 +46,7 @@
                     <tbody>
                         {% for employee in employee_master %}
                         <tr>
-                            <td>{{ employee.date }}</td>
+                            <td data-sort="{{ employee.date|date:"Ymd" }}">{{ employee.date | date:"d-m-Y" }}</td>
                             <td>{{ employee.employee_id }}</td>
                             <td>{{ employee.first_name }}</td>
                             <td>{{ employee.middle_name }}</td>

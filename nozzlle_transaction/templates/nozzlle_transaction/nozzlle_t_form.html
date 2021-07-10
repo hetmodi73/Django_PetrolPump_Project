@@ -519,4 +519,26 @@ $(function () {
           })
     </script>
 
+    <script>
+
+        document.addEventListener('DOMContentLoaded',function (){
+
+            document.querySelector('#id_loss_price_petrol').onfocusout=function (){
+
+                let cash=document.querySelector('#id_cash').value;
+                let paytm=document.querySelector('#id_paytm').value;
+                let phonepay=document.querySelector('#id_phonepay').value;
+                let card_debit_card=document.querySelector('#id_card').value;
+                let googlepay=document.querySelector('#id_googlepay').value;
+                let camount=document.querySelector('#id_creditoramount').value;
+                let tp=document.querySelector('#id_totaldprice').value;
+
+                let a=cash+paytm+phonepay+card+googlepay+camount
+
+                document.querySelector('#id_loss_price_petrol').value=a-tp;
+            }
+        })
+
+    </script>
+
 {% endblock %}

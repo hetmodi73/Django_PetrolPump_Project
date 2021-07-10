@@ -26,7 +26,7 @@
                     <tbody>
                         {% for suppliers in suppliers_master %}
                         <tr>
-                            <td>{{ suppliers.date }}</td>
+                            <td data-sort="{{ suppliers.date|date:"Ymd" }}">{{ suppliers.date | date:"d-m-Y" }}</td>
                             <td>{{ suppliers.receipt_no }}</td>
                             <td>
                                 <a href="{% url 'suppliers_master-update'  suppliers.id %}" class="btn btn-info">

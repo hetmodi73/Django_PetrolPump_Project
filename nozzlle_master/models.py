@@ -1,8 +1,10 @@
 from django.db import models
 from django.urls import reverse
+from datetime import datetime
 # Create your models here.
 
 class nozzlle(models.Model):
+    date=models.DateField(default=datetime.utcnow)
     nozzlle_no=models.IntegerField()
     choice= (
         ('petrol','petrol'),

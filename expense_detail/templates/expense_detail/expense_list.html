@@ -26,7 +26,7 @@
                     <tbody>
                         {% for expense in expense_detail %}
                         <tr>
-                            <td>{{ expense.date }}</td>
+                            <td data-sort="{{ expense.date|date:"Ymd" }}">{{ expense.date | date:"d-m-Y" }}</td>
                             <td>{{ expense.total_Amount }}</td>
                             <td>
                                 <a href="{% url 'expense_detail-update'  expense.id %}" class="btn btn-info">

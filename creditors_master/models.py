@@ -1,6 +1,7 @@
 from django.db import models
 from django.urls import reverse
 from django .core.validators import MinValueValidator
+from datetime import datetime
 # Create your models here.
 
 class creditors(models.Model):
@@ -21,7 +22,7 @@ class creditors(models.Model):
     country=models.CharField(max_length=20)
     gst_no=models.IntegerField()
     pending_balance=models.IntegerField(validators=[MinValueValidator(0,'Salary should not be less than 0')])
-    creation_date=models.DateField()
+    creation_date=models.DateField(default=datetime.utcnow)
 
     def __str__(self):
         return f"({self.creation_date})-({self.company_name})"
