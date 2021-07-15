@@ -1,11 +1,12 @@
 from django.db import models
 from django.urls import reverse
 from datetime import datetime
+from django.core.validators import MinValueValidator
 # Create your models here.
 
 class nozzlle(models.Model):
     date=models.DateField(default=datetime.utcnow)
-    nozzlle_no=models.IntegerField()
+    nozzlle_no=models.IntegerField(validators=[MinValueValidator(0,'Value should not be less than 0')])
     choice= (
         ('petrol','petrol'),
         ('Diesel','Diesel')

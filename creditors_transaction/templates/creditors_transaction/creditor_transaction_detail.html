@@ -9,33 +9,56 @@
                     </li>
 
                     <li class="list-group-item">
-                    <b> Company Name: </b> <a class="float-right">{{ object.vehicle_master }}</a>
+                    <b> Company Name: </b> <a class="float-right">{{ object.vehicle_master.creditors_master.company_name }}</a>
+                    </li>
+                    <li class="list-group-item">
+                    <b> Company Name: </b> <a class="float-right">{{ object.vehicle_master.vehicle_no }}</a>
                     </li>
 
                     <li class="list-group-item">
-                    <b> Type Of Vehicle: </b> <a class="float-right">{{ object.nozzlle_master }}</a>
+                    <b> Nozzlle Numer: </b> <a class="float-right">{{ object.nozzlle_master }}</a>
                     </li>
 
-                    <li class="list-group-item">
-                    <b> Vehicle Number: </b> <a class="float-right">{{ object.petrol_in_lit }}</a>
-                    </li>
+                    {% if object.nozzlle_master.nozzlle_type == 'petrol' %}
 
-                    <li class="list-group-item">
-                    <b> Type Of Fuel: </b> <a class="float-right">{{ object.diesel_in_lit }}</a>
-                    </li>
+                        <li class="list-group-item">
+                            <b> Total Litere petrol: </b> <a class="float-right">{{ object.petrol_in_lit }}</a>
+                        </li>
+                        <li class="list-group-item">
+                            <b> Price Of Petrol: </b> <a class="float-right">{{ object.petrol_price }}</a>
+                        </li>
+                    {% else %}
+                            <li class="list-group-item">
+                            <b> Total Litere Diesel: </b> <a class="float-right">{{ object.diesel_in_lit }}</a>
+                            </li>
 
-                    <li class="list-group-item">
-                    <b> Name Of Driver: </b> <a class="float-right">{{ object.petrol_price }}</a>
-                    </li>
 
-                    <li class="list-group-item">
-                    <b> Name Of Driver: </b> <a class="float-right">{{ object.diesel_price }}</a>
-                    </li>
+                            <li class="list-group-item">
+                            <b> Price Of Diesel: </b> <a class="float-right">{{ object.diesel_price }}</a>
+                            </li>
+
+                    {% endif %}
+
+
 
                     <li class="list-group-item">
                     <b> Remark: </b> <a class="float-right">{{ object.remark }}</a>
                     </li>
                 </div>
                 </ul>
+
+                <!-- this row will not appear when printing -->
+              <div class="row no-print">
+                <div class="col-6">
+                  <a href="invoice-print.html" rel="noopener" target="_blank" class="btn btn-default"><i class="fas fa-print"></i> Print</a>
+                  <button type="button" class="btn btn-success float-right"><i class="far fa-credit-card"></i> Submit
+                    Payment
+                  </button>
+                  <button type="button" class="btn btn-primary float-right" style="margin-right: 5px;">
+                    <i class="fas fa-download"></i> Generate PDF
+                  </button>
+                </div>
+              </div>
+
 </ul>
 {% endblock %}

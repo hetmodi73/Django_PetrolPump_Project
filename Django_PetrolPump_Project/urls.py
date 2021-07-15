@@ -39,7 +39,8 @@ urlpatterns = [
     path("nozzlle_transaction/",include("nozzlle_transaction.urls")),
     path("calculation_master/",include("calculation_master.urls")),
     path("dashboard/",dashboard,name="dashboard"),
-    path("expense_detail/",include("expense_detail.urls"))
+    path("expense_detail/",include("expense_detail.urls")),
+    path("e_dailybase_amount/",include("e_dailybase_amount.urls"))
 ]
 
 urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

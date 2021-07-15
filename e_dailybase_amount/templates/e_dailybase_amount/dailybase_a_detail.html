@@ -1,0 +1,30 @@
+{% extends "client/layout.html" %}
+{% block body %}
+<ul>
+    <h3 class="profile-username text-center" align="center"> Suppliers Details </h3>
+                <ul class="list-group list-group-unbordered mb-3">
+                <div>
+                    <li class="list-group-item">
+                    <b> Date: </b> <a class="float-right">{{ object.date }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Employee Id: </b> <a class="float-right">{{ object.employee_id }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Employee Name: </b> <a class="float-right">{{ object.employee_name }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> DailyBase Amount: </b> <a class="float-right">{{ object.amount }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Remark: </b> <a class="float-right">{{ object.remark }}</a>
+                    </li>
+
+                </div>
+                </ul>
+</ul>
+{% endblock %}

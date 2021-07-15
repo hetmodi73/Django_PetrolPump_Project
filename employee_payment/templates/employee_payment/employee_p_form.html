@@ -58,9 +58,9 @@
                       <div class="form-group col-lg-4 col-lg-4">
                     <label for="exampleInputDieselrate"> Amount On DailyBase </label>
                     <div class="input-group">
-                      {% crispy_field form.amount_dailybase %}
-                        {% if  form.amount_dailybase.errors %}
-                            {% for error in form.amount_dailybase.errors %}
+                      {% crispy_field form.e_dailybase_amount %}
+                        {% if  form.e_dailybase_amount.errors %}
+                            {% for error in form.e_dailybase_amount.errors %}
                                 <div class="invalid-feedback">
                                     {{ error }}
                                 </div>

@@ -272,4 +272,31 @@ $(function () {
 });
 </script>
 
+    <script>
+
+        //get the value of total amount of cash
+        document.addEventListener('DOMContentLoaded',function (){
+
+            document.querySelector('#id_total_Amount').onfocusout=function (){
+
+                let tea_coffee=document.querySelector('#id_tea_coffee').value;
+                let electricity=document.querySelector('#id_electricity').value;
+                let water_bill=document.querySelector('#id_water_bill').value;
+                let stationary=document.querySelector('#id_stationary').value;
+                let labour_expense=document.querySelector('#id_labour_expense').value;
+                let property_tax=document.querySelector('#id_property_tax').value;
+                let maintainence_expense=document.querySelector('#id_maintainence_expense').value;
+                let machinory_expense=document.querySelector('#id_machinory_expense').value;
+                let insurence_expence=document.querySelector('#id_insurence_expence').value;
+                let ruff_expense=document.querySelector('#id_ruff_expense').value;
+                let employee_insurance_expense=document.querySelector('#id_employee_insurance_expense').value;
+
+                let a=tea_coffee+electricity+water_bill+stationary+labour_expense+property_tax+maintainence_expense+machinory_expense+insurence_expence+ruff_expense+employee_insurance_expense
+
+                document.querySelector('#id_total_Amount').value=a;
+            }
+        })
+
+    </script>
+
 {% endblock %}

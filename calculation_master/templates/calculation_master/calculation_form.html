@@ -2,7 +2,7 @@
 {% load static %}
 {% load crispy_forms_field %}
 {% block extra_css %}
-<!-- daterange picker -->
+    <!-- daterange picker -->
   <link rel="stylesheet" href="{% static 'plugins/daterangepicker/daterangepicker.css' %}">
 
 {% endblock %}
@@ -35,10 +35,12 @@
                         </div>
                     </div>
                   </div>
-
                       <!-- /.form group -->
 
-                  <div class="row">
+
+                  <div>
+
+                      <div class="row">
 
                           <div class="form-group col-lg-6 col-lg-6">
                         <label for="exampleInputPetrolrate">Opening Of Tank</label>
@@ -64,12 +66,12 @@
                           {% endif %}
                       </div>
 
-                  </div>
+                      </div>
 
 
-                  <div class="row">
+                      <div class="row">
 
-                  <div class="form-group col-lg-6 col-lg-6">
+                        <div class="form-group col-lg-6 col-lg-6">
                     <label for="exampleInputDieselrate">Total Literes Petrol</label>
                     <div class="input-group">
                       {% crispy_field form.total_lit_petrol %}
@@ -83,7 +85,7 @@
                     </div>
                   </div>
 
-                  <div class="form-group col-lg-6 col-lg-6">
+                        <div class="form-group col-lg-6 col-lg-6">
                     <label for="exampleInputDieselrate">Total Literes Diesel</label>
                     <div class="input-group">
                       {% crispy_field form.total_lit_diesel %}
@@ -97,12 +99,12 @@
                     </div>
                   </div>
 
-                  </div>
+                      </div>
 
 
-                  <div class="row">
+                      <div class="row">
 
-                  <div class="form-group col-lg-6 col-lg-6">
+                        <div class="form-group col-lg-6 col-lg-6">
                     <label for="exampleInputDieselrate">Loss in Petrol</label>
                     <div class="input-group">
                       {% crispy_field form.loss_in_petrol %}
@@ -116,7 +118,7 @@
                     </div>
                   </div>
 
-                  <div class="form-group col-lg-6 col-lg-6">
+                        <div class="form-group col-lg-6 col-lg-6">
                     <label for="exampleInputDieselrate">Loss in Diesel</label>
                     <div class="input-group">
                       {% crispy_field form.loss_in_diesel %}
@@ -129,6 +131,9 @@
                         {% endif %}
                     </div>
                   </div>
+
+                      </div>
+
 
                   </div>
 

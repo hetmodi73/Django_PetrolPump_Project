@@ -216,17 +216,34 @@
                 <div class="row">
 
                     <!-- /.form group -->
-                  <div class="form-group col-lg-4 col-lg-4">
-                    <label for="exampleInputPetrolrate">D.O.B</label>
-                      {% crispy_field form.dob %}
-                      {% if  form.dob.errors %}
-                          {% for error in form.dob.errors %}
-                              <div class="invalid-feedback">
-                                  {{ error }}
-                              </div>
-                          {% endfor %}
-                      {% endif %}
-                  </div>
+{#                  <div class="form-group col-lg-4 col-lg-4">#}
+{#                    <label for="exampleInputPetrolrate">D.O.B</label>#}
+{#                      {% crispy_field form.dob %}#}
+{#                      {% if  form.dob.errors %}#}
+{#                          {% for error in form.dob.errors %}#}
+{#                              <div class="invalid-feedback">#}
+{#                                  {{ error }}#}
+{#                              </div>#}
+{#                          {% endfor %}#}
+{#                      {% endif %}#}
+{#                  </div>#}
+
+                    <div class="form-group col-lg-4 col-lg-4">
+                  <label>D.O.B</label>
+                    <div class="input-group date" id="reservationdate1" data-target-input="nearest">
+                        {% crispy_field form.dob %}
+                        {% if form.dob.errors %}
+                            {% for error in dob.errors %}
+                                <div class="invalid-feedback">
+                                {{ error }}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                        <div class="input-group-append" data-target="#reservationdate1" data-toggle="datetimepicker">
+                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                        </div>
+                    </div>
+                </div>
 
                 <!-- /.form group -->
                   <div class="form-group col-lg-4 col-lg-4">
@@ -304,16 +321,21 @@
 
                     <!-- /.form group -->
                   <div class="form-group col-lg-3 col-lg-3">
-                    <label for="exampleInputPetrolrate">Date_Of_Join</label>
-                      {% crispy_field form.Date_of_join %}
-                      {% if  form.Date_of_join.errors %}
-                          {% for error in form.Date_of_join.errors %}
-                              <div class="invalid-feedback">
-                                  {{ error }}
-                              </div>
-                          {% endfor %}
-                      {% endif %}
-                  </div>
+                  <label>Date Of Join</label>
+                    <div class="input-group date" id="reservationdate2" data-target-input="nearest">
+                        {% crispy_field form.dob %}
+                        {% if form.dob.errors %}
+                            {% for error in dob.errors %}
+                                <div class="invalid-feedback">
+                                {{ error }}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                        <div class="input-group-append" data-target="#reservationdate2" data-toggle="datetimepicker">
+                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                        </div>
+                    </div>
+                </div>
 
 
 
@@ -473,14 +495,36 @@
     <script src="{% static 'plugins/daterangepicker/daterangepicker.js' %}"></script>
     <!-- Tempusdominus Bootstrap 4 -->
     <script src="{% static 'plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js' %}"></script>
-<script>
-$(function () {
-    <!-- bootstrap color picker -->
-    //Date range picker
-    $('#reservationdate').datetimepicker({
-        format: 'YYYY-MM-DD'
+
+    <script>
+    $(function () {
+        <!-- bootstrap color picker -->
+        //Date range picker
+        $('#reservationdate').datetimepicker({
+            format: 'YYYY-MM-DD'
+        });
     });
-});
-</script>
+    </script>
+
+    <script>
+    $(function () {
+        <!-- bootstrap color picker -->
+        //Date range picker
+        $('#reservationdate1').datetimepicker({
+            format: 'YYYY-MM-DD'
+        });
+    });
+    </script>
+
+        <script>
+    $(function () {
+        <!-- bootstrap color picker -->
+        //Date range picker
+        $('#reservationdate2').datetimepicker({
+            format: 'YYYY-MM-DD'
+        });
+    });
+    </script>
+
 
 {% endblock %}

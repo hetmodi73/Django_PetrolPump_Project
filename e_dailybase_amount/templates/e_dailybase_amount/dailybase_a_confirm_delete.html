@@ -1,0 +1,39 @@
+{% extends "client/layout.html" %}
+{% block body %}
+    <h1 align="center"> Are you Sure You Want To Delete ? </h1>
+    <hr/>
+    <form method="post">
+    {% csrf_token %}
+
+        <ul>
+            <div>
+                    <li class="list-group-item">
+                    <b> Date: </b> <a class="float-right">{{ object.date }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Employee Id: </b> <a class="float-right">{{ object.employee_id }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Employee Name: </b> <a class="float-right">{{ object.employee_name }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> DailyBase Amount: </b> <a class="float-right">{{ object.amount }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Remark: </b> <a class="float-right">{{ object.remark }}</a>
+                    </li>
+
+            </div>
+        </ul>
+
+        <div align="center">
+            <input type="submit" value="Delete" class="btn btn-danger">
+            <a href="{% url 'suppliers_master-view' %}" class="btn btn-info">Cancel </a>
+        </div>
+
+    </form>
+{% endblock %}
