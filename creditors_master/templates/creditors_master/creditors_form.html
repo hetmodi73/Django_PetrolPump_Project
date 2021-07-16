@@ -4,17 +4,19 @@
 
 {% block body %}
     <!-- general form elements -->
+
             <div class="card card-primary">
               <div class="card-header">
                 <h3 class="card-title" textalign="center"> Creditors Entry Form </h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form method="post">
+              <div method="post">
               {% csrf_token %}
             <!-- /.form group -->
                     <hr/>
-              <div>
+
+                  <div>
                      <div class="row">
 
                          <div class="form-group col-lg-4 col-lg-4">
@@ -298,6 +300,7 @@
 
                     </div>
 
+                  </div>
               </div>
 
                   <div class="card-footer" align="center">

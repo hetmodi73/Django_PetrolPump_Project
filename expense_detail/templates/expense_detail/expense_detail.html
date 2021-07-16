@@ -1,9 +1,16 @@
 {% extends "client/layout.html" %}
 {% block body %}
-<ul>
-    <h3 class="profile-username text-center" align="center"> Expense Details </h3>
+
+    <h3 class="profile-username text-center"> Expense Details </h3>
+<hr/>
+
+        <div class="col-md-6">
+
+            <div class="card card-primary card-outline" class="col-md-4">
+              <div class="card-body box-profile">
+
                 <ul class="list-group list-group-unbordered mb-3">
-                <div>
+
                     <li class="list-group-item">
                     <b> Date: </b> <a class="float-right">{{ object.date }}</a>
                     </li>
@@ -31,6 +38,21 @@
                     <li class="list-group-item">
                     <b> Property Tax Expense: </b> <a class="float-right">{{ object.property_tax }}</a>
                     </li>
+
+                </ul>
+
+              </div>
+
+            </div>
+
+    </div>
+
+    <div class="col-md-6">
+
+            <div class="card card-primary card-outline" class="col-md-4">
+              <div class="card-body box-profile">
+
+                <ul class="list-group list-group-unbordered mb-3">
 
                     <li class="list-group-item">
                     <b> Maintainenece Expense: </b> <a class="float-right">{{ object.maintainence_expense }}</a>
@@ -60,8 +82,13 @@
                     <b> Remark: </b> <a class="float-right">{{ object.remark }}</a>
                     </li>
 
-
-                </div>
                 </ul>
-</ul>
+
+              </div>
+
+            </div>
+
+    </div>
+
 {% endblock %}
+

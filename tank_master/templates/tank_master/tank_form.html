@@ -155,7 +155,7 @@
                   <div class="row">
 
                       <div class="form-group form-group col-lg-6 col-lg-6">
-                        <label for="exampleInputPetrolrate">Oil Opening in Ltr </label>
+                        <label for="exampleInputPetrolrate">Opening Literes Of Oil</label>
                           {% crispy_field form.oil_lit_opening %}
                           {% if  form.oil_lit_opening.errors %}
                               {% for error in form.oil_lit_opening.errors %}
@@ -168,7 +168,7 @@
 
                       <div class="form-group form-group col-lg-6 col-lg-6">
                         <label for="exampleInputPetrolrate">
-                            Oil Closing (LTR)
+                            Closing Literes Of Oil
                         </label>
                           {% crispy_field form.oil_lit_closing %}
                           {% if  form.oil_lit_closing.errors %}

@@ -1,11 +1,16 @@
 {% extends "client/layout.html" %}
 {% block body %}
-<ul>
-    <h3 class="profile-username text-center" align="center"> Nozzlle Transaction Details </h3>
+
+    <h3 class="profile-username text-center"> Nozzlle Transaction Details </h3>
+<hr/>
+    <div class="col-md-5">
+
+            <div class="card card-primary card-outline" class="col-md-4">
+              <div class="card-body box-profile">
+
                 <ul class="list-group list-group-unbordered mb-3">
 
-                    <div>
-                        <li class="list-group-item">
+                    <li class="list-group-item">
                     <b> Date: </b> <a class="float-right">{{ object.date }}</a>
                     </li>
 
@@ -37,6 +42,21 @@
                     <b> Amount Of UPI: </b> <a class="float-right">{{ object.upi }}</a>
                     </li>
 
+                </ul>
+
+              </div>
+
+            </div>
+
+    </div>
+
+    <div class="col-md-5">
+
+            <div class="card card-primary card-outline" class="col-md-4">
+              <div class="card-body box-profile">
+
+                <ul class="list-group list-group-unbordered mb-3">
+
                     <li class="list-group-item">
                     <b> Amount Of Credit/Debit Card: </b> <a class="float-right">{{ object.credit_debit_card }}</a>
                     </li>
@@ -65,6 +85,20 @@
                     <b> Loss Of Price in Diesel: </b> <a class="float-right">{{ object.loss_price_diesel }}</a>
                     </li>
 
+                </ul>
+
+              </div>
+
+            </div>
+    </div>
+
+    <div class="col-md-5">
+
+            <div class="card card-primary card-outline" class="col-md-4">
+              <div class="card-body box-profile">
+
+                <ul class="list-group list-group-unbordered mb-3">
+
                     <li class="list-group-item">
                     <b> Opening Time: </b> <a class="float-right">{{ object.opening_time }}</a>
                     </li>
@@ -89,8 +123,11 @@
                     <b> Closing Of Diesel in Literes: </b> <a class="float-right">{{ object.closing_lit_Diesel }}</a>
                     </li>
 
-                    </div>
-
                 </ul>
-</ul>
+
+              </div>
+
+            </div>
+    </div>
+
 {% endblock %}

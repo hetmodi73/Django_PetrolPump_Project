@@ -2,8 +2,13 @@
 {% block body %}
 
     <h3 class="profile-username text-center"> Tank Details </h3>
+<hr/>
+    <div class="col-md-6">
+
+            <div class="card card-primary card-outline" class="col-md-4">
+              <div class="card-body box-profile">
+
                 <ul class="list-group list-group-unbordered mb-3">
-                <div>
                     <li class="list-group-item">
                     <b>Date: </b> <a class="float-right">{{ object.date }}</a>
                     </li>
@@ -19,6 +24,22 @@
                     <li class="list-group-item">
                     <b>Closing Of Diesel: </b> <a class="float-right">{{ object.diesel_closing }}</a>
                     </li>
+
+                </ul>
+
+              </div>
+
+            </div>
+
+    </div>
+
+    <div class="col-md-6">
+
+            <div class="card card-primary card-outline" class="col-md-4">
+              <div class="card-body box-profile">
+
+                <ul class="list-group list-group-unbordered mb-3">
+
                     <li class="list-group-item">
                     <b>Loss Of Petrol in Literes: </b> <a class="float-right">{{ object.loss_petrol_lit }}</a>
                     </li>
@@ -31,9 +52,18 @@
                     <li class="list-group-item">
                     <b>Loss Of Diesel in Price: </b> <a class="float-right">{{ object.loss_diesel_price }}</a>
                     </li>
-
-                </div>
+                    <li class="list-group-item">
+                    <b>Opening Literes Of Oil: </b> <a class="float-right">{{ object.oil_lit_opening }}</a>
+                    </li>
+                    <li class="list-group-item">
+                    <b>Closing Literes Of Oil: </b> <a class="float-right">{{ object.oil_lit_closing }}</a>
+                    </li>
 
                 </ul>
+
+              </div>
+
+            </div>
+    </div>
 
 {% endblock %}

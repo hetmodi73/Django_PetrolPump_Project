@@ -275,4 +275,27 @@ $(function () {
         })
     </script>
 
+        <script>
+
+        document.addEventListener('DOMContentLoaded',function (){
+            document.querySelector('#id_loss_price_diesel').onfocusin=function (){
+
+                let cash=parseInt(document.querySelector('#id_cash').value);
+                let phonePay=parseInt(document.querySelector('#id_phonePay').value);
+                let googlePay=parseInt(document.querySelector('#id_googlePay').value);
+                let paytm=parseInt(document.querySelector('#id_paytm').value);
+                let upi=parseInt(document.querySelector('#id_upi').value);
+                let credit_debit_card=parseInt(document.querySelector('#id_credit_debit_card').value);
+                let creditor_amount=parseInt(document.querySelector('#id_creditor_amount').value);
+
+                let total_price_diesel=document.querySelector('#id_total_price_diesel').value;
+
+                let tamount=(cash+phonePay+googlePay+paytm+upi+credit_debit_card+creditor_amount);
+
+                console.log(tamount)
+                document.querySelector('#id_loss_price_diesel').value=total_price_diesel-tamount;
+            }
+        })
+    </script>
+
 {% endblock %}
