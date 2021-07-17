@@ -170,23 +170,23 @@
 {#            <span class="brand-text font-weight-light">AdminLTE 3</span>#}
 {#    #}
             <h1 align="center">
-                Indian Oil
+
+                <img src="{% static 'Indian_Oil_Logo.jpeg' %}" height="150" width="150">
+
             </h1>
         </a>
 
     <!-- Sidebar -->
     <div class="sidebar">
       <!-- Sidebar user (optional) -->
+      <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-          {#        <div class="image">#}
-          {#          <img src="../../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">#}
-          {#        </div>#}
-
-
-          <h1>
-                  <a href="#" class="d-block">  </a>
-          </h1>
-
+        <div class="image">
+          <img src="{% static '20210629_222659-01-min.jpeg' %}" class="img-circle elevation-2" alt="User Image">
+        </div>
+        <div class="info">
+          <a href="#" class="d-block">{{ user.username }}</a>
+        </div>
       </div>
 
       <!-- SidebarSearch Form -->
@@ -1295,6 +1295,8 @@
 <!-- AdminLTE for demo purposes -->
 <script src="{% static 'dist/js/demo.js' %}" ></script>
 {% block extra_js %}
+
+
 {% endblock %}
 </div>
 </body>
