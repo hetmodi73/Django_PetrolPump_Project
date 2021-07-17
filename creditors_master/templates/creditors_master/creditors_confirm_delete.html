@@ -4,67 +4,102 @@
     <hr/>
     <form method="post">
     {% csrf_token %}
-     <ul>
-         <li class="list-group-item">
-                    <b> First Name: </b> <a class="float-right">{{ object.first_name }}</a>
-                    </li>
+
+
+    <div class="row">
+
+        <div class="col-md-5">
+            <div class="card card-primary card-outline" class="col-md-4">
+              <div class="card-body box-profile">
+
+                <ul class="list-group list-group-unbordered mb-3">
                     <li class="list-group-item">
-                    <b> Middle Name: </b> <a class="float-right">{{ object.middle_name }}</a>
-                    </li>
-                    <li class="list-group-item">
-                    <b> Last Name: </b> <a class="float-right">{{ object.last_name }}</a>
-                    </li>
-                    <li class="list-group-item">
-                    <b>Mobile Number: </b> <a class="float-right">{{ object.mobile_no }}</a>
-                    </li>
-                    <li class="list-group-item">
-                    <b> Office Number: </b> <a class="float-right">{{ object.office_no }}</a>
-                    </li>
-                    <li class="list-group-item">
-                    <b>Contact Person's Name: </b> <a class="float-right">{{ object.contact_person_name }}</a>
-                    </li>
-                    <li class="list-group-item">
-                    <b>Contact Person's Mobile Number: </b> <a class="float-right">{{ object.contact_person_mobile_no }}</a>
-                    </li>
-                    <li class="list-group-item">
-                    <b>Company Name: </b> <a class="float-right">{{ object.company_name }}</a>
-                    </li>
-                    <li class="list-group-item">
-                    <b>Address/Home Number: </b> <a class="float-right">{{ object.home_no }}</a>
-                    </li>
-                    <li class="list-group-item">
-                    <b>Street Name: </b> <a class="float-right">{{ object.street_name }}</a>
-                    </li>
-                    <li class="list-group-item">
-                    <b>Area Name: </b> <a class="float-right">{{ object.area_name }}</a>
-                    </li>
-                    <li class="list-group-item">
-                    <b>Pincode: </b> <a class="float-right">{{ object.pincode }}</a>
-                    </li>
-                    <li class="list-group-item">
-                    <b>City: </b> <a class="float-right">{{ object.city }}</a>
-                    </li>
-                    <li class="list-group-item">
-                    <b>State: </b> <a class="float-right">{{ object.state }}</a>
-                    </li>
-                    <li class="list-group-item">
-                    <b>Country: </b> <a class="float-right">{{ object.country }}</a>
-                    </li>
-                    <li class="list-group-item">
-                    <b>GST Number: </b> <a class="float-right">{{ object.gst_no }}</a>
-                    </li>
-                    <li class="list-group-item">
-                    <b>Pending Balance: </b> <a class="float-right">{{ object.pending_balance }}</a>
-                    </li>
-                    <li class="list-group-item">
-                    <b>Creation Date: </b> <a class="float-right">{{ object.creation_date }}</a>
+                        <b> Creditor Name:</b> <a class="float-right">{{ object.first_name }} {{ object.middle_name }} {{ object.last_name }}</a>
                     </li>
 
-     </ul>
+                    <li class="list-group-item">
+                        <b> Creation Date:</b> <a class="float-right">{{ object.creation_date }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                        <b>Employee Id:</b> <a class="float-right">{{ object.employee_id }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                        <b>Mobile Number:</b> <a class="float-right">{{ object.mobile_no }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                        <b>Office Number:</b> <a class="float-right">{{ object.office_no }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                        <b>Contact Person's Name:</b> <a class="float-right">{{ object.contact_person_name }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                        <b>Contact Person's Mobile Number:</b> <a class="float-right">{{ object.contact_person_mobile_no }}</a>
+                    </li>
+
+                </ul>
+
+              </div>
+
+            </div>
+        </div>
+
+        <div class="col-md-5">
+
+            <div class="card card-primary card-outline" class="col-md-4">
+
+              <div class="card-body box-profile">
+
+                <ul class="list-group list-group-unbordered mb-3">
+                        <li class="list-group-item">
+                            <b>Company Name:</b> <a class="float-right">{{ object.company_name }}</a>
+                        </li>
+
+                        <li class="list-group-item">
+                            <b>Address:</b> <a class="float-right">{{ object.home_no }},{{ object.street_name }},{{ object.area_name }}</a>
+                        </li>
+
+                        <li class="list-group-item">
+                            <b>City:</b> <a class="float-right">{{ object.city }}</a>
+                        </li>
+
+                        <li class="list-group-item">
+                            <b>State:</b> <a class="float-right">{{ object.state }}</a>
+                        </li>
+
+                        <li class="list-group-item">
+                            <b>Country:</b> <a class="float-right">{{ object.country }}</a>
+                        </li>
+
+                        <li class="list-group-item">
+                            <b>Pincode:</b> <a class="float-right">{{ object.pincode }}</a>
+                        </li>
+
+                        <li class="list-group-item">
+                            <b>GST Number:</b> <a class="float-right">{{ object.gst_no }}</a>
+                        </li>
+
+                        <li class="list-group-item">
+                            <b>Pending Balance:</b> <a class="float-right">{{ object.pending_balance }}</a>
+                        </li>
+
+                </ul>
+
+              </div>
+
+            </div>
+        </div>
+
+    </div>
+
         <div align="center">
 
-            <input type="submit" value="delete" class="btn btn-danger">
-            <a href="{% url 'creditors-view' %}" class="btn btn-info">cancel </a>
+            <input type="submit" value="Delete" class="btn btn-danger">
+            <a href="{% url 'creditors-view' %}" class="btn btn-info">Cancel </a>
 
         </div>
 

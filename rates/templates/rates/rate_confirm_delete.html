@@ -4,25 +4,42 @@
     <hr/>
     <form method="post">
     {% csrf_token %}
-     <ul>
-             <li class="list-group-item">
-             <b> Date: </b> <a class="float-right">{{ object.date }}</a>
-             </li>
 
-             <li class="list-group-item">
-             <b> Petrol Price: </b> <a class="float-right">{{ object.petrol_price }}</a>
-             </li>
+         <div align="center">
 
-             <li class="list-group-item">
-             <b> Diesel Price: </b> <a class="float-right">{{ object.diesel_price }}</a>
-             </li>
+            <div class="col-md-6" align="left">
 
-             <li class="list-group-item">
-             <b> Stock Of Oil: </b> <a class="float-right">{{ object.oil_stock }}</a>
-             </li>
+            <div class="card card-primary card-outline" class="col-md-4">
+              <div class="card-body box-profile">
 
+                <ul class="list-group list-group-unbordered mb-3" >
 
-     </ul>
+                    <li class="list-group-item">
+                    <b> Date: </b> <a class="float-right">{{ object.date }}</a>
+                    </li>
+
+                     <li class="list-group-item">
+                     <b> Petrol Price: </b> <a class="float-right">{{ object.petrol_price }}</a>
+                     </li>
+
+                     <li class="list-group-item">
+                     <b> Diesel Price: </b> <a class="float-right">{{ object.diesel_price }}</a>
+                     </li>
+
+                     <li class="list-group-item">
+                     <b> Stock Of Oil: </b> <a class="float-right">{{ object.oil_stock }}</a>
+                     </li>
+
+                </ul>
+
+              </div>
+
+            </div>
+
+    </div>
+
+    </div>
+
         <div align="center">
             <input type="submit" value="Delete" class="btn btn-danger">
             <a href="{% url 'rate-view' %}" class="btn btn-info" >cancel </a>

@@ -4,8 +4,16 @@
     <hr/>
     <form method="post">
     {% csrf_token %}
-     <ul>
-                        <li class="list-group-item">
+
+<div class="row">
+
+         <div class="col-md-6">
+
+            <div class="card card-primary card-outline" class="col-md-4">
+              <div class="card-body box-profile">
+
+                <ul class="list-group list-group-unbordered mb-3">
+                    <li class="list-group-item">
                     <b>Date: </b> <a class="float-right">{{ object.date }}</a>
                     </li>
                     <li class="list-group-item">
@@ -20,6 +28,22 @@
                     <li class="list-group-item">
                     <b>Closing Of Diesel: </b> <a class="float-right">{{ object.diesel_closing }}</a>
                     </li>
+
+                </ul>
+
+              </div>
+
+            </div>
+
+    </div>
+
+        <div class="col-md-6">
+
+            <div class="card card-primary card-outline" class="col-md-4">
+              <div class="card-body box-profile">
+
+                <ul class="list-group list-group-unbordered mb-3">
+
                     <li class="list-group-item">
                     <b>Loss Of Petrol in Literes: </b> <a class="float-right">{{ object.loss_petrol_lit }}</a>
                     </li>
@@ -39,11 +63,16 @@
                     <b>Closing Literes Of Oil: </b> <a class="float-right">{{ object.oil_lit_closing }}</a>
                     </li>
 
+                </ul>
 
+              </div>
 
+            </div>
+    </div>
 
-    </ul>
-        <div align="center">
+    </div>
+
+    <div align="center">
             <input type="submit" value="delete" class="btn btn-danger">
             <a href="{% url 'tank-view' %}" class="btn btn-info" >cancel </a>
         </div>
