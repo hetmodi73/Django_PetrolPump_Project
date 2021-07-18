@@ -1,0 +1,50 @@
+{% extends "client/layout.html" %}
+{% block body %}
+    <h1 align="center"> Nozzlle Details </h1>
+    <hr/>
+    <form method="post">
+    {% csrf_token %}
+
+
+<div align="center">
+
+            <div class="col-md-6" align="left">
+
+            <div class="card card-primary card-outline" class="col-md-4">
+              <div class="card-body box-profile">
+
+                <ul class="list-group list-group-unbordered mb-3" >
+
+                    <li class="list-group-item">
+                    <b> Date: </b> <a class="float-right">{{ object.date }}</a>
+                    </li>
+
+                     <li class="list-group-item">
+                     <b> Nozzlle Number: </b> <a class="float-right">{{ object.nozzlle_no }}</a>
+                     </li>
+
+                     <li class="list-group-item">
+                     <b> Nozzlle Type: </b> <a class="float-right">{{ object.nozzlle_type }}</a>
+                     </li>
+
+                     <li class="list-group-item">
+                     <b> Remark: </b> <a class="float-right">{{ object.remark }}</a>
+                     </li>
+
+                </ul>
+
+              </div>
+
+            </div>
+
+    </div>
+
+    </div>
+
+    </form>
+
+            <div align="center">
+                 <a href="{% url 'nozzlle-view' %}" class="btn btn-info"><b>Back</b></a>
+            </div>
+
+{% endblock %}

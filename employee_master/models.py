@@ -37,7 +37,7 @@ class employee(models.Model):
     Date_of_join=models.DateField()
     expected_salary=models.IntegerField(validators=[MinValueValidator(0,'Value should not be less than 0')])
     photo=models.ImageField(default='default.jpg',upload_to='profile',blank=True,null=True)
-    Document_file = models.FileField(blank=True,null=True,upload_to='profile')
+    Document_file = models.FileField(default="",blank=True,null=True,upload_to='profile')
     bank_name=models.CharField(max_length=20,null=True,blank=True)
     account_no=models.IntegerField(blank=True,null=True,validators=[MinValueValidator(0,'Value should not be less than 0')])
     ifsc_code=models.IntegerField(blank=True,null=True,validators=[MinValueValidator(0,'Value should not be less than 0')])

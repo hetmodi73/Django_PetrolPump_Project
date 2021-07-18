@@ -72,34 +72,54 @@
 {% endblock %}
 
 {% block extra_js %}
-
-<!-- DataTables  & Plugins -->
-
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.7.1/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/colreorder/1.5.4/js/dataTables.colReorder.min.js"></script>
     <script src="https://cdn.datatables.net/searchbuilder/1.1.0/js/dataTables.searchBuilder.min.js"></script>
     <script src="https://cdn.datatables.net/datetime/1.1.0/js/dataTables.dateTime.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.7.1/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.7.1/js/dataTables.buttons.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/1.7.1/js/buttons.print.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.7.1/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.7.1/js/buttons.colVis.min.js"></script>
 
-
-    <!-- Page specific script -->
 
     <script>
-
-        $(document).ready(function() {
-            $('#example1').DataTable( {
-                dom: 'QBfrtip',
-                buttons: [
-                    'copy', 'csv', 'excel', 'pdf', 'print'
-                ]
-            } );
-        } );
-
+    $(document).ready(function() {
+    $('#example1').DataTable( {
+        dom: 'QBfrtip',
+        colReorder: true,
+        buttons: [
+            'colvis',
+            'copy',
+            {
+                extend: 'excel',
+                messageTop: 'PDF created by PDFMake with Buttons for DataTables.',
+                exportOptions: {
+                    columns: ':visible'
+                }
+            },
+            {
+                extend: 'pdfHtml5',
+                messageTop: 'INDIAN OIL',
+                exportOptions: {
+                    columns: ':visible'
+                }
+            },
+              {
+                    extend: 'print',
+                    messageTop: "<div class='col-sm-3'></div><div class='col-sm-3'><img src='{% static 'Indian_Oil_Logo.jpeg' %}' width='100' height='100'></img></div>",
+                    exportOptions:{
+                        columns:':visible'
+                    }
+            }
+        ]
+    } );
+} );
     </script>
+    <!-- Custom Js -->
+    <script src="{% static 'js/admin.js'%}"></script>
 
 {% endblock %}
