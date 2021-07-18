@@ -24,6 +24,11 @@ def dashboard(request):
     total_petorl_price=data1.aggregate(Sum('total_price_petrol'))
     total_diesel_price=data1.aggregate(Sum('total_price_diesel'))
     print(total_petorl_price)
+
+    if total_petorl_price['total_price_petrol__sum'] is None :
+        total_petorl_price['total_price_petrol__sum']=0
+    if total_diesel_price['total_price_diesel__sum'] is None:
+        total_diesel_price['total_price_diesel__sum']=0
     today_collection=total_petorl_price['total_price_petrol__sum']+total_diesel_price['total_price_diesel__sum']
 
 

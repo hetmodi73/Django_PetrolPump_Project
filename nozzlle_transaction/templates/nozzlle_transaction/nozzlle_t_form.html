@@ -167,20 +167,18 @@
                             <div class="form-group">
                           <label>Opening Time</label>
 
-                          <div class="input-group">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text"><i class="far fa-clock"></i></span>
-                            </div>
-                              {% crispy_field form.opening_time %}
-                                {% if  form.opening_time.errors %}
+                          <div class="input-group date" id="timepicker" data-target-input="nearest">
+                            {% crispy_field form.opening_time 'class' 'datetimepicker-input' 'data-target' '#timepicker' %}
+                                {% if form.opening_time.errors %}
                                     {% for error in form.opening_time.errors %}
-                                        <div class="invalid-feedback">
-                                            {{ error }}
-                                        </div>
+                                        <label class="invalid-feedback"><b>{{ error }}</b></label>
                                     {% endfor %}
                                 {% endif %}
+                              <div class="input-group-append" data-target="#timepicker" data-toggle="datetimepicker">
+                                  <div class="input-group-text"><i class="far fa-clock"></i></div>
+                              </div>
                           </div>
-                          <!-- /.input group -->
+                                                  <!-- /.input group -->
                             </div>
 
 {#                      <div class="form-group col-lg-6 col-lg-6">#}
@@ -201,18 +199,16 @@
                         <div class="form-group">
                           <label>Closing Time</label>
 
-                          <div class="input-group">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text"><i class="far fa-clock"></i></span>
-                            </div>
-                              {% crispy_field form.closing_time %}
-                                {% if  form.closing_time.errors %}
+                          <div class="input-group date" id="timepicker1" data-target-input="nearest">
+                            {% crispy_field form.closing_time 'class' 'datetimepicker-input' 'data-target' '#timepicker1' %}
+                                {% if form.closing_time.errors %}
                                     {% for error in form.closing_time.errors %}
-                                        <div class="invalid-feedback">
-                                            {{ error }}
-                                        </div>
+                                        <label class="invalid-feedback"><b>{{ error }}</b></label>
                                     {% endfor %}
                                 {% endif %}
+                              <div class="input-group-append" data-target="#timepicker1" data-toggle="datetimepicker">
+                                  <div class="input-group-text"><i class="far fa-clock"></i></div>
+                              </div>
                           </div>
                           <!-- /.input group -->
                         </div>
@@ -436,10 +432,7 @@
     <!-- Tempusdominus Bootstrap 4 -->
     <script src="{% static 'plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js'%}">
 
-        <!-- date-range-picker -->
-    <script src="{% static 'plugins/daterangepicker/daterangepicker.js' %}"></script>
 
-    <script src="{%  static 'plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js'%}"></script>
 
     </script>
 
@@ -452,22 +445,18 @@
             format: 'YYYY-MM-DD'
         });
 
-         //Timepicker//
-        $('#id_opening_time').datetimepicker({
+
+        //Timepicker//
+        $('#timepicker').datetimepicker({
             format: 'LT'
-        })
+        });
 
-             //Timepicker//
-        $('#id_closing_time').datetimepicker({
+        $('#timepicker1').datetimepicker({
             format: 'LT'
-        })
 
-        $('.timepicker').bootstrapMaterialDatePicker({
-        format: 'HH:mm',
-        clearButton: true,
-        date: false
-
+        });
     });
+
     </script>
 
     <script>
