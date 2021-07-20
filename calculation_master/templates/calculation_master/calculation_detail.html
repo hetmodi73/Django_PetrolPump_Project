@@ -13,32 +13,40 @@
 
                 <ul class="list-group list-group-unbordered mb-3" >
 
-                    <li class="list-group-item">
+<li class="list-group-item">
                     <b> Date: </b> <a class="float-right">{{ object.date }}</a>
                     </li>
 
                     <li class="list-group-item">
-                    <b> Company Name: </b> <a class="float-right">{{ object.tank_opening }}</a>
+                    <b> Opening Of Petrol in Tank: </b> <a class="float-right">{{ object.tank_lit_petrol }}</a>
                     </li>
 
                     <li class="list-group-item">
-                    <b> Type Of Vehicle: </b> <a class="float-right">{{ object.tank_closing }}</a>
+                    <b> Closing Of Petrol in Tank: </b> <a class="float-right">{{ object.tank_lit_diesel }}</a>
                     </li>
 
                     <li class="list-group-item">
-                    <b> Vehicle Number: </b> <a class="float-right">{{ object.total_lit_petrol }}</a>
+                    <b> Opening Of Diesel in Tank: </b> <a class="float-right">{{ object.total_lit_petrol }}</a>
                     </li>
 
                     <li class="list-group-item">
-                    <b> Type Of Fuel: </b> <a class="float-right">{{ object.total_lit_diesel }}</a>
+                    <b> Closing Of Diesel in Tank: </b> <a class="float-right">{{ object.total_lit_diesel }}</a>
                     </li>
 
                     <li class="list-group-item">
-                    <b> Name Of Driver: </b> <a class="float-right">{{ object.loss_in_petrol }}</a>
+                    <b> Total Literes Petrol: </b> <a class="float-right">{{ object.total_price_petrol }}</a>
                     </li>
 
                     <li class="list-group-item">
-                    <b> Name Of Driver: </b> <a class="float-right">{{ object.loss_in_diesel }}</a>
+                    <b> Total Literes Diesel: </b> <a class="float-right">{{ object.total_price_diesel }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Loss in Petrol: </b> <a class="float-right">{{ object.loss_in_petrol }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Loss in Diesel: </b> <a class="float-right">{{ object.loss_in_diesel }}</a>
                     </li>
 
                 </ul>

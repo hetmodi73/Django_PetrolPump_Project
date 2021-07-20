@@ -161,13 +161,13 @@
 
                   </div>
 
-                      <div col-lg-12 col-lg-12 class="row">
+                      <div class="row">
 
                         <!-- Date and time range -->
-                            <div class="form-group">
+                            <div class="form-group" col-lg-12 col-lg-12>
                           <label>Opening Time</label>
 
-                          <div class="input-group date" id="timepicker" data-target-input="nearest">
+                          <div class="input-group date" id="timepicker" data-target-input="nearest" col-lg-12 col-lg-12>
                             {% crispy_field form.opening_time 'class' 'datetimepicker-input' 'data-target' '#timepicker' %}
                                 {% if form.opening_time.errors %}
                                     {% for error in form.opening_time.errors %}
@@ -196,10 +196,10 @@
 {#                      </div>#}
 
                         <!-- Date and time range -->
-                        <div class="form-group">
+                        <div class="form-group" col-lg-12 col-lg-12>
                           <label>Closing Time</label>
 
-                          <div class="input-group date" id="timepicker1" data-target-input="nearest">
+                          <div class="input-group date" id="timepicker1" data-target-input="nearest" col-lg-12 col-lg-12>
                             {% crispy_field form.closing_time 'class' 'datetimepicker-input' 'data-target' '#timepicker1' %}
                                 {% if form.closing_time.errors %}
                                     {% for error in form.closing_time.errors %}

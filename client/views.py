@@ -1,6 +1,13 @@
+from django.db.models.functions import TruncMonth
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from tank_master.models import tank
+from datetime import datetime
+from creditors_master.models import creditors
+from django.db.models import Sum
+from nozzlle_transaction.models import nozzlle_t
+from django.http.response import JsonResponse
+from rates.models import rate
 
 # Create your views here.
 @login_required
@@ -18,6 +25,7 @@ def dashboard(request):
     from creditors_master.models import creditors
     data = creditors.objects.all().aggregate(Sum('pending_balance'))
     print(data)
+
     #nozzell trancsations
     from nozzlle_transaction.models import nozzlle_t
     data1=nozzlle_t.objects.filter(date=datetime.utcnow().date())
@@ -38,4 +46,18 @@ def dashboard(request):
         'pending_amount':data['pending_balance__sum'],
         'today_collection':today_collection
     })
+
+
+def get_petrol_amount_by_month_chart(request):
+    from django.db.models import Sum
+    from datetime import datetime
+    from calculation_master.models import calculation
+    result = calculation.objects.annotate(month=TruncMonth('date')).values('month').annotate(
+         no_of_ad=Sum('total_lit_petrol'))
+    data = {'label': [], 'values': []}
+    for ex in result:
+        data['label'].append(datetime.strftime(ex['month'], '%B'))
+        data['values'].append(ex['no_of_ad'])
+        print(data)
+    return JsonResponse(data)
 

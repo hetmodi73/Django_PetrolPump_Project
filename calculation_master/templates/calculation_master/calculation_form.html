@@ -39,10 +39,10 @@
                       <div class="row">
 
                           <div class="form-group col-lg-6 col-sm-6">
-                            <label for="exampleInputPetrolrate">Opening Of Tank</label>
-                            {% crispy_field form.tank_opening %}
-                              {% if  form.tank_opening.errors %}
-                                    {% for error in form.tank_opening.errors %}
+                            <label for="exampleInputPetrolrate">Total Litere Petrol</label>
+                            {% crispy_field form.total_lit_petrol %}
+                              {% if  form.total_lit_petrol.errors %}
+                                    {% for error in form.total_lit_petrol.errors %}
                                       <div class="invalid-feedback">
                                           {{ error }}
                                       </div>
@@ -51,10 +51,38 @@
                           </div>
 
                           <div class="form-group col-lg-6 col-sm-6">
-                              <label for="exampleInputPetrolrate">Closing Of Tank</label>
-                              {% crispy_field form.tank_closing %}
-                              {% if  form.tank_closing.errors %}
-                                  {% for error in form.tank_closing.errors %}
+                              <label for="exampleInputPetrolrate">Total Litere Diesel</label>
+                              {% crispy_field form.total_lit_diesel %}
+                              {% if  form.total_lit_diesel.errors %}
+                                  {% for error in form.total_lit_diesel.errors %}
+                                      <div class="invalid-feedback">
+                                          {{ error }}
+                                      </div>
+                                  {% endfor %}
+                              {% endif %}
+                          </div>
+
+                      </div>
+
+                      <div class="row">
+
+                          <div class="form-group col-lg-6 col-sm-6">
+                            <label for="exampleInputPetrolrate">Total Price of Petrol</label>
+                            {% crispy_field form.total_price_petrol %}
+                              {% if  form.total_price_petrol.errors %}
+                                    {% for error in form.total_price_petrol.errors %}
+                                      <div class="invalid-feedback">
+                                          {{ error }}
+                                      </div>
+                                    {% endfor %}
+                              {% endif %}
+                          </div>
+
+                          <div class="form-group col-lg-6 col-sm-6">
+                              <label for="exampleInputPetrolrate">Closing Of Diesel in Tank</label>
+                              {% crispy_field form.total_price_diesel %}
+                              {% if  form.total_price_diesel.errors %}
+                                  {% for error in form.total_price_diesel.errors %}
                                       <div class="invalid-feedback">
                                           {{ error }}
                                       </div>
@@ -67,11 +95,11 @@
                       <div class="row">
 
                         <div class="form-group col-lg-6 col-sm-6">
-                            <label for="exampleInputDieselrate">Total Literes Petrol</label>
+                            <label for="exampleInputDieselrate">Tank Litere Petrol</label>
                             <div class="input-group">
-                                {% crispy_field form.total_lit_petrol %}
-                                {% if  form.total_lit_petrol.errors %}
-                                {% for error in form.total_lit_petrol.errors %}
+                                {% crispy_field form.tank_lit_petrol %}
+                                {% if  form.tank_lit_petrol.errors %}
+                                {% for error in form.tank_lit_petrol.errors %}
                                     <div class="invalid-feedback">
                                         {{ error }}
                                     </div>
@@ -81,11 +109,11 @@
                         </div>
 
                         <div class="form-group col-lg-6 col-lg-sm">
-                            <label for="exampleInputDieselrate">Total Literes Diesel</label>
+                            <label for="exampleInputDieselrate">Tank Litere Diesel</label>
                             <div class="input-group">
-                              {% crispy_field form.total_lit_diesel %}
-                                {% if  form.total_lit_diesel.errors %}
-                                    {% for error in form.total_lit_diesel.errors %}
+                              {% crispy_field form.tank_lit_diesel %}
+                                {% if  form.tank_lit_diesel.errors %}
+                                    {% for error in form.tank_lit_diesel.errors %}
                                         <div class="invalid-feedback">
                                             {{ error }}
                                         </div>
@@ -164,6 +192,22 @@ $(function () {
     });
 });
 </script>
+
+    <script>
+
+    document.addEventListener('DOMContentLoaded',function () {
+        document.querySelector("#id_total_lit_petrol").value={{ total_lit_petrol }};
+        document.querySelector("#id_total_lit_diesel").value={{ total_lit_diesel }};
+        document.querySelector("#id_total_price_petrol").value={{ total_price_petrol }};
+        document.querySelector("#id_total_price_diesel").value={{ total_price_diesel }};
+        document.querySelector("#id_tank_lit_petrol").value={{ tank_lit_petrol }};
+        document.querySelector("#id_tank_lit_diesel").value={{ tank_lit_diesel }};
+        document.querySelector("#id_loss_in_petrol").value={{ loss_price_petrol }};
+        document.querySelector("#id_loss_in_diesel").value={{ loss_price_diesel }};
+
+
+    })
+    </script>
 
 
 {% endblock %}

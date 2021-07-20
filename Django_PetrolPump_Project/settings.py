@@ -147,3 +147,4 @@ LOGIN_REDIRECT_URL='home-page'
 MEDIA_ROOT=os.path.join(BASE_DIR,'media')
 MEDIA_URL='/media/'
 
+TIME_INPUT_FORMATS=['%I:%M %p',]

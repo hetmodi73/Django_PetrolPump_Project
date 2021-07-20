@@ -37,14 +37,6 @@
                     <b> Amount Of GooglePay: </b> <a class="float-right">{{ object.googlePay }}</a>
                     </li>
 
-                    <li class="list-group-item">
-                    <b> Amount Of Paytm: </b> <a class="float-right">{{ object.paytm }}</a>
-                    </li>
-
-                    <li class="list-group-item">
-                    <b> Amount Of UPI: </b> <a class="float-right">{{ object.upi }}</a>
-                    </li>
-
                 </ul>
 
               </div>
@@ -61,15 +53,21 @@
                 <ul class="list-group list-group-unbordered mb-3">
 
                     <li class="list-group-item">
+                    <b> Amount Of Paytm: </b> <a class="float-right">{{ object.paytm }}</a>
+                    </li>
+
+                    <li class="list-group-item">
+                    <b> Amount Of UPI: </b> <a class="float-right">{{ object.upi }}</a>
+                    </li>
+
+                    <li class="list-group-item">
                     <b> Amount Of Credit/Debit Card: </b> <a class="float-right">{{ object.credit_debit_card }}</a>
                     </li>
 
-                    <li class="list-group-item">
-                    <b> Total Literes Petrol: </b> <a class="float-right">{{ object.total_lit_petrol }}</a>
-                    </li>
+                    {% if object.nozzlle_master.nozzlle_type == 'petrol' %}
 
                     <li class="list-group-item">
-                    <b> Total Literes Diesel: </b> <a class="float-right">{{ object.total_lit_diesel }}</a>
+                    <b> Total Literes Petrol: </b> <a class="float-right">{{ object.total_lit_petrol }}</a>
                     </li>
 
                     <li class="list-group-item">
@@ -77,16 +75,24 @@
                     </li>
 
                     <li class="list-group-item">
-                    <b> Total Price Of Diesel: </b> <a class="float-right">{{ object.total_price_diesel }}</a>
+                    <b> Loss Of Price in Petrol: </b> <a class="float-right">{{ object.loss_price_petrol }}</a>
+                    </li>
+
+                    {% else %}
+
+                    <li class="list-group-item">
+                    <b> Total Literes Diesel: </b> <a class="float-right">{{ object.total_lit_diesel }}</a>
                     </li>
 
                     <li class="list-group-item">
-                    <b> Loss Of Price in Petrol: </b> <a class="float-right">{{ object.loss_price_petrol }}</a>
+                    <b> Total Price Of Diesel: </b> <a class="float-right">{{ object.total_price_diesel }}</a>
                     </li>
 
                     <li class="list-group-item">
                     <b> Loss Of Price in Diesel: </b> <a class="float-right">{{ object.loss_price_diesel }}</a>
                     </li>
+
+                    {% endif %}
 
                 </ul>
 
@@ -109,6 +115,7 @@
                     <li class="list-group-item">
                     <b> Closing Time: </b> <a class="float-right">{{ object.closing_time }}</a>
                     </li>
+
 
                     <li class="list-group-item">
                     <b> Opening Of Petrol in Literes: </b> <a class="float-right">{{ object.opening_lit_petrol }}</a>

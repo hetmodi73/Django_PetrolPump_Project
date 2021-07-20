@@ -1,12 +1,16 @@
 {% extends "client/layout.html" %}
 {% block body %}
+
     <h1 align="center"> Are you Sure You Want To Delete ?</h1>
     <hr/>
 
     <form method="post">
     {% csrf_token %}
+
     <div class="row">
+
         <div class="col-md-4">
+
         <!-- Profile Image -->
             <div class="card card-primary card-outline" class="col-md-4">
               <div class="card-body box-profile">
@@ -38,9 +42,6 @@
             </div>
 
     </div>
-
-
-
 
         <!--Extra Information Of Employee-->
             <div class="col-md-8">
@@ -131,7 +132,7 @@
                     <!-- /.Employee Bank Details -->
 
                   <div class="tab-pane" id="settings">
-                    <form class="form-horizontal">
+
 
                         <li class="list-group-item">
                             <b>Bank Name:</b> <a class="float-right">{{ object.bank_name }}</a>
@@ -153,7 +154,7 @@
                             <b>Salary:</b> <a class="float-right">{{ object.salary }}</a>
                         </li>
 
-                    </form>
+
                   </div>
                   <!-- /.tab-pane -->
                 </div>
@@ -168,8 +169,10 @@
         <div align="center">
 
             <input type="submit" value="Delete" class="btn btn-danger">
-            <a href="{% url 'rate-view' %}" class="btn btn-info" >Cancel </a>
+            <a href="{% url 'employee-view' %}" class="btn btn-info" >Cancel </a>
 
         </div>
+
     </form>
+
 {% endblock %}
