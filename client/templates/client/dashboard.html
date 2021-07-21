@@ -1,4 +1,5 @@
 {% extends "client/layout.html" %}
+{% load static %}
 {% block title %}
     Home - Indian Oil Petrol Pump
 {% endblock %}
@@ -99,7 +100,7 @@
               </div>
               <div class="card-body">
                 <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-                  <canvas id="barChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 341px;" width="511" height="375" class="chartjs-render-monitor"></canvas>
+                  <canvas id="bar-chart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 341px;" width="511" height="375" class="chartjs-render-monitor"></canvas>
                 </div>
               </div>
               <!-- /.card-body -->
@@ -115,7 +116,46 @@
     <!-- /.content -->
 
 
-    <script>
+
+{##}
+{#<script>#}
+{##}
+{#  $(function () {#}
+{##}
+{#      //-------------#}
+{#      //- BAR CHART -#}
+{#      //-------------#}
+{#      var barChartCanvas = $('#barChart').get(0).getContext('2d')#}
+{#      var barChartData = $.extend(true, {}, areaChartData)#}
+{#      var temp0 = areaChartData.datasets[0]#}
+{#      var temp1 = areaChartData.datasets[1]#}
+{#      barChartData.datasets[0] = temp1#}
+{#      barChartData.datasets[1] = temp0#}
+{##}
+{#      var barChartOptions = {#}
+{#          responsive: true,#}
+{#          maintainAspectRatio: false,#}
+{#          datasetFill: false#}
+{#      }#}
+{##}
+{#      new Chart(barChartCanvas, {#}
+{#          type: 'bar',#}
+{#          data: barChartData,#}
+{#          options: barChartOptions#}
+{#      })#}
+{# })#}
+{##}
+{#</script>#}
+{##}
+
+{% endblock %}
+
+{% block extra_js %}
+<!-- ChartJS -->
+<script src="{% static 'plugins/chart.js/Chart.min.js'%}"></script>
+
+ <script>
+
   $(function () {
     /* ChartJS
      * -------
@@ -125,12 +165,13 @@
     fetch("http://127.0.0.1:8000/get_petrol_amount/")
       .then(response => response.json())
       .then(data => {
+                console.log(data);
           var areaChartData = {
       //labels  : ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
       labels  : data.label,
       datasets: [
         {
-          label               : 'No of Task',
+          label               : 'Petorl selling',
           backgroundColor     : 'rgba(60,141,188,0.9)',
           borderColor         : 'rgba(60,141,188,0.8)',
           pointRadius          : false,
@@ -175,7 +216,7 @@
 
        // for payments chart
 
-      fetch("{% url 'get-amount-month-chart' %}")
+     /* fetch("")
       .then(response => response.json())
       .then(data => {
           var areaChartData = {
@@ -224,9 +265,9 @@
     })
 
       } )
-
+*/
         // for pending fees chart
-      fetch("{% url 'get-task-due-date' %}")
+     /* fetch("")
       .then(response => response.json())
       .then(data => {
           var areaChartData = {
@@ -278,39 +319,7 @@
     })
 
       } )
-
+       */
   })
 </script>
-
-{##}
-{#<script>#}
-{##}
-{#  $(function () {#}
-{##}
-{#      //-------------#}
-{#      //- BAR CHART -#}
-{#      //-------------#}
-{#      var barChartCanvas = $('#barChart').get(0).getContext('2d')#}
-{#      var barChartData = $.extend(true, {}, areaChartData)#}
-{#      var temp0 = areaChartData.datasets[0]#}
-{#      var temp1 = areaChartData.datasets[1]#}
-{#      barChartData.datasets[0] = temp1#}
-{#      barChartData.datasets[1] = temp0#}
-{##}
-{#      var barChartOptions = {#}
-{#          responsive: true,#}
-{#          maintainAspectRatio: false,#}
-{#          datasetFill: false#}
-{#      }#}
-{##}
-{#      new Chart(barChartCanvas, {#}
-{#          type: 'bar',#}
-{#          data: barChartData,#}
-{#          options: barChartOptions#}
-{#      })#}
-{# })#}
-{##}
-{#</script>#}
-{##}
-
 {% endblock %}
