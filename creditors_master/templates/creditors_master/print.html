@@ -1,79 +1,91 @@
-{% extends "client/layout.html" %}
-{% block body %}
-
-    <h1 align="center">Creditors Details</h1>
-    <hr/>
-
-    <div class="row">
-
-                <ul class="list-group list-group-unbordered mb-3">
-
-                        <li class="list-group-item">
-                            <b> Creditor Name:</b> <a class="float-right">{{ object.first_name }} {{ object.middle_name }} {{ object.last_name }}</a>
-                        </li>
-
-                        <li class="list-group-item">
-                            <b> Creation Date:</b> <a class="float-right">{{ object.creation_date }}</a>
-                        </li>
-
-                        <li class="list-group-item">
-                            <b>Mobile Number:</b> <a class="float-right">{{ object.mobile_no }}</a>
-                        </li>
-
-                        <li class="list-group-item">
-                            <b>Office Number:</b> <a class="float-right">{{ object.office_no }}</a>
-                        </li>
-
-                        <li class="list-group-item">
-                            <b>Contact Person's Name:</b> <a class="float-right">{{ object.contact_person_name }}</a>
-                        </li>
-
-                        <li class="list-group-item">
-                            <b>Contact Person's Mobile Number:</b> <a class="float-right">{{ object.contact_person_mobile_no }}</a>
-                        </li>
-
-                        <li class="list-group-item">
-                            <b>Company Name:</b> <a class="float-right">{{ object.company_name }}</a>
-                        </li>
-
-                        <li class="list-group-item">
-                            <b>Address:</b> <a class="float-right">{{ object.home_no }},{{ object.street_name }},{{ object.area_name }}</a>
-                        </li>
-
-                        <li class="list-group-item">
-                            <b>City:</b> <a class="float-right">{{ object.city }}</a>
-                        </li>
-
-                        <li class="list-group-item">
-                            <b>State:</b> <a class="float-right">{{ object.state }}</a>
-                        </li>
-
-                        <li class="list-group-item">
-                            <b>Country:</b> <a class="float-right">{{ object.country }}</a>
-                        </li>
-
-                        <li class="list-group-item">
-                            <b>Pincode:</b> <a class="float-right">{{ object.pincode }}</a>
-                        </li>
-
-                        <li class="list-group-item">
-                            <b>GST Number:</b> <a class="float-right">{{ object.gst_no }}</a>
-                        </li>
-
-                        <li class="list-group-item">
-                            <b>Pending Balance:</b> <a class="float-right">{{ object.pending_balance }}</a>
-                        </li>
-
-               </ul>
-    </div>
-
-
-{% endblock %}
-
-{% block extra_js  %}
-
-    <script>
-        window.addEventListener("load", window.print());
-    </script>
-
-{% endblock %}
+{#{% extends "client/layout.html" %}#}
+{#{% block body %}#}
+{#{% load static %}#}
+{#<!-- Google Font: Source Sans Pro -->#}
+{#  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">#}
+{#  <!-- Font Awesome -->#}
+{#  <link rel="stylesheet" href="{% static 'plugins/fontawesome-free/css/all.min.css' %}">#}
+{#  <!-- Theme style -->#}
+{#  <link rel="stylesheet" href="{% static 'dist/css/adminlte.min.css' %}">#}
+{##}
+{#   <h3 class="profile-username text-center">Creditors Details</h3>#}
+{#    <hr/>#}
+{##}
+{#                <ul class="list-group list-group-unbordered mb-3">#}
+{#                    <div>#}
+{##}
+{#                        <li class="list-group-item">#}
+{#                            <b> Creditor Name:</b> <a class="float-right">{{ object.first_name }} {{ object.middle_name }} {{ object.last_name }}</a>#}
+{#                        </li>#}
+{##}
+{#                        <li class="list-group-item">#}
+{#                            <b> Creation Date:</b> <a class="float-right">{{ object.creation_date }}</a>#}
+{#                        </li>#}
+{##}
+{#                        <li class="list-group-item">#}
+{#                            <b>Mobile Number:</b> <a class="float-right">{{ object.mobile_no }}</a>#}
+{#                        </li>#}
+{##}
+{#                        <li class="list-group-item">#}
+{#                            <b>Office Number:</b> <a class="float-right">{{ object.office_no }}</a>#}
+{#                        </li>#}
+{##}
+{#                        <li class="list-group-item">#}
+{#                            <b>Contact Person's Name:</b> <a class="float-right">{{ object.contact_person_name }}</a>#}
+{#                        </li>#}
+{##}
+{#                        <li class="list-group-item">#}
+{#                            <b>Contact Person's Mobile Number:</b> <a class="float-right">{{ object.contact_person_mobile_no }}</a>#}
+{#                        </li>#}
+{##}
+{#                        <li class="list-group-item">#}
+{#                            <b>Company Name:</b> <a class="float-right">{{ object.company_name }}</a>#}
+{#                        </li>#}
+{##}
+{#                        <li class="list-group-item">#}
+{#                            <b>Address:</b> <a class="float-right">{{ object.home_no }},{{ object.street_name }},{{ object.area_name }}</a>#}
+{#                        </li>#}
+{##}
+{#                        <li class="list-group-item">#}
+{#                            <b>City:</b> <a class="float-right">{{ object.city }}</a>#}
+{#                        </li>#}
+{##}
+{#                        <li class="list-group-item">#}
+{#                            <b>State:</b> <a class="float-right">{{ object.state }}</a>#}
+{#                        </li>#}
+{##}
+{#                        <li class="list-group-item">#}
+{#                            <b>Country:</b> <a class="float-right">{{ object.country }}</a>#}
+{#                        </li>#}
+{##}
+{#                        <li class="list-group-item">#}
+{#                            <b>Pincode:</b> <a class="float-right">{{ object.pincode }}</a>#}
+{#                        </li>#}
+{##}
+{#                        <li class="list-group-item">#}
+{#                            <b>GST Number:</b> <a class="float-right">{{ object.gst_no }}</a>#}
+{#                        </li>#}
+{##}
+{#                        <li class="list-group-item">#}
+{#                            <b>Pending Balance:</b> <a class="float-right">{{ object.pending_balance }}</a>#}
+{#                        </li>#}
+{##}
+{#                    </div>#}
+{##}
+{#               </ul>#}
+{##}
+{##}
+{#{% endblock %}#}
+{##}
+{#<!-- jQuery -->#}
+{#<script src="{% static 'plugins/jquery/jquery.min.js' %}"></script>#}
+{#<!-- Bootstrap 4 -->#}
+{#<script src="{% static 'plugins/bootstrap/js/bootstrap.bundle.min.js' %}"></script>#}
+{#<!-- AdminLTE App -->#}
+{#<script src="{% static 'dist/js/adminlte.min.js' %}"></script>#}
+{#<!-- AdminLTE for demo purposes -->#}
+{#<script src="{% static 'dist/js/demo.js' %}" ></script>#}
+{##}
+{#<script>#}
+{#    window.addEventListener("load", window.print());#}
+{#</script>#}

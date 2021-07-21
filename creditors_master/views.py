@@ -22,6 +22,6 @@ class UpdateCreditorsView(UpdateView):
 class DetailCreditorsView(DetailView):
     model = creditors
     success_url = '/creditors_master/view'
-
-class DetailCtransactionView(DetailView):
-    model = creditors
+#
+# class DetailCtransactionView(DetailView):
+#     model = creditors

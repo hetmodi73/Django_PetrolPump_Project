@@ -23,3 +23,5 @@ class DetailCreditor_transactionView(DetailView):
     model = creditor_transaction
     success_url = '/creditors_transaction/view'
 
+class DetailCreditor_transactionView(DetailView):
+    model = creditor_transaction

@@ -4,6 +4,7 @@ from vehicle_master.models import vehicle
 from nozzlle_master.models import nozzlle
 from django.urls import reverse
 from django.core.validators import MinValueValidator
+from django.shortcuts import render
 # Create your models here.
 
 class creditor_transaction(models.Model):
@@ -21,3 +22,9 @@ class creditor_transaction(models.Model):
 
     def get_absolute_url(self):
         return reverse('creditor_transaction-view')
+
+def print_page(request, id):
+    object = creditor_transaction.objects.get(id=id)
+    return render(request, "creditors_transaction/print.html", {
+    "object": object
+    })

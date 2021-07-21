@@ -3,7 +3,7 @@ from django.urls import reverse
 from django .core.validators import MinValueValidator
 from datetime import datetime
 from django.core.validators import MinValueValidator
-from django.shortcuts import render
+# from django.shortcuts import render
 # Create your models here.
 
 class creditors(models.Model):
@@ -32,11 +32,11 @@ class creditors(models.Model):
     def get_absolute_url(self):
         return reverse('creditors-view')
 
-    def print_page(request, id):
-        object = creditors.objects.get(id=id)
-        return render(request, "creditors_master/print.html", {
-            "object": object
-        })
+# def print_page(request, id):
+#     object = creditors.objects.get(id=id)
+#     return render(request, "creditors_master/print.html", {
+#     "object": object
+#     })
 
 
 
