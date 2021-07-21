@@ -20,6 +20,11 @@ def dashboard(request):
     petrol_stock=today.petrol_closing
     diesel_stock=today.diesel_closing
 
+    # if petrol_stock is None:
+    #     petrol_stock=0
+    # if diesel_stock is None:
+    #     diesel_stock=0
+
     # creditor amount
     from django.db.models import Sum
     from creditors_master.models import creditors

@@ -23,3 +23,8 @@ class DetailCreditorsView(DetailView):
     model = creditors
     success_url = '/creditors_master/view'
 
+def invoice(request,id):
+    object=creditors.objects.get(id=id)
+    return render(request,"creditors_master/print.html",{
+        "object":object
+    })

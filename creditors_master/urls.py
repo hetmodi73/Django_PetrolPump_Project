@@ -6,5 +6,6 @@ urlpatterns=[
     path('view/',ListCreditorsView.as_view(),name="creditors-view"),
     path('update/<int:pk>',UpdateCreditorsView.as_view(),name="creditors-update"),
     path('delete/<int:pk>',DeleteCreditorsView.as_view(),name="creditors-delete"),
-    path('detail/<int:pk>',DetailCreditorsView.as_view(),name="creditors-detail")
+    path('detail/<int:pk>',DetailCreditorsView.as_view(),name="creditors-detail"),
+    path('invoice/<int:id>',invoice,name="print")
 ]

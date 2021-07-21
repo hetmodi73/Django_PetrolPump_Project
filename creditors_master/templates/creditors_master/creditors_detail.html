@@ -1,4 +1,4 @@
-{{% extends "client/layout.html" %}
+{% extends "client/layout.html" %}
 {% block body %}
 
     <h1 align="center">Creditors Details</h1>
@@ -89,9 +89,14 @@
 
     </div>
 
+    <div class="row no-print">
+                <div class="col-12" align="left">
+                  <a href="{% url 'print' object.id %}" rel="noopener" target="_blank" class="btn btn-default"><i class="fas fa-print"></i> Print</a>
+                    <a href="{% url 'creditors-view' %}" >
+                      <button type="button" class="btn btn-info float-right"> Back </button>
+                    </a>
 
-            <div align="center">
-                 <a href="{% url 'creditors-view' %}" class="btn btn-info"><b>Back</b></a>
-            </div>
+                </div>
+              </div>
 
 {% endblock %}

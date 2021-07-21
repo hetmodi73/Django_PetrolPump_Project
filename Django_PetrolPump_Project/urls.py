@@ -41,7 +41,7 @@ urlpatterns = [
     path("dashboard/",dashboard,name="dashboard"),
     path("expense_detail/",include("expense_detail.urls")),
     path("e_dailybase_amount/",include("e_dailybase_amount.urls")),
-    path("get_petrol_amount/",get_petrol_amount_by_month_chart,name="get_petrol_amount")
+    path("get_petrol_amount/",get_petrol_amount_by_month_chart,name="get_petrol_amount"),
 ]
 
 urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
