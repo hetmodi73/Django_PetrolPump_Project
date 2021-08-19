@@ -1,7 +1,9 @@
 {% extends "client/layout.html" %}
 {% load static %}
 {% block title %}
+
     Home - Indian Oil Petrol Pump
+
 {% endblock %}
 
 {% block body %}
@@ -80,14 +82,15 @@
         <div class="row">
           <!-- Left col -->
 
+            <div class="row">
 
-            <!--Bar Chart-->
+                <!--Bar Chart-->
 
-            <section class="col-lg-7 connectedSortable">
+                <section class="col-lg-6 connectedSortable">
 
               <div class="card card-success">
               <div class="card-header">
-                <h3 class="card-title">Bar Chart</h3>
+                <h3 class="card-title">Petrol Rates Chart</h3>
 
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -108,6 +111,97 @@
 
             <!-- /.card -->
           </section>
+
+
+                <!--Bar Chart-->
+
+                <section class="col-lg-6 connectedSortable">
+
+              <div class="card card-success">
+              <div class="card-header">
+                <h3 class="card-title">Diesel Rates Chart</h3>
+
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                  <button type="button" class="btn btn-tool" data-card-widget="remove">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+                  <canvas id="bar-chart1" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 341px;" width="511" height="375" class="chartjs-render-monitor"></canvas>
+                </div>
+              </div>
+              <!-- /.card-body -->
+            </div>
+
+            <!-- /.card -->
+          </section>
+
+
+                <!--Bar Chart-->
+
+                <section class="col-lg-6 connectedSortable">
+
+              <div class="card card-success">
+              <div class="card-header">
+                <h3 class="card-title">Creditors Chart</h3>
+
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                  <button type="button" class="btn btn-tool" data-card-widget="remove">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+                  <canvas id="bar-chart2" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 341px;" width="511" height="375" class="chartjs-render-monitor"></canvas>
+                </div>
+              </div>
+              <!-- /.card-body -->
+            </div>
+
+            <!-- /.card -->
+          </section>
+
+
+                <!--Bar Chart-->
+
+                <section class="col-lg-6 connectedSortable">
+
+              <div class="card card-success">
+              <div class="card-header">
+                <h3 class="card-title">Creditors Chart</h3>
+
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                  <button type="button" class="btn btn-tool" data-card-widget="remove">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+                  <canvas id="bar-chart3" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 341px;" width="511" height="375" class="chartjs-render-monitor"></canvas>
+                </div>
+              </div>
+              <!-- /.card-body -->
+            </div>
+
+            <!-- /.card -->
+          </section>
+
+            </div>
+
+
           <!-- right col -->
         </div>
         <!-- /.row (main row) -->
@@ -322,4 +416,512 @@
        */
   })
 </script>
+
+     <script>
+
+  $(function () {
+    /* ChartJS
+     * -------
+     * Here we will create a few charts using ChartJS
+     */
+      // for admission chart
+    fetch("http://127.0.0.1:8000/get_diesel_amount/")
+      .then(response => response.json())
+      .then(data => {
+                console.log(data);
+          var areaChartData = {
+      //labels  : ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+      labels  : data.label,
+      datasets: [
+        {
+          label               : 'Diesel selling',
+          backgroundColor     : 'rgba(60,141,188,0.9)',
+          borderColor         : 'rgba(60,141,188,0.8)',
+          pointRadius          : false,
+          pointColor          : '#3b8bba',
+          pointStrokeColor    : 'rgba(60,141,188,1)',
+          pointHighlightFill  : '#fff',
+          pointHighlightStroke: 'rgba(60,141,188,1)',
+          data                : data.values
+        }
+      ]
+    }
+
+              //-------------
+    //- BAR CHART -
+    //-------------
+    var barChartCanvas = $('#bar-chart1').get(0).getContext('2d')
+    var barChartData = $.extend(true, {}, areaChartData)
+    var temp0 = areaChartData.datasets[0]
+    barChartData.datasets[0] = temp0
+    var barChartOptions = {
+      responsive              : true,
+      maintainAspectRatio     : false,
+      datasetFill             : false,
+        scales: {
+        yAxes: [{
+            display: true,
+            ticks: {
+               // suggestedMin: 0,    // minimum will be 0, unless there is a lower value.
+                // OR //
+                beginAtZero: true   // minimum value will be 0.
+            }
+        }]
+    }
+    }
+    new Chart(barChartCanvas, {
+      type: 'bar',
+      data: barChartData,
+      options: barChartOptions
+    })
+
+      } )
+
+       // for payments chart
+
+     /* fetch("")
+      .then(response => response.json())
+      .then(data => {
+          var areaChartData = {
+      //labels  : ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+      labels  : data.label,
+      datasets: [
+        {
+          label               : 'Total Revenue',
+          backgroundColor     : 'rgba(60,141,188,0.9)',
+          borderColor         : 'rgba(60,141,188,0.8)',
+          pointRadius          : false,
+          pointColor          : '#3b8bba',
+          pointStrokeColor    : 'rgba(60,141,188,1)',
+          pointHighlightFill  : '#fff',
+          pointHighlightStroke: 'rgba(60,141,188,1)',
+          data                : data.values
+        }
+      ]
+    }
+     //-------------
+    //- BAR CHART -
+    //-------------
+    var barChartCanvas = $('#payment-chart').get(0).getContext('2d')
+    var barChartData = $.extend(true, {}, areaChartData)
+    var temp0 = areaChartData.datasets[0]
+    barChartData.datasets[0] = temp0
+    var barChartOptions = {
+      responsive              : true,
+      maintainAspectRatio     : false,
+      datasetFill             : false,
+        scales: {
+        yAxes: [{
+            display: true,
+            ticks: {
+               // suggestedMin: 0,    // minimum will be 0, unless there is a lower value.
+                // OR //
+                beginAtZero: true   // minimum value will be 0.
+            }
+        }]
+    }
+    }
+    new Chart(barChartCanvas, {
+      type: 'bar',
+      data: barChartData,
+      options: barChartOptions
+    })
+
+      } )
+*/
+        // for pending fees chart
+     /* fetch("")
+      .then(response => response.json())
+      .then(data => {
+          var areaChartData = {
+      //labels  : ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+      labels  : data.label,
+      datasets: [
+        {
+            axis: 'y',
+          label               : 'Due Task',
+          backgroundColor     : 'rgba(60,141,188,0.9)',
+          borderColor         : 'rgba(60,141,188,0.8)',
+          pointRadius          : false,
+          pointColor          : '#3b8bba',
+          pointStrokeColor    : 'rgba(60,141,188,1)',
+          pointHighlightFill  : '#fff',
+          pointHighlightStroke: 'rgba(60,141,188,1)',
+          data                : data.values
+        }
+      ]
+    }
+     //-------------
+    //- BAR CHART -
+    //-------------
+    var barChartCanvas = $('#pending-chart').get(0).getContext('2d')
+    var barChartData = $.extend(true, {}, areaChartData)
+    var temp0 = areaChartData.datasets[0]
+    barChartData.datasets[0] = temp0
+    var barChartOptions = {
+      responsive              : true,
+      maintainAspectRatio     : false,
+      indexAxis: 'y',
+      datasetFill             : false,
+        scales: {
+        yAxes: [{
+            //display: true,
+            ticks: {
+                suggestedMin: 0,    // minimum will be 0, unless there is a lower value.
+                // OR //
+                beginAtZero: true,   // minimum value will be 0.
+                stepSize:2000,
+            }
+        }]
+    }
+    }
+    new Chart(barChartCanvas, {
+      type: 'bar',
+      data: barChartData,
+      options: barChartOptions
+    })
+
+      } )
+       */
+  })
+</script>
+
+     <script>
+
+  $(function () {
+    /* ChartJS
+     * -------
+     * Here we will create a few charts using ChartJS
+     */
+      // for admission chart
+    fetch("http://127.0.0.1:8000/get_creditors_petrol_amount/")
+      .then(response => response.json())
+      .then(data => {
+                console.log(data);
+          var areaChartData = {
+      //labels  : ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+      labels  : data.label,
+      datasets: [
+        {
+          label               : 'Creditors Petrol Selling',
+          backgroundColor     : 'rgba(60,141,188,0.9)',
+          borderColor         : 'rgba(60,141,188,0.8)',
+          pointRadius          : false,
+          pointColor          : '#3b8bba',
+          pointStrokeColor    : 'rgba(60,141,188,1)',
+          pointHighlightFill  : '#fff',
+          pointHighlightStroke: 'rgba(60,141,188,1)',
+          data                : data.values
+        }
+      ]
+    }
+
+              //-------------
+    //- BAR CHART -
+    //-------------
+    var barChartCanvas = $('#bar-chart2').get(0).getContext('2d')
+    var barChartData = $.extend(true, {}, areaChartData)
+    var temp0 = areaChartData.datasets[0]
+    barChartData.datasets[0] = temp0
+    var barChartOptions = {
+      responsive              : true,
+      maintainAspectRatio     : false,
+      datasetFill             : false,
+        scales: {
+        yAxes: [{
+            display: true,
+            ticks: {
+               // suggestedMin: 0,    // minimum will be 0, unless there is a lower value.
+                // OR //
+                beginAtZero: true   // minimum value will be 0.
+            }
+        }]
+    }
+    }
+    new Chart(barChartCanvas, {
+      type: 'bar',
+      data: barChartData,
+      options: barChartOptions
+    })
+
+      } )
+
+       // for payments chart
+
+     /* fetch("")
+      .then(response => response.json())
+      .then(data => {
+          var areaChartData = {
+      //labels  : ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+      labels  : data.label,
+      datasets: [
+        {
+          label               : 'Total Revenue',
+          backgroundColor     : 'rgba(60,141,188,0.9)',
+          borderColor         : 'rgba(60,141,188,0.8)',
+          pointRadius          : false,
+          pointColor          : '#3b8bba',
+          pointStrokeColor    : 'rgba(60,141,188,1)',
+          pointHighlightFill  : '#fff',
+          pointHighlightStroke: 'rgba(60,141,188,1)',
+          data                : data.values
+        }
+      ]
+    }
+     //-------------
+    //- BAR CHART -
+    //-------------
+    var barChartCanvas = $('#payment-chart').get(0).getContext('2d')
+    var barChartData = $.extend(true, {}, areaChartData)
+    var temp0 = areaChartData.datasets[0]
+    barChartData.datasets[0] = temp0
+    var barChartOptions = {
+      responsive              : true,
+      maintainAspectRatio     : false,
+      datasetFill             : false,
+        scales: {
+        yAxes: [{
+            display: true,
+            ticks: {
+               // suggestedMin: 0,    // minimum will be 0, unless there is a lower value.
+                // OR //
+                beginAtZero: true   // minimum value will be 0.
+            }
+        }]
+    }
+    }
+    new Chart(barChartCanvas, {
+      type: 'bar',
+      data: barChartData,
+      options: barChartOptions
+    })
+
+      } )
+*/
+        // for pending fees chart
+     /* fetch("")
+      .then(response => response.json())
+      .then(data => {
+          var areaChartData = {
+      //labels  : ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+      labels  : data.label,
+      datasets: [
+        {
+            axis: 'y',
+          label               : 'Due Task',
+          backgroundColor     : 'rgba(60,141,188,0.9)',
+          borderColor         : 'rgba(60,141,188,0.8)',
+          pointRadius          : false,
+          pointColor          : '#3b8bba',
+          pointStrokeColor    : 'rgba(60,141,188,1)',
+          pointHighlightFill  : '#fff',
+          pointHighlightStroke: 'rgba(60,141,188,1)',
+          data                : data.values
+        }
+      ]
+    }
+     //-------------
+    //- BAR CHART -
+    //-------------
+    var barChartCanvas = $('#pending-chart').get(0).getContext('2d')
+    var barChartData = $.extend(true, {}, areaChartData)
+    var temp0 = areaChartData.datasets[0]
+    barChartData.datasets[0] = temp0
+    var barChartOptions = {
+      responsive              : true,
+      maintainAspectRatio     : false,
+      indexAxis: 'y',
+      datasetFill             : false,
+        scales: {
+        yAxes: [{
+            //display: true,
+            ticks: {
+                suggestedMin: 0,    // minimum will be 0, unless there is a lower value.
+                // OR //
+                beginAtZero: true,   // minimum value will be 0.
+                stepSize:2000,
+            }
+        }]
+    }
+    }
+    new Chart(barChartCanvas, {
+      type: 'bar',
+      data: barChartData,
+      options: barChartOptions
+    })
+
+      } )
+       */
+  })
+</script>
+
+    <script>
+
+  $(function () {
+    /* ChartJS
+     * -------
+     * Here we will create a few charts using ChartJS
+     */
+      // for admission chart
+    fetch("http://127.0.0.1:8000/get_creditors_diesel_amount/")
+      .then(response => response.json())
+      .then(data => {
+                console.log(data);
+          var areaChartData = {
+      //labels  : ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+      labels  : data.label,
+      datasets: [
+        {
+          label               : 'Creditors Diesel Selling',
+          backgroundColor     : 'rgba(60,141,188,0.9)',
+          borderColor         : 'rgba(60,141,188,0.8)',
+          pointRadius          : false,
+          pointColor          : '#3b8bba',
+          pointStrokeColor    : 'rgba(60,141,188,1)',
+          pointHighlightFill  : '#fff',
+          pointHighlightStroke: 'rgba(60,141,188,1)',
+          data                : data.values
+        }
+      ]
+    }
+
+              //-------------
+    //- BAR CHART -
+    //-------------
+    var barChartCanvas = $('#bar-chart3').get(0).getContext('2d')
+    var barChartData = $.extend(true, {}, areaChartData)
+    var temp0 = areaChartData.datasets[0]
+    barChartData.datasets[0] = temp0
+    var barChartOptions = {
+      responsive              : true,
+      maintainAspectRatio     : false,
+      datasetFill             : false,
+        scales: {
+        yAxes: [{
+            display: true,
+            ticks: {
+               // suggestedMin: 0,    // minimum will be 0, unless there is a lower value.
+                // OR //
+                beginAtZero: true   // minimum value will be 0.
+            }
+        }]
+    }
+    }
+    new Chart(barChartCanvas, {
+      type: 'bar',
+      data: barChartData,
+      options: barChartOptions
+    })
+
+      } )
+
+       // for payments chart
+
+     /* fetch("")
+      .then(response => response.json())
+      .then(data => {
+          var areaChartData = {
+      //labels  : ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+      labels  : data.label,
+      datasets: [
+        {
+          label               : 'Total Revenue',
+          backgroundColor     : 'rgba(60,141,188,0.9)',
+          borderColor         : 'rgba(60,141,188,0.8)',
+          pointRadius          : false,
+          pointColor          : '#3b8bba',
+          pointStrokeColor    : 'rgba(60,141,188,1)',
+          pointHighlightFill  : '#fff',
+          pointHighlightStroke: 'rgba(60,141,188,1)',
+          data                : data.values
+        }
+      ]
+    }
+     //-------------
+    //- BAR CHART -
+    //-------------
+    var barChartCanvas = $('#payment-chart').get(0).getContext('2d')
+    var barChartData = $.extend(true, {}, areaChartData)
+    var temp0 = areaChartData.datasets[0]
+    barChartData.datasets[0] = temp0
+    var barChartOptions = {
+      responsive              : true,
+      maintainAspectRatio     : false,
+      datasetFill             : false,
+        scales: {
+        yAxes: [{
+            display: true,
+            ticks: {
+               // suggestedMin: 0,    // minimum will be 0, unless there is a lower value.
+                // OR //
+                beginAtZero: true   // minimum value will be 0.
+            }
+        }]
+    }
+    }
+    new Chart(barChartCanvas, {
+      type: 'bar',
+      data: barChartData,
+      options: barChartOptions
+    })
+
+      } )
+*/
+        // for pending fees chart
+     /* fetch("")
+      .then(response => response.json())
+      .then(data => {
+          var areaChartData = {
+      //labels  : ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+      labels  : data.label,
+      datasets: [
+        {
+            axis: 'y',
+          label               : 'Due Task',
+          backgroundColor     : 'rgba(60,141,188,0.9)',
+          borderColor         : 'rgba(60,141,188,0.8)',
+          pointRadius          : false,
+          pointColor          : '#3b8bba',
+          pointStrokeColor    : 'rgba(60,141,188,1)',
+          pointHighlightFill  : '#fff',
+          pointHighlightStroke: 'rgba(60,141,188,1)',
+          data                : data.values
+        }
+      ]
+    }
+     //-------------
+    //- BAR CHART -
+    //-------------
+    var barChartCanvas = $('#pending-chart').get(0).getContext('2d')
+    var barChartData = $.extend(true, {}, areaChartData)
+    var temp0 = areaChartData.datasets[0]
+    barChartData.datasets[0] = temp0
+    var barChartOptions = {
+      responsive              : true,
+      maintainAspectRatio     : false,
+      indexAxis: 'y',
+      datasetFill             : false,
+        scales: {
+        yAxes: [{
+            //display: true,
+            ticks: {
+                suggestedMin: 0,    // minimum will be 0, unless there is a lower value.
+                // OR //
+                beginAtZero: true,   // minimum value will be 0.
+                stepSize:2000,
+            }
+        }]
+    }
+    }
+    new Chart(barChartCanvas, {
+      type: 'bar',
+      data: barChartData,
+      options: barChartOptions
+    })
+
+      } )
+       */
+  })
+</script>
+
 {% endblock %}

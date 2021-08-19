@@ -66,3 +66,41 @@ def get_petrol_amount_by_month_chart(request):
         print(data)
     return JsonResponse(data)
 
+def get_diesel_amount_by_month_chart(request):
+    from django.db.models import Sum
+    from datetime import datetime
+    from calculation_master.models import calculation
+    result = calculation.objects.annotate(month=TruncMonth('date')).values('month').annotate(
+         no_of_ad=Sum('total_lit_diesel'))
+    data = {'label': [], 'values': []}
+    for ex in result:
+        data['label'].append(datetime.strftime(ex['month'], '%B'))
+        data['values'].append(ex['no_of_ad'])
+        print(data)
+    return JsonResponse(data)
+
+def get_creditors_petrol_amount_by_month_chart(request):
+    from django.db.models import Sum
+    from datetime import datetime
+    from creditors_transaction.models import creditor_transaction
+    result = creditor_transaction.objects.annotate(month=TruncMonth('date')).values('month').annotate(
+         no_of_ad=Sum('petrol_price'))
+    data = {'label': [], 'values': []}
+    for ex in result:
+        data['label'].append(datetime.strftime(ex['month'], '%B'))
+        data['values'].append(ex['no_of_ad'])
+        print(data)
+    return JsonResponse(data)
+
+def get_creditors_diesel_amount_by_month_chart(request):
+    from django.db.models import Sum
+    from datetime import datetime
+    from creditors_transaction.models import creditor_transaction
+    result = creditor_transaction.objects.annotate(month=TruncMonth('date')).values('month').annotate(
+         no_of_ad=Sum('diesel_price'))
+    data = {'label': [], 'values': []}
+    for ex in result:
+        data['label'].append(datetime.strftime(ex['month'], '%B'))
+        data['values'].append(ex['no_of_ad'])
+        print(data)
+    return JsonResponse(data)
